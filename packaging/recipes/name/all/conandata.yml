@@ -1,0 +1,4 @@
+sources:
+  "1.0.0":
+    url: "https://github.com/privateMwb/cpp2_template.git"
+    commit: "3d051c726b7af9f716b0afdd371682be63479a54"
