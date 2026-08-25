@@ -2,11 +2,11 @@
 # CMAKE_PROJECT_NAME must match project()'s name in the repo's root
 # CMakeLists.txt exactly, casing included (e.g. "FalconHTTP") -- NOT
 # ${PORT}, which vcpkg forces to lowercase-with-hyphens (e.g.
-# "falconhttp") and is a different string. GITHUB_DnsProject_NAME must match
+# "falconhttp") and is a different string. GITHUB_REPO_NAME must match
 # the real GitHub repo name, casing included -- also not necessarily
 # the same as ${PORT}.
 set(CMAKE_PROJECT_NAME DnsPro)
-set(GITHUB_DnsProject_NAME DnsResolver)
+set(GITHUB_REPO_NAME DnsResolver)
 # ──────────────────────────────────────────────────────────────
 
 # Reads GITHUB_TOKEN from the environment if present (set by
@@ -22,7 +22,7 @@ endif()
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    DnsProject privateMwb/${GITHUB_DnsProject_NAME}
+    REPO privateMwb/${GITHUB_REPO_NAME}
     REF 3d051c726b7af9f716b0afdd371682be63479a54
     SHA512 8ed246af33f890ebee9b8bddab533ac0c6ec049703f64aba2d7c194a838191aa849eee936697fe4ade8a73c65abef9826ef9c37b5b555cd844ce7890f685f93d
     AUTHORIZATION_TOKEN ${GITHUB_AUTH_TOKEN}
@@ -52,7 +52,7 @@ foreach(SPEC ${SUBMODULE_SPECS})
 
     vcpkg_from_github(
         OUT_SOURCE_PATH SUBMODULE_SOURCE_PATH
-        DnsProject privateMwb/${SUBMODULE_NAME}
+        REPO privateMwb/${SUBMODULE_NAME}
         REF ${SUBMODULE_REF}
         SHA512 ${SUBMODULE_SHA512}
         AUTHORIZATION_TOKEN ${GITHUB_AUTH_TOKEN}
