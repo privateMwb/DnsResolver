@@ -98,6 +98,10 @@ jobs:
         continue-on-error: true
         run: ./build/regression
 
+      - name: Run google regression tool
+        continue-on-error: true
+        run: ./build/google_regressions
+
       - name: Determine version
         id: version
         run: |

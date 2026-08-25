@@ -15,7 +15,7 @@ cmake -S . -B build_benchmarks -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBU
 cmake --build build_benchmarks
 ```
 
-This produces a `benchmarks_google` executable under `build_benchmarks/`,
+This produces a `google_benchmarks` executable under `build_benchmarks/`,
 and fetches Google Benchmark at configure time.
 
 ## Usage
@@ -23,35 +23,35 @@ and fetches Google Benchmark at configure time.
 Run every registered benchmark:
 
 ```
-./build_benchmarks/benchmarks_google
+./build_benchmarks/google_benchmarks
 ```
 
 List all benchmark dnspros without running them — useful when you don't
 remember one's exact dnspro:
 
 ```
-./build_benchmarks/benchmarks_google --benchmark_list_tests
+./build_benchmarks/google_benchmarks --benchmark_list_tests
 ```
 
 Run only the benchmarks matching a regex, e.g. everything with
 "Search" in its dnspro:
 
 ```
-./build_benchmarks/benchmarks_google --benchmark_filter=Search
+./build_benchmarks/google_benchmarks --benchmark_filter=Search
 ```
 
 Print results as JSON instead of the default table — pipe this into a
 file or another tool:
 
 ```
-./build_benchmarks/benchmarks_google --benchmark_format=json
+./build_benchmarks/google_benchmarks --benchmark_format=json
 ```
 
 Write results straight to a file, in a chosen format, without touching
 stdout:
 
 ```
-./build_benchmarks/benchmarks_google --benchmark_out=benchmarks/results/google_benchmarks_results.json --benchmark_out_format=json
+./build_benchmarks/google_benchmarks --benchmark_out=benchmarks/results/google_benchmarks_results.json --benchmark_out_format=json
 ```
 
 These flags combine freely — e.g. filter down to one category and
@@ -68,7 +68,7 @@ the benchmark binary directly.
 1. Generate the JSON results (see above):
 
 ```
-./build_benchmarks/benchmarks_google --benchmark_out=benchmarks/results/google_benchmarks_results.json --benchmark_out_format=json
+./build_benchmarks/google_benchmarks --benchmark_out=benchmarks/results/google_benchmarks_results.json --benchmark_out_format=json
 ```
 
 2. Convert that JSON into a Markdown table:

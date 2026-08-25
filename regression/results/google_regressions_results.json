@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Lookup_ExistingNameType",
+    "baseline_ns": 131.34,
+    "current_ns": 997.55,
+    "pct_change": -86.83
+  },
+  {
+    "name": "Lookup_MissingName",
+    "baseline_ns": 59.56,
+    "current_ns": 123.72,
+    "pct_change": -51.86
+  },
+  {
+    "name": "Lookup_ExistingNameMissingType",
+    "baseline_ns": 71.22,
+    "current_ns": 169.61,
+    "pct_change": -58.01
+  },
+  {
+    "name": "Build_QuestionOnly",
+    "baseline_ns": 129.91,
+    "current_ns": 637.21,
+    "pct_change": -79.61
+  },
+  {
+    "name": "Build_FourAnswerRecords",
+    "baseline_ns": 437.89,
+    "current_ns": 1997.49,
+    "pct_change": -78.08
+  },
+  {
+    "name": "Parse_QuestionOnly",
+    "baseline_ns": 62.58,
+    "current_ns": 474.53,
+    "pct_change": -86.81
+  },
+  {
+    "name": "Parse_FourAnswerRecords",
+    "baseline_ns": 346.87,
+    "current_ns": 2482.83,
+    "pct_change": -86.03
+  },
+  {
+    "name": "AddRecord_ExistingBucket",
+    "baseline_ns": 285.97,
+    "current_ns": 1163.46,
+    "pct_change": -75.42
+  },
+  {
+    "name": "RemoveRecord_MissingName",
+    "baseline_ns": 56.78,
+    "current_ns": 116.53,
+    "pct_change": -51.28
+  },
+  {
+    "name": "Resolve_AnswerFound",
+    "baseline_ns": 487.69,
+    "current_ns": 3303.08,
+    "pct_change": -85.24
+  },
+  {
+    "name": "Resolve_NXDOMAIN",
+    "baseline_ns": 391.76,
+    "current_ns": 1584.62,
+    "pct_change": -75.28
+  },
+  {
+    "name": "Resolve_NODATA",
+    "baseline_ns": 402.01,
+    "current_ns": 1849.59,
+    "pct_change": -78.26
+  },
+  {
+    "name": "Message_MoveConstruct",
+    "baseline_ns": 6.24,
+    "current_ns": 41.42,
+    "pct_change": -84.94
+  },
+  {
+    "name": "Message_MoveAssign",
+    "baseline_ns": 5.92,
+    "current_ns": 38.30,
+    "pct_change": -84.54
+  },
+  {
+    "name": "ParseAt/FourAnswerRecords",
+    "baseline_ns": 327.72,
+    "current_ns": 2832.48,
+    "pct_change": -88.43
+  },
+  {
+    "name": "ParseAt/SixteenAnswerRecords",
+    "baseline_ns": 2044.20,
+    "current_ns": 7122.65,
+    "pct_change": -71.30
+  },
+  {
+    "name": "ParseAt/SixtyFourAnswerRecords",
+    "baseline_ns": 6715.49,
+    "current_ns": 27806.35,
+    "pct_change": -75.85
+  },
+  {
+    "name": "BuildAt/FourAnswerRecords",
+    "baseline_ns": 440.39,
+    "current_ns": 2490.59,
+    "pct_change": -82.32
+  },
+  {
+    "name": "BuildAt/SixteenAnswerRecords",
+    "baseline_ns": 1238.41,
+    "current_ns": 3576.87,
+    "pct_change": -65.38
+  },
+  {
+    "name": "BuildAt/SixtyFourAnswerRecords",
+    "baseline_ns": 4293.48,
+    "current_ns": 12176.15,
+    "pct_change": -64.74
+  },
+  {
+    "name": "ParseAt/TwoLabelsDeep",
+    "baseline_ns": 66.33,
+    "current_ns": 1108.69,
+    "pct_change": -94.02
+  },
+  {
+    "name": "ParseAt/EightLabelsDeep",
+    "baseline_ns": 122.84,
+    "current_ns": 907.54,
+    "pct_change": -86.46
+  },
+  {
+    "name": "ParseAt/ThirtyTwoLabelsDeep",
+    "baseline_ns": 435.62,
+    "current_ns": 1878.80,
+    "pct_change": -76.81
+  },
+  {
+    "name": "BuildAt/TwoLabelsDeep",
+    "baseline_ns": 127.90,
+    "current_ns": 809.61,
+    "pct_change": -84.20
+  },
+  {
+    "name": "BuildAt/EightLabelsDeep",
+    "baseline_ns": 256.04,
+    "current_ns": 1373.72,
+    "pct_change": -81.36
+  },
+  {
+    "name": "BuildAt/ThirtyTwoLabelsDeep",
+    "baseline_ns": 710.52,
+    "current_ns": 2510.40,
+    "pct_change": -71.70
+  },
+  {
+    "name": "LookupAt/Names100",
+    "baseline_ns": 137.54,
+    "current_ns": 994.84,
+    "pct_change": -86.17
+  },
+  {
+    "name": "LookupAt/Names1000",
+    "baseline_ns": 138.45,
+    "current_ns": 849.25,
+    "pct_change": -83.70
+  },
+  {
+    "name": "LookupAt/Names10000",
+    "baseline_ns": 146.02,
+    "current_ns": 839.03,
+    "pct_change": -82.60
+  },
+  {
+    "name": "Canonicalize_MixedCaseName",
+    "baseline_ns": 235.29,
+    "current_ns": 1182.96,
+    "pct_change": -80.11
+  },
+  {
+    "name": "NameParse_Uncompressed",
+    "baseline_ns": 63.90,
+    "current_ns": 839.63,
+    "pct_change": -92.39
+  },
+  {
+    "name": "NameParse_Compressed",
+    "baseline_ns": 99.59,
+    "current_ns": 1287.93,
+    "pct_change": -92.27
+  }
+]

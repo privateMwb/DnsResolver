@@ -1,0 +1,770 @@
+[
+  {
+    "suite": "Lookup",
+    "operation": "Existing name+type",
+    "iteration": 10000, 
+    "baseline_ns": 138.01,
+    "current_ns": 643.67,
+    "pct_change": -78.56
+  },
+  {
+    "suite": "Lookup",
+    "operation": "Existing name+type",
+    "iteration": 100000, 
+    "baseline_ns": 138.92,
+    "current_ns": 836.78,
+    "pct_change": -83.40
+  },
+  {
+    "suite": "Lookup",
+    "operation": "Existing name+type",
+    "iteration": 1000000, 
+    "baseline_ns": 141.91,
+    "current_ns": 679.75,
+    "pct_change": -79.12
+  },
+  {
+    "suite": "Lookup",
+    "operation": "Missing name",
+    "iteration": 10000, 
+    "baseline_ns": 65.06,
+    "current_ns": 175.69,
+    "pct_change": -62.97
+  },
+  {
+    "suite": "Lookup",
+    "operation": "Missing name",
+    "iteration": 100000, 
+    "baseline_ns": 58.90,
+    "current_ns": 175.84,
+    "pct_change": -66.50
+  },
+  {
+    "suite": "Lookup",
+    "operation": "Missing name",
+    "iteration": 1000000, 
+    "baseline_ns": 59.96,
+    "current_ns": 175.52,
+    "pct_change": -65.84
+  },
+  {
+    "suite": "Lookup",
+    "operation": "Existing name, missing type",
+    "iteration": 10000, 
+    "baseline_ns": 70.74,
+    "current_ns": 221.69,
+    "pct_change": -68.09
+  },
+  {
+    "suite": "Lookup",
+    "operation": "Existing name, missing type",
+    "iteration": 100000, 
+    "baseline_ns": 72.71,
+    "current_ns": 218.68,
+    "pct_change": -66.75
+  },
+  {
+    "suite": "Lookup",
+    "operation": "Existing name, missing type",
+    "iteration": 1000000, 
+    "baseline_ns": 72.04,
+    "current_ns": 218.92,
+    "pct_change": -67.09
+  },
+  {
+    "suite": "Build",
+    "operation": "Query, single question",
+    "iteration": 10000, 
+    "baseline_ns": 130.06,
+    "current_ns": 1121.35,
+    "pct_change": -88.40
+  },
+  {
+    "suite": "Build",
+    "operation": "Query, single question",
+    "iteration": 100000, 
+    "baseline_ns": 129.76,
+    "current_ns": 580.15,
+    "pct_change": -77.63
+  },
+  {
+    "suite": "Build",
+    "operation": "Query, single question",
+    "iteration": 1000000, 
+    "baseline_ns": 129.88,
+    "current_ns": 505.47,
+    "pct_change": -74.31
+  },
+  {
+    "suite": "Build",
+    "operation": "Response, 4 answer records",
+    "iteration": 10000, 
+    "baseline_ns": 440.61,
+    "current_ns": 1435.14,
+    "pct_change": -69.30
+  },
+  {
+    "suite": "Build",
+    "operation": "Response, 4 answer records",
+    "iteration": 100000, 
+    "baseline_ns": 442.80,
+    "current_ns": 1449.89,
+    "pct_change": -69.46
+  },
+  {
+    "suite": "Build",
+    "operation": "Response, 4 answer records",
+    "iteration": 1000000, 
+    "baseline_ns": 441.45,
+    "current_ns": 2619.87,
+    "pct_change": -83.15
+  },
+  {
+    "suite": "Parse",
+    "operation": "Query, single question",
+    "iteration": 10000, 
+    "baseline_ns": 73.25,
+    "current_ns": 1121.35,
+    "pct_change": -93.47
+  },
+  {
+    "suite": "Parse",
+    "operation": "Query, single question",
+    "iteration": 100000, 
+    "baseline_ns": 62.76,
+    "current_ns": 580.15,
+    "pct_change": -89.18
+  },
+  {
+    "suite": "Parse",
+    "operation": "Query, single question",
+    "iteration": 1000000, 
+    "baseline_ns": 65.75,
+    "current_ns": 505.47,
+    "pct_change": -86.99
+  },
+  {
+    "suite": "Parse",
+    "operation": "Response, 4 answer records",
+    "iteration": 10000, 
+    "baseline_ns": 333.58,
+    "current_ns": 1435.14,
+    "pct_change": -76.76
+  },
+  {
+    "suite": "Parse",
+    "operation": "Response, 4 answer records",
+    "iteration": 100000, 
+    "baseline_ns": 339.08,
+    "current_ns": 1449.89,
+    "pct_change": -76.61
+  },
+  {
+    "suite": "Parse",
+    "operation": "Response, 4 answer records",
+    "iteration": 1000000, 
+    "baseline_ns": 347.05,
+    "current_ns": 2619.87,
+    "pct_change": -86.75
+  },
+  {
+    "suite": "Record",
+    "operation": "Existing name+type bucket",
+    "iteration": 10000, 
+    "baseline_ns": 374.12,
+    "current_ns": 2782.85,
+    "pct_change": -86.56
+  },
+  {
+    "suite": "Record",
+    "operation": "Existing name+type bucket",
+    "iteration": 100000, 
+    "baseline_ns": 329.22,
+    "current_ns": 2247.69,
+    "pct_change": -85.35
+  },
+  {
+    "suite": "Record",
+    "operation": "Existing name+type bucket",
+    "iteration": 1000000, 
+    "baseline_ns": 324.18,
+    "current_ns": 2272.32,
+    "pct_change": -85.73
+  },
+  {
+    "suite": "Record",
+    "operation": "Missing name",
+    "iteration": 10000, 
+    "baseline_ns": 56.12,
+    "current_ns": 175.69,
+    "pct_change": -68.06
+  },
+  {
+    "suite": "Record",
+    "operation": "Missing name",
+    "iteration": 100000, 
+    "baseline_ns": 57.46,
+    "current_ns": 175.84,
+    "pct_change": -67.32
+  },
+  {
+    "suite": "Record",
+    "operation": "Missing name",
+    "iteration": 1000000, 
+    "baseline_ns": 56.66,
+    "current_ns": 175.52,
+    "pct_change": -67.72
+  },
+  {
+    "suite": "Resolve",
+    "operation": "Answer found",
+    "iteration": 10000, 
+    "baseline_ns": 484.84,
+    "current_ns": 4661.63,
+    "pct_change": -89.60
+  },
+  {
+    "suite": "Resolve",
+    "operation": "Answer found",
+    "iteration": 100000, 
+    "baseline_ns": 483.41,
+    "current_ns": 4647.68,
+    "pct_change": -89.60
+  },
+  {
+    "suite": "Resolve",
+    "operation": "Answer found",
+    "iteration": 1000000, 
+    "baseline_ns": 484.15,
+    "current_ns": 4138.72,
+    "pct_change": -88.30
+  },
+  {
+    "suite": "Resolve",
+    "operation": "NXDOMAIN",
+    "iteration": 10000, 
+    "baseline_ns": 397.46,
+    "current_ns": 1681.84,
+    "pct_change": -76.37
+  },
+  {
+    "suite": "Resolve",
+    "operation": "NXDOMAIN",
+    "iteration": 100000, 
+    "baseline_ns": 396.53,
+    "current_ns": 2130.63,
+    "pct_change": -81.39
+  },
+  {
+    "suite": "Resolve",
+    "operation": "NXDOMAIN",
+    "iteration": 1000000, 
+    "baseline_ns": 394.94,
+    "current_ns": 2571.07,
+    "pct_change": -84.64
+  },
+  {
+    "suite": "Resolve",
+    "operation": "NODATA",
+    "iteration": 10000, 
+    "baseline_ns": 402.00,
+    "current_ns": 1837.91,
+    "pct_change": -78.13
+  },
+  {
+    "suite": "Resolve",
+    "operation": "NODATA",
+    "iteration": 100000, 
+    "baseline_ns": 395.62,
+    "current_ns": 2360.29,
+    "pct_change": -83.24
+  },
+  {
+    "suite": "Resolve",
+    "operation": "NODATA",
+    "iteration": 1000000, 
+    "baseline_ns": 398.70,
+    "current_ns": 2122.35,
+    "pct_change": -81.21
+  },
+  {
+    "suite": "Message Move",
+    "operation": "Move-construct",
+    "iteration": 10000, 
+    "baseline_ns": 9.57,
+    "current_ns": 106.65,
+    "pct_change": -91.03
+  },
+  {
+    "suite": "Message Move",
+    "operation": "Move-construct",
+    "iteration": 100000, 
+    "baseline_ns": 9.38,
+    "current_ns": 75.28,
+    "pct_change": -87.54
+  },
+  {
+    "suite": "Message Move",
+    "operation": "Move-construct",
+    "iteration": 1000000, 
+    "baseline_ns": 5.39,
+    "current_ns": 64.99,
+    "pct_change": -91.71
+  },
+  {
+    "suite": "Message Move",
+    "operation": "Move-assign",
+    "iteration": 10000, 
+    "baseline_ns": 5.95,
+    "current_ns": 59.30,
+    "pct_change": -89.97
+  },
+  {
+    "suite": "Message Move",
+    "operation": "Move-assign",
+    "iteration": 100000, 
+    "baseline_ns": 5.91,
+    "current_ns": 60.53,
+    "pct_change": -90.24
+  },
+  {
+    "suite": "Message Move",
+    "operation": "Move-assign",
+    "iteration": 1000000, 
+    "baseline_ns": 5.85,
+    "current_ns": 57.14,
+    "pct_change": -89.76
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "4 answer records",
+    "iteration": 10000, 
+    "baseline_ns": 315.78,
+    "current_ns": 2031.65,
+    "pct_change": -84.46
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "4 answer records",
+    "iteration": 100000, 
+    "baseline_ns": 312.72,
+    "current_ns": 2471.00,
+    "pct_change": -87.34
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "4 answer records",
+    "iteration": 1000000, 
+    "baseline_ns": 315.45,
+    "current_ns": 2250.11,
+    "pct_change": -85.98
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "16 answer records",
+    "iteration": 10000, 
+    "baseline_ns": 1220.01,
+    "current_ns": 7002.89,
+    "pct_change": -82.58
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "16 answer records",
+    "iteration": 100000, 
+    "baseline_ns": 1222.81,
+    "current_ns": 8229.37,
+    "pct_change": -85.14
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "16 answer records",
+    "iteration": 1000000, 
+    "baseline_ns": 1219.16,
+    "current_ns": 11916.79,
+    "pct_change": -89.77
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "64 answer records",
+    "iteration": 10000, 
+    "baseline_ns": 6107.97,
+    "current_ns": 56819.36,
+    "pct_change": -89.25
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "64 answer records",
+    "iteration": 100000, 
+    "baseline_ns": 6138.30,
+    "current_ns": 50993.31,
+    "pct_change": -87.96
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "64 answer records",
+    "iteration": 1000000, 
+    "baseline_ns": 6149.22,
+    "current_ns": 38868.89,
+    "pct_change": -84.18
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "4 answer records",
+    "iteration": 10000, 
+    "baseline_ns": 438.03,
+    "current_ns": 2031.65,
+    "pct_change": -78.44
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "4 answer records",
+    "iteration": 100000, 
+    "baseline_ns": 436.94,
+    "current_ns": 2471.00,
+    "pct_change": -82.32
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "4 answer records",
+    "iteration": 1000000, 
+    "baseline_ns": 436.95,
+    "current_ns": 2250.11,
+    "pct_change": -80.58
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "16 answer records",
+    "iteration": 10000, 
+    "baseline_ns": 1233.42,
+    "current_ns": 7002.89,
+    "pct_change": -82.39
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "16 answer records",
+    "iteration": 100000, 
+    "baseline_ns": 1235.52,
+    "current_ns": 8229.37,
+    "pct_change": -84.99
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "16 answer records",
+    "iteration": 1000000, 
+    "baseline_ns": 1235.55,
+    "current_ns": 11916.79,
+    "pct_change": -89.63
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "64 answer records",
+    "iteration": 10000, 
+    "baseline_ns": 4340.63,
+    "current_ns": 56819.36,
+    "pct_change": -92.36
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "64 answer records",
+    "iteration": 100000, 
+    "baseline_ns": 4327.80,
+    "current_ns": 50993.31,
+    "pct_change": -91.51
+  },
+  {
+    "suite": "Answer Count Growth",
+    "operation": "64 answer records",
+    "iteration": 1000000, 
+    "baseline_ns": 4316.69,
+    "current_ns": 38868.89,
+    "pct_change": -88.89
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "2 labels deep",
+    "iteration": 10000, 
+    "baseline_ns": 62.87,
+    "current_ns": 868.98,
+    "pct_change": -92.77
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "2 labels deep",
+    "iteration": 100000, 
+    "baseline_ns": 63.11,
+    "current_ns": 895.51,
+    "pct_change": -92.95
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "2 labels deep",
+    "iteration": 1000000, 
+    "baseline_ns": 62.89,
+    "current_ns": 896.91,
+    "pct_change": -92.99
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "8 labels deep",
+    "iteration": 10000, 
+    "baseline_ns": 107.43,
+    "current_ns": 1080.68,
+    "pct_change": -90.06
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "8 labels deep",
+    "iteration": 100000, 
+    "baseline_ns": 106.68,
+    "current_ns": 1145.37,
+    "pct_change": -90.69
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "8 labels deep",
+    "iteration": 1000000, 
+    "baseline_ns": 106.41,
+    "current_ns": 1071.14,
+    "pct_change": -90.07
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "32 labels deep",
+    "iteration": 10000, 
+    "baseline_ns": 372.44,
+    "current_ns": 2749.64,
+    "pct_change": -86.45
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "32 labels deep",
+    "iteration": 100000, 
+    "baseline_ns": 366.99,
+    "current_ns": 2750.69,
+    "pct_change": -86.66
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "32 labels deep",
+    "iteration": 1000000, 
+    "baseline_ns": 367.39,
+    "current_ns": 2903.93,
+    "pct_change": -87.35
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "2 labels deep",
+    "iteration": 10000, 
+    "baseline_ns": 129.35,
+    "current_ns": 868.98,
+    "pct_change": -85.11
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "2 labels deep",
+    "iteration": 100000, 
+    "baseline_ns": 126.59,
+    "current_ns": 895.51,
+    "pct_change": -85.86
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "2 labels deep",
+    "iteration": 1000000, 
+    "baseline_ns": 126.04,
+    "current_ns": 896.91,
+    "pct_change": -85.95
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "8 labels deep",
+    "iteration": 10000, 
+    "baseline_ns": 252.08,
+    "current_ns": 1080.68,
+    "pct_change": -76.67
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "8 labels deep",
+    "iteration": 100000, 
+    "baseline_ns": 252.12,
+    "current_ns": 1145.37,
+    "pct_change": -77.99
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "8 labels deep",
+    "iteration": 1000000, 
+    "baseline_ns": 252.37,
+    "current_ns": 1071.14,
+    "pct_change": -76.44
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "32 labels deep",
+    "iteration": 10000, 
+    "baseline_ns": 721.58,
+    "current_ns": 2749.64,
+    "pct_change": -73.76
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "32 labels deep",
+    "iteration": 100000, 
+    "baseline_ns": 721.48,
+    "current_ns": 2750.69,
+    "pct_change": -73.77
+  },
+  {
+    "suite": "Label Depth Growth",
+    "operation": "32 labels deep",
+    "iteration": 1000000, 
+    "baseline_ns": 723.09,
+    "current_ns": 2903.93,
+    "pct_change": -75.10
+  },
+  {
+    "suite": "Zone Size Growth",
+    "operation": "100 names stored",
+    "iteration": 10000, 
+    "baseline_ns": 266.73,
+    "current_ns": 1388.88,
+    "pct_change": -80.80
+  },
+  {
+    "suite": "Zone Size Growth",
+    "operation": "100 names stored",
+    "iteration": 100000, 
+    "baseline_ns": 154.14,
+    "current_ns": 1539.29,
+    "pct_change": -89.99
+  },
+  {
+    "suite": "Zone Size Growth",
+    "operation": "100 names stored",
+    "iteration": 1000000, 
+    "baseline_ns": 143.71,
+    "current_ns": 1556.53,
+    "pct_change": -90.77
+  },
+  {
+    "suite": "Zone Size Growth",
+    "operation": "1,000 names stored",
+    "iteration": 10000, 
+    "baseline_ns": 143.50,
+    "current_ns": 1387.55,
+    "pct_change": -89.66
+  },
+  {
+    "suite": "Zone Size Growth",
+    "operation": "1,000 names stored",
+    "iteration": 100000, 
+    "baseline_ns": 144.66,
+    "current_ns": 1416.96,
+    "pct_change": -89.79
+  },
+  {
+    "suite": "Zone Size Growth",
+    "operation": "1,000 names stored",
+    "iteration": 1000000, 
+    "baseline_ns": 146.83,
+    "current_ns": 1456.41,
+    "pct_change": -89.92
+  },
+  {
+    "suite": "Zone Size Growth",
+    "operation": "10,000 names stored",
+    "iteration": 10000, 
+    "baseline_ns": 144.66,
+    "current_ns": 1422.40,
+    "pct_change": -89.83
+  },
+  {
+    "suite": "Zone Size Growth",
+    "operation": "10,000 names stored",
+    "iteration": 100000, 
+    "baseline_ns": 144.70,
+    "current_ns": 1419.36,
+    "pct_change": -89.81
+  },
+  {
+    "suite": "Zone Size Growth",
+    "operation": "10,000 names stored",
+    "iteration": 1000000, 
+    "baseline_ns": 143.64,
+    "current_ns": 1454.30,
+    "pct_change": -90.12
+  },
+  {
+    "suite": "Canonicalize",
+    "operation": "Mixed-case name",
+    "iteration": 10000, 
+    "baseline_ns": 174.28,
+    "current_ns": 1904.37,
+    "pct_change": -90.85
+  },
+  {
+    "suite": "Canonicalize",
+    "operation": "Mixed-case name",
+    "iteration": 100000, 
+    "baseline_ns": 202.49,
+    "current_ns": 2124.57,
+    "pct_change": -90.47
+  },
+  {
+    "suite": "Canonicalize",
+    "operation": "Mixed-case name",
+    "iteration": 1000000, 
+    "baseline_ns": 294.89,
+    "current_ns": 2236.01,
+    "pct_change": -86.81
+  },
+  {
+    "suite": "Name Parse",
+    "operation": "Uncompressed name",
+    "iteration": 10000, 
+    "baseline_ns": 67.05,
+    "current_ns": 906.22,
+    "pct_change": -92.60
+  },
+  {
+    "suite": "Name Parse",
+    "operation": "Uncompressed name",
+    "iteration": 100000, 
+    "baseline_ns": 68.94,
+    "current_ns": 895.46,
+    "pct_change": -92.30
+  },
+  {
+    "suite": "Name Parse",
+    "operation": "Uncompressed name",
+    "iteration": 1000000, 
+    "baseline_ns": 71.12,
+    "current_ns": 927.20,
+    "pct_change": -92.33
+  },
+  {
+    "suite": "Name Parse",
+    "operation": "Name via compression pointer",
+    "iteration": 10000, 
+    "baseline_ns": 104.52,
+    "current_ns": 1317.65,
+    "pct_change": -92.07
+  },
+  {
+    "suite": "Name Parse",
+    "operation": "Name via compression pointer",
+    "iteration": 100000, 
+    "baseline_ns": 103.53,
+    "current_ns": 1319.15,
+    "pct_change": -92.15
+  },
+  {
+    "suite": "Name Parse",
+    "operation": "Name via compression pointer",
+    "iteration": 1000000, 
+    "baseline_ns": 102.93,
+    "current_ns": 1353.53,
+    "pct_change": -92.40
+  }
+]
