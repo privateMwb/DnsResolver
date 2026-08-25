@@ -1,0 +1,9 @@
+[submodule "libs/internal/VectorPro"]
+	path = libs/internal/VectorPro
+	url = https://github.com/privateMwb/VectorPro
+[submodule "libs/internal/HashMapPro"]
+	path = libs/internal/HashMapPro
+	url = https://github.com/privateMwb/HashMapPro
+[submodule "libs/internal/ArenaAllocator"]
+	path = libs/internal/ArenaAllocator
+	url = https://github.com/privateMwb/ArenaAllocator

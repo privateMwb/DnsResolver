@@ -26,60 +26,68 @@ of `BENCH()`, timing the library's type alone.
 
 ## Access
 
-Benchmarks read and lookup operations on already-constructed data —
-retrieving values by key, indexed access, and existence checks.
+Benchmarks read and lookup operations against an already-populated
+ZoneStore.
 
 ### Benchmarks
 
-
+- `lookup.cpp` — `ZoneStore::lookup()` across all three outcomes: match
+  found, name doesn't exist (NXDOMAIN), name exists but wrong type (NODATA)
 
 ---
 
 ## Core
 
 Benchmarks the fundamental, most frequently exercised operations —
-parsing raw input into the in-memory structure, serializing it back
-to text, and equality comparison between instances.
+parsing a query, building a response, writing into the zone store, and
+the full resolve pipeline that ties them together.
 
 ### Benchmarks
 
-
+- `parse.cpp` — `Parser::parse()` on a question-only query and a response with answer records
+- `build.cpp` — `Builder::build()` on the same two message shapes
+- `record.cpp` — `ZoneStore::addRecord()` and `removeRecord()`
+- `resolve.cpp` — full `Resolver::resolve()` pipeline across all three outcomes: answer found, NXDOMAIN, NODATA
 
 ---
 
 ## Lifecycle
 
-Benchmarks object lifetime operations — construction, destruction,
-copying, and moving — across the different states or value kinds the
-library's core type can hold.
+Benchmarks object lifetime operations — construction, destruction, and
+moving. Thinner here than in FalconHTTP: DnsResolver doesn't wrap any
+native OS resources (no sockets, no server), so there's no
+`socket_construction.cpp`/`server_construction.cpp` equivalent —
+`Message` move is the one lifetime cost worth isolating.
 
 ### Benchmarks
 
-
+- `message_move.cpp` — `Message` move-construct and move-assign
 
 ---
 
 ## Scaling
 
-Benchmarks how per-operation cost changes as the *size of the input
-data* grows — for example, a container with an increasing number of
-elements. This is a separate axis from the SMALL/MEDIUM/LARGE
-iteration tiers described above: those repeat the same fixed-size
-operation more times, while Scaling grows the operation itself and
-observes the resulting cost.
+Benchmarks how per-operation cost changes as a structural size grows —
+a separate axis from the SMALL/MEDIUM/LARGE iteration tiers above:
+those repeat the same fixed-size operation more times, while Scaling
+grows the structure itself (answer count, zone record count, name
+depth) and observes the resulting per-call cost.
 
 ### Benchmarks
 
-
+- `answer_count_growth.cpp` — parse/build cost as `ancount` grows
+- `zone_size_growth.cpp` — `lookup()` cost as ZoneStore record count grows
+- `label_depth_growth.cpp` — name parse/build cost as label count grows
 
 ---
 
 ## Utility
 
-Benchmarks helper and miscellaneous operations that don't belong to
-any of the categories above — pretty-printing, string formatting,
-and similar non-core utilities.
+Benchmarks small, frequently-called conversion and lookup functions
+that don't belong to any of the categories above — the isolated name
+encode/decode steps, and zone-key canonicalization.
 
 ### Benchmarks
 
-
+- `name_parse.cpp` — name parsing, uncompressed vs. via a compression pointer
+- `canonicalize.cpp` — `ZoneStore`'s name -> canonical string key conversion, via `addRecord()`

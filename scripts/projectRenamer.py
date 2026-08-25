@@ -5,9 +5,9 @@ from pathlib import Path
 # Project configuration
 # ============================================================
 
-lowcap = "name"
-highcap = "Name"
-RepoName = "REPO"
+lowcap = "dnspro"
+highcap = "DnsPro"
+RepoName = "DnsProject"
 
 
 # ============================================================

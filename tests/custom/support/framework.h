@@ -7,6 +7,7 @@
 // clang-format off
 // Include the library under test here, e.g.:
 //   #include <your_library/your_library.h>
+#include <DnsPro/DnsResolver.h>      //
 
 #include "helpers.h"                 // output formatting & printing helpers
 #include "macros.h"                  // RUN/CHK/CHK_THROWS, REGISTER_TEST_SUITE()

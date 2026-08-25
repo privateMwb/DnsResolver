@@ -22,7 +22,12 @@ threads, and correctness under simultaneous access.
 
 ### Tests
 
-
+- `resolver_concurrent_resolve.cpp` — concurrent `resolve()` reads
+  against a shared, already-populated `ZoneStore` each produce a
+  correct, independent answer: `concurrent_resolve_reads`
+- `zonestore_concurrent_access.cpp` — concurrent `addRecord()` calls
+  under distinct names all land, with the correct final `recordCount()`:
+  `concurrent_add_record`
 
 ---
 
@@ -34,7 +39,22 @@ single function in isolation.
 
 ### Tests
 
-
+- `compression_pointer_chain.cpp` — a two-hop compression pointer
+  chain resolves to the correct name: `two_hop_pointer_chain_resolves`
+- `empty_zone_query.cpp` — resolving against a zero-record `ZoneStore`
+  returns a well-formed NXDOMAIN response: `empty_zone_returns_nxdomain`
+- `malformed_query_handling.cpp` — a query `Parser::parse()` can't
+  parse produces the same `Status` through `Resolver::resolve()` as
+  parsing it directly would: `truncated_query_status_propagates`
+- `parse_build_roundtrip.cpp` — a fully-populated `Message` (question,
+  answer, authority, additional) survives `Builder::build()` then
+  `Parser::parse()` intact: `full_message_roundtrip`
+- `resolve_roundtrip.cpp` — raw query bytes through `Resolver::resolve()`
+  produce a response that re-parses correctly, for both the hit and
+  NXDOMAIN cases: `resolve_roundtrip_hit`, `resolve_roundtrip_nxdomain`
+- `multi_question_query.cpp` — a multi-question query only answers the
+  first question, per `Resolver::resolve()`'s documented behavior:
+  `multi_question_answers_first_only`
 
 ---
 
@@ -46,7 +66,13 @@ library's core type can hold.
 
 ### Tests
 
-
+- `message_move.cpp` — `Message` move-construct and move-assign both
+  transfer data and leave the source empty: `move_construct_transfers_data`,
+  `move_assign_transfers_data`
+- `resolver_zone_reference.cpp` — `Resolver` holds a reference to its
+  `ZoneStore`, not a copy: `resolver_sees_later_zone_changes`
+- `zonestore_copy.cpp` — a copied `ZoneStore` is fully independent of
+  its source: `copy_is_independent`
 
 ---
 
@@ -57,7 +83,7 @@ per resolved issue, added at the time the fix lands.
 
 ### Tests
 
-
+None yet — populated as fixes land.
 
 ---
 
@@ -68,4 +94,22 @@ testable unit of behavior, independent of the categories above.
 
 ### Tests
 
-
+- `zonestore.cpp` — name case-insensitivity, type filtering on
+  `lookup()`/`contains()`, `removeRecord()` hit/miss, and bucket
+  cleanup after removing a name's last record:
+  `case_insensitive_name_matching`, `type_filtering_lookup_contains`,
+  `remove_record_hit_and_miss`, `remove_record_bucket_cleanup`
+- `buffer_too_small.cpp` — truncated buffers are rejected at each
+  stage (header, question name, question fields, rdata):
+  `truncated_header_rejected`, `truncated_question_name_rejected`,
+  `truncated_question_fields_rejected`, `truncated_rdata_rejected`
+- `build_limits.cpp` — label length, section size, and rdata size
+  limits are enforced on build: `oversized_label_rejected`,
+  `boundary_label_accepted`, `oversized_section_rejected`,
+  `oversized_rdata_rejected`
+- `compression.cpp` — forward compression pointers are rejected, valid
+  backward pointers are accepted: `forward_pointer_rejected`,
+  `far_forward_pointer_rejected`, `valid_backward_pointer_accepted`
+- `header_flags_roundtrip.cpp` — header flag bits survive
+  `Builder::build()` then `Parser::parse()` unchanged, at both extremes:
+  `all_zero_flags_roundtrip`, `all_flags_set_roundtrip`

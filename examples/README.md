@@ -23,9 +23,9 @@ This produces a single `examples` executable under `build_examples/`.
 ./build_examples/examples list           # list all suites, grouped by category
 ./build_examples/examples <category>     # run every suite in a category, e.g. `advanced`
 ./build_examples/examples <id>           # run one suite by id, e.g. `A1`
-./build_examples/examples <name>         # run one suite by file name, e.g. `basic_usage`
+./build_examples/examples <dnspro>         # run one suite by file dnspro, e.g. `basic_usage`
 ```
 
-Matching is case-insensitive. Category and file-name arguments are
+Matching is case-insensitive. Category and file-dnspro arguments are
 matched against the same `list` output, so run `./build_examples/examples list`
 first if you're not sure what's available.

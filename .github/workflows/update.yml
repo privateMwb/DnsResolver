@@ -25,10 +25,10 @@ jobs:
 
     env:
       PACKAGE_NAME: name
-      REPOSITORY: privateMwb/cpp2_template
+      DnsProjectSITORY: privateMwb/DsnResolver
       ROOT_DIR: .
-      CONAN_RECIPE_DIR: packaging/recipes/name/all
-      VCPKG_PORT_DIR: packaging/vcpkg/ports/name
+      CONAN_RECIPE_DIR: packaging/recipes/dnspro/all
+      VCPKG_PORT_DIR: packaging/vcpkg/ports/dnspro
 
     steps:
       - name: Resolve tag
@@ -85,7 +85,7 @@ jobs:
           # compute valid.
           curl -L \
             -o source.tar.gz \
-            https://github.com/${{ env.REPOSITORY }}/archive/${{ steps.branch.outputs.sha }}.tar.gz
+            https://github.com/${{ env.DnsProjectSITORY }}/archive/${{ steps.branch.outputs.sha }}.tar.gz
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -96,7 +96,7 @@ jobs:
         run: |
           python scripts/update_package_files.py \
             --package ${{ env.PACKAGE_NAME }} \
-            --repo ${{ env.REPOSITORY }} \
+            --repo ${{ env.DnsProjectSITORY }} \
             --version ${{ steps.tag.outputs.version }} \
             --commit ${{ steps.branch.outputs.sha }} \
             --archive source.tar.gz \

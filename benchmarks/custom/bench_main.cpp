@@ -15,7 +15,7 @@ inline void exportResults() {
     exportMarkdown("benchmark_results.md");
 }
 
-}  // namespace
+} // namespace
 
 int main(int argc, char* argv[]) {
     setProjectLabels();

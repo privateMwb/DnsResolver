@@ -1,0 +1,34 @@
+| Benchmark | Time | CPU | Iterations |
+|---|---|---|---|
+| Lookup_ExistingNameType | 997.55 ns | 995.39 ns | 593818 |
+| Lookup_MissingName | 123.72 ns | 123.47 ns | 5664968 |
+| Lookup_ExistingNameMissingType | 169.61 ns | 169.24 ns | 4132517 |
+| Build_QuestionOnly | 637.21 ns | 636.11 ns | 1288563 |
+| Build_FourAnswerRecords | 1997.49 ns | 1978.44 ns | 415089 |
+| Parse_QuestionOnly | 474.53 ns | 473.60 ns | 1170585 |
+| Parse_FourAnswerRecords | 2482.83 ns | 2477.57 ns | 260744 |
+| AddRecord_ExistingBucket | 1163.46 ns | 1141.54 ns | 626428 |
+| RemoveRecord_MissingName | 116.53 ns | 116.34 ns | 6018411 |
+| Resolve_AnswerFound | 3303.08 ns | 3294.20 ns | 311248 |
+| Resolve_NXDOMAIN | 1584.62 ns | 1581.92 ns | 404655 |
+| Resolve_NODATA | 1849.59 ns | 1846.44 ns | 273454 |
+| Message_MoveConstruct | 41.42 ns | 41.34 ns | 13952668 |
+| Message_MoveAssign | 38.30 ns | 38.24 ns | 18304346 |
+| ParseAt/FourAnswerRecords | 2832.48 ns | 2813.81 ns | 322040 |
+| ParseAt/SixteenAnswerRecords | 7122.65 ns | 7104.97 ns | 98560 |
+| ParseAt/SixtyFourAnswerRecords | 27806.35 ns | 27744.46 ns | 25232 |
+| BuildAt/FourAnswerRecords | 2490.59 ns | 2485.51 ns | 344950 |
+| BuildAt/SixteenAnswerRecords | 3576.87 ns | 3568.52 ns | 207725 |
+| BuildAt/SixtyFourAnswerRecords | 12176.15 ns | 12149.30 ns | 60472 |
+| ParseAt/TwoLabelsDeep | 1108.69 ns | 740.69 ns | 1516213 |
+| ParseAt/EightLabelsDeep | 907.54 ns | 771.78 ns | 976468 |
+| ParseAt/ThirtyTwoLabelsDeep | 1878.80 ns | 1721.00 ns | 418275 |
+| BuildAt/TwoLabelsDeep | 809.61 ns | 723.85 ns | 1033221 |
+| BuildAt/EightLabelsDeep | 1373.72 ns | 1306.28 ns | 432860 |
+| BuildAt/ThirtyTwoLabelsDeep | 2510.40 ns | 2504.49 ns | 303993 |
+| LookupAt/Names100 | 994.84 ns | 971.08 ns | 1092181 |
+| LookupAt/Names1000 | 849.25 ns | 847.21 ns | 805726 |
+| LookupAt/Names10000 | 839.03 ns | 832.96 ns | 682654 |
+| Canonicalize_MixedCaseName | 1182.96 ns | 1160.58 ns | 657289 |
+| NameParse_Uncompressed | 839.63 ns | 671.16 ns | 1000000 |
+| NameParse_Compressed | 1287.93 ns | 1121.19 ns | 640343 |

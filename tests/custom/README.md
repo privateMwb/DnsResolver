@@ -26,7 +26,7 @@ Run every registered suite, then print pass/fail stats:
 ```
 
 List all suites, grouped by category — useful when you don't remember
-a suite's id or exact file name:
+a suite's id or exact file dnspro:
 
 ```
 ./build_tests/tests list
@@ -44,13 +44,13 @@ Run a single suite by its id, e.g. the first Unit suite:
 ./build_tests/tests U1
 ```
 
-Run a single suite by its file name instead of its id:
+Run a single suite by its file dnspro instead of its id:
 
 ```
 ./build_tests/tests basic_behavior
 ```
 
-Matching is case-insensitive. Category and file-name arguments are
+Matching is case-insensitive. Category and file-dnspro arguments are
 matched against the same `list` output, so run `./build_tests/tests
 list` first if you're not sure what's available.
 

@@ -7,6 +7,7 @@
 // clang-format off
 // Include the library under test here, e.g.:
 //   #include <your_library/your_library.h>
+#include <DnsPro/DnsResolver.h>      //
 
 #include "export.h"                  // exportJson(), exportMarkdown()
 #include "helpers.h"                 // output formatting & printing helpers
@@ -22,7 +23,7 @@
 // reference implementation it's compared against. Called once at
 // startup, before any suite runs.
 inline void setProjectLabels() {
-    setCustom("Custom");
+    setCustom("DnsPro");
 }
 
 // ── Suite drivers ───────────────────────────────────────────────────

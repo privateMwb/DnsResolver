@@ -32,19 +32,19 @@ results, then export both reports:
 ```
 
 List every available baseline snapshot, oldest to newest — useful
-when you don't remember a baseline's exact name:
+when you don't remember a baseline's exact dnspro:
 
 ```
 ./build_regression/regression list
 ```
 
-Compare one named baseline against the current benchmark results:
+Compare one dnsprod baseline against the current benchmark results:
 
 ```
 ./build_regression/regression v1.2.0
 ```
 
-Compare two named baselines directly against each other, instead of
+Compare two dnsprod baselines directly against each other, instead of
 against the current run:
 
 ```

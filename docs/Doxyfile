@@ -5,16 +5,16 @@
 #
 # Retargeting: PROJECT_NAME and PROJECT_BRIEF are the only
 # project-specific lines here. INPUT already scans ../include and
-# ../src recursively, so it picks up include/<Name>/*.h and
-# src/<Name>/*.cpp regardless of what the library is actually called —
+# ../src recursively, so it picks up include/<DnsPro>/*.h and
+# src/<DnsPro>/*.cpp regardless of what the library is actually called —
 # no path here needs editing.
 #
 # Only the settings that differ from Doxygen's defaults are listed —
 # run `doxygen -g -` to see the full default set if needed.
 # ============================================================
 
-PROJECT_NAME            = "Name"
-PROJECT_BRIEF           = "TODO: one-line description of what this library does."
+PROJECT_NAME            = "DnsPro"
+PROJECT_BRIEF           = "A C++23 library for parsing, building, and authoritatively resolving DNS messages (RFC 1035)."
 
 OUTPUT_DIRECTORY        = .
 

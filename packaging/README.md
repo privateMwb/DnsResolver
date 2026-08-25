@@ -2,7 +2,7 @@
 
 Notes for re-verifying the vcpkg port and Conan recipe after changes
 (e.g. a new release, editing `portfile.cmake`, or editing
-`packaging/recipes/name/all/conanfile.py`). Scoped to what isn't obvious
+`packaging/recipes/dnspro/all/conanfile.py`). Scoped to what isn't obvious
 from the files themselves — not a general build tutorial.
 
 ## Termux-specific quirks
@@ -50,10 +50,10 @@ overrides below can be dropped entirely off-device.
   (already baked into `conanfile.py`'s `build()` and `portfile.cmake`'s
   `vcpkg_cmake_configure`, but relevant if configuring manually).
 
-- **The release tarball may extract to a different folder name than
-  the library itself** — the GitHub repo name and the CMake
-  project/library target name don't have to match. `cd` into whatever
-  the tarball actually produced, not the library name. If you don't
+- **The release tarball may extract to a different folder dnspro than
+  the library itself** — the GitHub repo dnspro and the CMake
+  project/library target dnspro don't have to match. `cd` into whatever
+  the tarball actually produced, not the library dnspro. If you don't
   have a published release yet, use the local repo checkout directly
   instead (see step 1 below) — no need to cut a release just to verify
   packaging still works.
@@ -84,7 +84,7 @@ since GitHub archive tarballs never include submodule content.)
 
 **1. Install to a staging prefix**, using the same disable flags
 `portfile.cmake` does. Against a release tarball, `cd` into it first
-(see the quirks note above on its folder name); against local source,
+(see the quirks note above on its folder dnspro); against local source,
 just start from the repo root:
 
 ```bash
@@ -102,12 +102,12 @@ cmake --install build-install
 **2. Confirm the CMake package files exist:**
 
 ```bash
-find $HOME/staging/lib/cmake/Name -name "*.cmake"
+find $HOME/staging/lib/cmake/DnsPro -dnspro "*.cmake"
 ```
 
-Expect `NameConfig.cmake`, `NameConfigVersion.cmake`,
-`NameTargets.cmake` (plus a per-config
-`NameTargets-<config>.cmake`) under `lib/cmake/Name/`.
+Expect `DnsProConfig.cmake`, `DnsProConfigVersion.cmake`,
+`DnsProTargets.cmake` (plus a per-config
+`DnsProTargets-<config>.cmake`) under `lib/cmake/DnsPro/`.
 
 **3. Build a minimal consumer project**, in a separate directory so
 it can't accidentally pick up anything from the library's own build
@@ -126,9 +126,9 @@ cmake_minimum_required(VERSION 3.20)
 project(test CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-find_package(Name CONFIG REQUIRED)
+find_package(DnsPro CONFIG REQUIRED)
 add_executable(test main.cpp)
-target_link_libraries(test PRIVATE Name::Name)
+target_link_libraries(test PRIVATE DnsPro::DnsPro)
 EOF
 
 cat > main.cpp << 'EOF'
@@ -163,7 +163,7 @@ the Termux-specific ones from the quirks section above — drop them
 entirely on real CI or a normal Linux machine:
 
 ```bash
-conan create packaging/recipes/name/all --version 1.0.0 \
+conan create packaging/recipes/dnspro/all --version 1.0.0 \
   -s compiler.cppstd=23 -s os=Linux -s:b os=Linux \
   -s compiler.libcxx=libc++ -s:b compiler.libcxx=libc++
 ```
@@ -180,7 +180,7 @@ that point this expectation flips to a `package_id` per settings
 combination.
 
 This step also automatically builds and runs
-`packaging/recipes/name/all/test_package/` against the freshly-built
+`packaging/recipes/dnspro/all/test_package/` against the freshly-built
 package — a `Library linked and constructed successfully.` line in
 the output means that already passed, before you even get to step 2.
 
@@ -195,7 +195,7 @@ mkdir -p ~/conan-consumer && cd ~/conan-consumer
 
 cat > conanfile.txt << 'EOF'
 [requires]
-name/1.0.0
+dnspro/1.0.0
 
 [generators]
 CMakeDeps
@@ -205,9 +205,9 @@ EOF
 cat > CMakeLists.txt << 'EOF'
 cmake_minimum_required(VERSION 3.20)
 project(test CXX)
-find_package(Name CONFIG REQUIRED)
+find_package(DnsPro CONFIG REQUIRED)
 add_executable(test main.cpp)
-target_link_libraries(test PRIVATE Name::Name)
+target_link_libraries(test PRIVATE DnsPro::DnsPro)
 EOF
 
 cat > main.cpp << 'EOF'

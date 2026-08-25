@@ -129,7 +129,7 @@ portfile = port_dir / "portfile.cmake"
 text = portfile.read_text(encoding="utf-8")
 
 # Only touches the first REF -- the top-level vcpkg_from_github() block
-# for the library itself. SUBMODULE_SPECS entries are plain "name|ref|sha"
+# for the library itself. SUBMODULE_SPECS entries are plain "dnspro|ref|sha"
 # strings (no literal "REF" keyword), and the per-submodule
 # vcpkg_from_github() call inside the foreach loop uses REF ${SUBMODULE_REF}
 # (a variable, not a hex literal), so neither is matched by this pattern.

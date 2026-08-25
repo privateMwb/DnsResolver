@@ -139,9 +139,8 @@ inline void doNotOptimize() {
 
 // Prints a horizontal separator line.
 inline void borderLine() {
-    std::cout << GRAY << std::string(90, '-') << RESET << "\n";
+    std::cout << GRAY << std::string(70, '-') << RESET << "\n";
 }
-
 
 // Prints the benchmark table header.
 inline void setHeader(std::string_view header) {
@@ -149,7 +148,7 @@ inline void setHeader(std::string_view header) {
 
     // clang-format off
     std::cout << std::left << CYAN 
-              << std::setw(30) << prettify(header) 
+              << std::setw(45) << prettify(header) 
               << std::setw(15) << "Iteration" 
               << std::setw(15) << custom
               << RESET << "\n";
@@ -170,7 +169,7 @@ inline void printComparisonRow(std::string_view name, std::string_view iteration
                                nanoseconds customNs) {
     // clang-format off
     std::cout << std::left 
-              << std::setw(30) << prettify(name) 
+              << std::setw(45) << prettify(name) 
               << std::setw(15) << iteration
               << std::setw(15) << formatDuration(customNs) 
               << RESET << "\n";

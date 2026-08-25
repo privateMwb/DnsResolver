@@ -1,15 +1,15 @@
 <!--
   Retargeting: replace every <angle-bracket> placeholder below. The
-  badge URLs, CI workflow names, and project-structure tree already
+  badge URLs, CI workflow dnspros, and project-structure tree already
   match this skeleton's actual layout — only the owner/repo and
-  project name need swapping in those. Features, Quick Start, and
+  project dnspro need swapping in those. Features, Quick Start, and
   Benchmarks are marked as sections to write fresh each time; don't
   invent numbers or content to fill them. Also edit the two <text>
-  strings inside assets/banner.svg (project name + tagline).
+  strings inside assets/banner.svg (project dnspro + tagline).
 -->
 
 <p align="center">
-  <img src="assets/banner.svg" alt="<ProjectName>" width="100%">
+  <img src="assets/banner.svg" alt="<ProjectDnsPro>" width="100%">
 </p>
 
 <p align="center">
@@ -66,7 +66,7 @@
      that make it worth using over the obvious alternative. This is
      the only line most visitors read — make it specific, not generic
      marketing copy. -->
-<p align="center"><ProjectName> is a <one-line description of what it does and why>.</p>
+<p align="center"><ProjectDnsPro> is a <one-line description of what it does and why>.</p>
 
 <br>
 
@@ -89,7 +89,7 @@
 
 ## <a id="features"></a>✨ Features
 
-<!-- Write these fresh per project — they should name the actual
+<!-- Write these fresh per project — they should dnspro the actual
      design decisions that make this implementation different, the
      way JsonPro's called out std::variant-backed storage and
      std::to_chars-based serialization rather than just "it's fast."
@@ -114,17 +114,17 @@
 <!-- List only this project's OWN internal libraries that the library
      code itself actually uses (not test/benchmark-only deps), one row
      per submodule under libs/internal/. Order by how central each one
-     is, not alphabetically. Name the specific type and the specific
+     is, not alphabetically. DnsPro the specific type and the specific
      place it's used -- "backing Router::routes" tells a reader
      something; "used internally" doesn't. Cut anything vendored but
      currently unused. -->
 
-<ProjectName> is built entirely on this author's own libraries, vendored as git submodules under `libs/internal/`:
+<ProjectDnsPro> is built entirely on this author's own libraries, vendored as git submodules under `libs/internal/`:
 
 | Library | Provides | Repository |
 |---|---|---|
-| `<LibraryName>` | `<Type<T>>`, <what it backs and where — e.g. "Router::routes and the middleware list"> | `<owner>/<repo>` |
-| `<LibraryName>` | `<Type<T>>`, <same pattern> | `<owner>/<repo>` |
+| `<LibraryDnsPro>` | `<Type<T>>`, <what it backs and where — e.g. "Router::routes and the middleware list"> | `<owner>/<repo>` |
+| `<LibraryDnsPro>` | `<Type<T>>`, <same pattern> | `<owner>/<repo>` |
 
 <div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
@@ -146,8 +146,8 @@ cmake --install build
 Then, in your own `CMakeLists.txt`:
 
 ```cmake
-find_package(<ProjectName> CONFIG REQUIRED)
-target_link_libraries(your_target PRIVATE <ProjectName>::<ProjectName>)
+find_package(<ProjectDnsPro> CONFIG REQUIRED)
+target_link_libraries(your_target PRIVATE <ProjectDnsPro>::<ProjectDnsPro>)
 ```
 
 > vcpkg and Conan packages are built and verified (recipe in
@@ -166,7 +166,7 @@ target_link_libraries(your_target PRIVATE <ProjectName>::<ProjectName>)
      actual API — not the placeholder below. -->
 
 ```cpp
-#include <ProjectName/Header.h>
+#include <ProjectDnsPro/Header.h>
 
 int main() {
     // ...
@@ -183,16 +183,16 @@ int main() {
 ```
 <repo>/
 ├── include/
-│   └── <ProjectName>/
+│   └── <ProjectDnsPro>/
 │       └── ...
 │
 ├── src/                              # only present once the library has
-│   └── <ProjectName>/                # compiled sources — header-only by default
+│   └── <ProjectDnsPro>/                # compiled sources — header-only by default
 │       └── ...
 │
 ├── libs/
 │   └── internal/                     # this project's own libraries, vendored
-│       └── <LibraryName>/            # as git submodules (see Dependencies)
+│       └── <LibraryDnsPro>/            # as git submodules (see Dependencies)
 │
 ├── examples/
 │   ├── CMakeLists.txt
@@ -240,7 +240,7 @@ int main() {
 │   └── dependabot.yml
 │
 ├── cmake/
-│   └── <ProjectName>Config.cmake.in
+│   └── <ProjectDnsPro>Config.cmake.in
 │
 ├── docs/
 │   ├── Doxyfile
@@ -267,7 +267,7 @@ int main() {
 ## <a id="development"></a>🛠️ Development
 
 The from-source install above builds the library only. To work on
-<ProjectName> itself — running tests, benchmarks, or the regression
+<ProjectDnsPro> itself — running tests, benchmarks, or the regression
 tool — build with everything enabled (the default):
 
 ```bash
@@ -291,8 +291,8 @@ ctest --test-dir build
 ```
 
 `regression` picks the latest baseline by semantic version (`v1.10.0`
-correctly outranks `v1.9.0`), not alphabetical filename order, and
-auto-names its output (`regression_v1.2.0_vs_current.md`/`.json`, etc.).
+correctly outranks `v1.9.0`), not alphabetical filednspro order, and
+auto-dnspros its output (`regression_v1.2.0_vs_current.md`/`.json`, etc.).
 
 See [packaging/README.md](packaging/README.md) for notes on verifying the vcpkg
 port and Conan recipe locally.
@@ -309,7 +309,7 @@ Measured against `<reference-implementation>`, same build, at 10K /
 100K / 1M iterations (`benchmarks/baselines/<version>.json` has the
 full dataset).
 
-| Operation | <ProjectName> | <reference-implementation> | Difference |
+| Operation | <ProjectDnsPro> | <reference-implementation> | Difference |
 |---|---|---|---|
 | `<operation>` | `<time>` | `<time>` | `<±N%>` |
 

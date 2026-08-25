@@ -25,7 +25,7 @@ Run every test in the executable:
 ```
 
 List all tests without running them — useful when you don't remember
-a test's exact name:
+a test's exact dnspro:
 
 ```
 ./build_tests/google_tests --gtest_list_tests
@@ -38,7 +38,7 @@ e.g. everything under `Unit`:
 ./build_tests/google_tests --gtest_filter=Unit.*
 ```
 
-Run a single test by its full `Category.TestName`:
+Run a single test by its full `Category.TestDnsPro`:
 
 ```
 ./build_tests/google_tests --gtest_filter=Unit.BasicBehavior

@@ -32,36 +32,36 @@
 // Runs a paired comparison benchmark (custom implementation vs.
 // reference implementation) across the standard SMALL/MEDIUM/LARGE
 // tiers (10K/100K/1M iterations), printing one comparison row per tier.
-#define BENCH(name, c_expr)                                                                \
+#define BENCH(name, c_expr)                                                                        \
     do {                                                                                           \
-        nanoseconds cNs{};                                                                  \
+        nanoseconds cNs{};                                                                         \
                                                                                                    \
         BENCHMARK(std::string(name), SMALL, c_expr, cNs, true);                                    \
-        printComparisonRow(name, "10K", cNs);                                                 \
+        printComparisonRow(name, "10K", cNs);                                                      \
                                                                                                    \
         BENCHMARK(std::string(name), MEDIUM, c_expr, cNs, true);                                   \
-        printComparisonRow(name, "100K", cNs);                                                \
+        printComparisonRow(name, "100K", cNs);                                                     \
                                                                                                    \
         BENCHMARK(std::string(name), LARGE, c_expr, cNs, true);                                    \
-        printComparisonRow(name, "1M", cNs);                                                  \
+        printComparisonRow(name, "1M", cNs);                                                       \
     } while (0)
 
 // Like BENCH, but for suites whose payload is too heavy for BENCH's
 // default 10K/100K/1M tiers (e.g. large structures, deep recursion) —
 // at those tiers a single expensive call multiplied out would never
 // finish in reasonable time. Uses 1/10/100 instead.
-#define BENCH_CUSTOM(name, c_expr)                                                         \
+#define BENCH_CUSTOM(name, c_expr)                                                                 \
     do {                                                                                           \
-        nanoseconds cNs{};                                                                  \
+        nanoseconds cNs{};                                                                         \
                                                                                                    \
         BENCHMARK(std::string(name), 1, c_expr, cNs, true);                                        \
-        printComparisonRow(name, "1", cNs);                                                   \
+        printComparisonRow(name, "1", cNs);                                                        \
                                                                                                    \
         BENCHMARK(std::string(name), 10, c_expr, cNs, true);                                       \
-        printComparisonRow(name, "10", cNs);                                                  \
+        printComparisonRow(name, "10", cNs);                                                       \
                                                                                                    \
         BENCHMARK(std::string(name), 100, c_expr, cNs, true);                                      \
-        printComparisonRow(name, "100", cNs);                                                 \
+        printComparisonRow(name, "100", cNs);                                                      \
     } while (0)
 
 // Registers this file's run_benchmarks with the global registry so it

@@ -23,7 +23,12 @@ threads, and correctness under simultaneous access.
 
 ### Tests
 
-
+- `resolver_concurrent_resolve.cpp` — concurrent `resolve()` reads
+  against a shared, already-populated `ZoneStore` each produce a
+  correct, independent answer: `ResolverConcurrentResolve.ConcurrentResolveReads`
+- `zonestore_concurrent_access.cpp` — concurrent `addRecord()` calls
+  under distinct names all land, with the correct final `recordCount()`:
+  `ZoneStoreConcurrentAccess.ConcurrentAddRecord`
 
 ---
 
@@ -35,7 +40,25 @@ single function in isolation.
 
 ### Tests
 
-
+- `compression_pointer_chain.cpp` — a two-hop compression pointer
+  chain resolves to the correct name:
+  `CompressionPointerChain.TwoHopPointerChainResolves`
+- `empty_zone_query.cpp` — resolving against a zero-record `ZoneStore`
+  returns a well-formed NXDOMAIN response:
+  `EmptyZoneQuery.EmptyZoneReturnsNxdomain`
+- `malformed_query_handling.cpp` — a query `Parser::parse()` can't
+  parse produces the same `Status` through `Resolver::resolve()` as
+  parsing it directly would: `MalformedQueryHandling.TruncatedQueryStatusPropagates`
+- `parse_build_roundtrip.cpp` — a fully-populated `Message` (question,
+  answer, authority, additional) survives `Builder::build()` then
+  `Parser::parse()` intact: `ParseBuildRoundtrip.FullMessageRoundtrip`
+- `resolve_roundtrip.cpp` — raw query bytes through `Resolver::resolve()`
+  produce a response that re-parses correctly, for both the hit and
+  NXDOMAIN cases: `ResolveRoundtrip.ResolveRoundtripHit`,
+  `ResolveRoundtrip.ResolveRoundtripNxdomain`
+- `multi_question_query.cpp` — a multi-question query only answers the
+  first question, per `Resolver::resolve()`'s documented behavior:
+  `MultiQuestionQuery.MultiQuestionAnswersFirstOnly`
 
 ---
 
@@ -47,7 +70,13 @@ library's core type can hold.
 
 ### Tests
 
-
+- `message_move.cpp` — `Message` move-construct and move-assign both
+  transfer data and leave the source empty:
+  `MessageMove.MoveConstructTransfersData`, `MessageMove.MoveAssignTransfersData`
+- `resolver_zone_reference.cpp` — `Resolver` holds a reference to its
+  `ZoneStore`, not a copy: `ResolverZoneReference.ResolverSeesLaterZoneChanges`
+- `zonestore_copy.cpp` — a copied `ZoneStore` is fully independent of
+  its source: `ZoneStoreCopy.CopyIsIndependent`
 
 ---
 
@@ -58,7 +87,8 @@ per resolved issue, added at the time the fix lands.
 
 ### Tests
 
-
+None yet — this category is populated as fixes land, not converted
+from the custom suite (it had none to carry over either).
 
 ---
 
@@ -69,3 +99,22 @@ testable unit of behavior, independent of the categories above.
 
 ### Tests
 
+- `zonestore.cpp` — name case-insensitivity, type filtering on
+  `lookup()`/`contains()`, `removeRecord()` hit/miss, and bucket
+  cleanup after removing a name's last record:
+  `ZoneStore.CaseInsensitiveNameMatching`, `ZoneStore.TypeFilteringLookupContains`,
+  `ZoneStore.RemoveRecordHitAndMiss`, `ZoneStore.RemoveRecordBucketCleanup`
+- `buffer_too_small.cpp` — truncated buffers are rejected at each
+  stage (header, question name, question fields, rdata):
+  `BufferTooSmall.TruncatedHeaderRejected`, `BufferTooSmall.TruncatedQuestionNameRejected`,
+  `BufferTooSmall.TruncatedQuestionFieldsRejected`, `BufferTooSmall.TruncatedRdataRejected`
+- `build_limits.cpp` — label length, section size, and rdata size
+  limits are enforced on build: `BuildLimits.OversizedLabelRejected`,
+  `BuildLimits.BoundaryLabelAccepted`, `BuildLimits.OversizedSectionRejected`,
+  `BuildLimits.OversizedRdataRejected`
+- `compression.cpp` — forward compression pointers are rejected, valid
+  backward pointers are accepted: `Compression.ForwardPointerRejected`,
+  `Compression.FarForwardPointerRejected`, `Compression.ValidBackwardPointerAccepted`
+- `header_flags_roundtrip.cpp` — header flag bits survive
+  `Builder::build()` then `Parser::parse()` unchanged, at both extremes:
+  `HeaderFlagsRoundtrip.AllZeroFlagsRoundtrip`, `HeaderFlagsRoundtrip.AllFlagsSetRoundtrip`
