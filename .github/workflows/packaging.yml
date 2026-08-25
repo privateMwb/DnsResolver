@@ -21,6 +21,7 @@ on:
     paths:
       - "packaging/recipes/**"
       - "packaging/vcpkg/ports/**"
+      - "packaging/vcpkg/vcpkg-configuration.json"
       - "packaging/vcpkg-smoke-test/**"
       - "CMakeLists.txt"
       - "conandata.yml"
