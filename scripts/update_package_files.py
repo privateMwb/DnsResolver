@@ -15,15 +15,14 @@ parser.add_argument("--version", required=True)
 parser.add_argument("--commit", required=True)
 parser.add_argument("--archive", required=True)
 parser.add_argument(
-    "--submodule",
-    nargs=3,
-    metavar=("NAME", "COMMIT", "ARCHIVE"),
-    action="append",
-    default=[],
-    help="A vendored submodule's SUBMODULE_SPECS entry to update in "
-    "portfile.cmake, e.g. --submodule VectorPro <commit> VectorPro.tar.gz. "
-    "Repeatable, one per submodule. Each NAME must already have an entry "
-    "in portfile.cmake's SUBMODULE_SPECS.",
+    "--submodules-manifest",
+    required=False,
+    default=None,
+    help="Path to a JSON file: a list of {name, commit, archive} objects "
+    "describing vendored submodules to update in portfile.cmake's "
+    "SUBMODULE_SPECS. Optional -- omit (or point at a file with an empty "
+    "list) for projects with no SUBMODULE_SPECS entries to update. Each "
+    "name must already have an entry in portfile.cmake's SUBMODULE_SPECS.",
 )
 parser.add_argument("--root-dir", required=True)
 parser.add_argument("--conan-dir", required=True)
@@ -168,11 +167,22 @@ if ref_count == 0 or sha_count == 0:
     )
 
 # SUBMODULE_SPECS entries, e.g. "ArenaAllocator|<commit-sha>|<sha512>" or
-# "ArenaAllocator|2e58e18...|8ed246af...". Each --submodule NAME COMMIT
-# ARCHIVE updates exactly the entry for that NAME, leaving its neighbors
-# in SUBMODULE_SPECS untouched.
-for sub_name, sub_commit, sub_archive_path in args.submodule:
-    sub_archive = pathlib.Path(sub_archive_path)
+# "ArenaAllocator|2e58e18...|8ed246af...". Each manifest entry updates
+# exactly the SUBMODULE_SPECS line for that name, leaving its neighbors
+# untouched. Manifest is optional -- no file, or an empty list, means
+# nothing here to update (e.g. a project with no vendored submodules).
+submodules = []
+
+if args.submodules_manifest:
+    manifest_path = pathlib.Path(args.submodules_manifest)
+
+    if manifest_path.exists():
+        submodules = json.loads(manifest_path.read_text(encoding="utf-8"))
+
+for entry in submodules:
+    sub_name = entry["name"]
+    sub_commit = entry["commit"]
+    sub_archive = pathlib.Path(entry["archive"])
 
     if not sub_archive.exists():
         sys.exit(f"Submodule archive not found for {sub_name}: {sub_archive}")
