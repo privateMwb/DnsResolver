@@ -53,11 +53,11 @@
   <text x="600" y="155" text-anchor="middle"
         font-family="'Segoe UI', Helvetica, Arial, sans-serif"
         font-size="72" font-weight="700" letter-spacing="4"
-        fill="url(#titleGradient)" filter="url(#glow)">PROJECT_NAME</text>
+        fill="url(#titleGradient)" filter="url(#glow)">DnsResolver</text>
 
   <rect x="400" y="185" width="400" height="2" fill="url(#lineGradient)"/>
 
   <text x="600" y="220" text-anchor="middle"
         font-family="'Segoe UI', Helvetica, Arial, sans-serif"
-        font-size="18" letter-spacing="2" fill="#8B92A8">TAGLINE GOES HERE</text>
+        font-size="18" letter-spacing="2" fill="#8B92A8">DNS message parsing, building, and resolution</text>
 </svg>

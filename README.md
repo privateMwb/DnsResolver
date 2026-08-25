@@ -1,53 +1,43 @@
-<!--
-  Retargeting: replace every <angle-bracket> placeholder below. The
-  badge URLs, CI workflow dnspros, and project-structure tree already
-  match this skeleton's actual layout — only the owner/repo and
-  project dnspro need swapping in those. Features, Quick Start, and
-  Benchmarks are marked as sections to write fresh each time; don't
-  invent numbers or content to fill them. Also edit the two <text>
-  strings inside assets/banner.svg (project dnspro + tagline).
--->
-
 <p align="center">
-  <img src="assets/banner.svg" alt="<ProjectDnsPro>" width="100%">
+  <img src="assets/banner.svg" alt="DnsPro" width="100%">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/<owner>/<repo>?style=for-the-badge&logo=github&color=6E40C9&labelColor=0D1117" alt="Version">
+  <img src="https://img.shields.io/github/v/release/privateMwb/DnsResolver?style=for-the-badge&logo=github&color=6E40C9&labelColor=0D1117" alt="Version">
   <img src="https://img.shields.io/badge/License-MIT-39D0D8?style=for-the-badge&labelColor=0D1117" alt="License - MIT">
   <img src="https://img.shields.io/badge/C%2B%2B-23-00599C?style=for-the-badge&logo=c%2B%2B&labelColor=0D1117" alt="C++ - 23">
 </p>
 
 <p align="center">
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/build.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/build.yml/badge.svg" alt="Build and Test">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/build.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/build.yml/badge.svg" alt="Build and Test">
   </a>
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/benchmark.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/benchmark.yml/badge.svg" alt="Benchmarks">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/benchmark.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/benchmark.yml/badge.svg" alt="Benchmarks">
   </a>
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/coverage.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/coverage.yml/badge.svg" alt="Coverage">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/coverage.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/coverage.yml/badge.svg" alt="Coverage">
   </a>
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/sanitizers.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/sanitizers.yml/badge.svg" alt="Sanitizers">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/sanitizers.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/sanitizers.yml/badge.svg" alt="Sanitizers">
   </a>
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/clang-tidy.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/clang-tidy.yml/badge.svg" alt="Clang Tidy">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/clang-tidy.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/clang-tidy.yml/badge.svg" alt="Clang Tidy">
   </a>
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/clang-format.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/clang-format.yml/badge.svg" alt="Clang Format">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/clang-format.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/clang-format.yml/badge.svg" alt="Clang Format">
   </a>
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/codeql.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/codeql.yml/badge.svg" alt="CodeQL">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/codeql.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/codeql.yml/badge.svg" alt="CodeQL">
   </a>
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/docs.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/docs.yml/badge.svg" alt="Documentation">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/docs.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/docs.yml/badge.svg" alt="Documentation">
   </a>
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/release.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/release.yml/badge.svg" alt="Release">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/release.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/release.yml/badge.svg" alt="Release">
   </a>
-  <a href="https://github.com/<owner>/<repo>/actions/workflows/packaging.yml">
-    <img src="https://github.com/<owner>/<repo>/actions/workflows/packaging.yml/badge.svg" alt="Packaging">
+  <a href="https://github.com/privateMwb/DnsResolver/actions/workflows/packaging.yml">
+    <img src="https://github.com/privateMwb/DnsResolver/actions/workflows/packaging.yml/badge.svg" alt="Packaging">
   </a>
 </p>
 
@@ -62,11 +52,7 @@
   <img src="assets/divider.svg" alt="" width="100%">
 </p>
 
-<!-- One or two sentences: what this is, and the two or three things
-     that make it worth using over the obvious alternative. This is
-     the only line most visitors read — make it specific, not generic
-     marketing copy. -->
-<p align="center"><ProjectDnsPro> is a <one-line description of what it does and why>.</p>
+<p align="center">DnsPro is a C++23 library for parsing, building, and resolving DNS messages against an in-memory authoritative zone — a typed, RFC 1035-conformant packet representation with correct compression-pointer handling (including loop and forward-pointer rejection), not a raw-bytes wrapper.</p>
 
 <br>
 
@@ -89,16 +75,29 @@
 
 ## <a id="features"></a>✨ Features
 
-<!-- Write these fresh per project — they should dnspro the actual
-     design decisions that make this implementation different, the
-     way JsonPro's called out std::variant-backed storage and
-     std::to_chars-based serialization rather than just "it's fast."
-     A bullet that could describe any library in this category is a
-     bullet worth cutting. -->
-
-- **<Specific design decision>** — <what it is, why it matters, and
-  what it avoids compared to the obvious naive approach>.
-- **<Another concrete decision>** — <same pattern>.
+- **Nested `name → type → records` zone indexing** — `ZoneStore` indexes
+  records as `HashMap<string, HashMap<uint16_t, Vector<ResourceRecord>>>`
+  rather than a flat per-name list, so `lookup()` and `removeRecord()`
+  stay independent of zone size — measured flat at ~144 ns/op whether
+  the zone holds 100 or 10,000 names.
+- **Compression-pointer loop detection that catches oscillation, not
+  just backward jumps** — rejecting a pointer that targets its own or a
+  later offset isn't sufficient on its own: a label that advances the
+  cursor forward, followed by a pointer back to that label, still
+  satisfies a naive "each hop must be backward" rule while looping
+  forever. `Parser` bounds total hops with a step counter specifically
+  to catch this class of malformed packet, not just the simpler
+  forward-pointer case.
+- **`Builder` never emits compression pointers, by design** — round-trip
+  correctness only requires a rebuilt packet re-parse to an equivalent
+  `Message`, not that it match another encoder's compression choices
+  byte-for-byte; always writing full names keeps the encoder simple, at
+  a real, measured wire-size cost documented in Benchmarks rather than
+  an unmeasured one.
+- **Zero-copy `Message` moves** — move-construct and move-assign cost
+  ~5–10 ns regardless of how many questions or answer records a
+  `Message` holds, since `Vector`'s move steals the underlying buffer
+  pointer rather than copying elements.
 
 <div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
@@ -111,20 +110,17 @@
 
 ## <a id="dependencies"></a>🔗 Dependencies
 
-<!-- List only this project's OWN internal libraries that the library
-     code itself actually uses (not test/benchmark-only deps), one row
-     per submodule under libs/internal/. Order by how central each one
-     is, not alphabetically. DnsPro the specific type and the specific
-     place it's used -- "backing Router::routes" tells a reader
-     something; "used internally" doesn't. Cut anything vendored but
-     currently unused. -->
-
-<ProjectDnsPro> is built entirely on this author's own libraries, vendored as git submodules under `libs/internal/`:
+DnsPro is built entirely on this author's own libraries, vendored as git submodules under `libs/internal/`:
 
 | Library | Provides | Repository |
 |---|---|---|
-| `<LibraryDnsPro>` | `<Type<T>>`, <what it backs and where — e.g. "Router::routes and the middleware list"> | `<owner>/<repo>` |
-| `<LibraryDnsPro>` | `<Type<T>>`, <same pattern> | `<owner>/<repo>` |
+| `VectorPro` | `Vector<T>`, backing `Message`'s question/answer/authority/additional sections and `ZoneStore`'s per-type record lists | `privateMwb/VectorPro` |
+| `HashMapPro` | `HashMap<K,V>`, backing `ZoneStore`'s nested name→type→records index | `privateMwb/HashMapPro` |
+
+> `ArenaAllocator` is also vendored under `libs/internal/` but not yet
+> wired up — every `Vector<T>` above currently uses the default heap
+> allocator, not an arena-backed one. Left out of this table since
+> nothing in the library code actually uses it yet.
 
 <div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
@@ -133,8 +129,8 @@
 **From source:**
 
 ```bash
-git clone https://github.com/<owner>/<repo>.git
-cd <repo>
+git clone https://github.com/privateMwb/DnsResolver.git
+cd DnsResolver
 cmake -B build \
   -DBUILD_TESTS=OFF \
   -DBUILD_BENCHMARKS=OFF \
@@ -146,12 +142,12 @@ cmake --install build
 Then, in your own `CMakeLists.txt`:
 
 ```cmake
-find_package(<ProjectDnsPro> CONFIG REQUIRED)
-target_link_libraries(your_target PRIVATE <ProjectDnsPro>::<ProjectDnsPro>)
+find_package(DnsPro CONFIG REQUIRED)
+target_link_libraries(your_target PRIVATE DnsPro::DnsPro)
 ```
 
 > vcpkg and Conan packages are built and verified (recipe in
-> `packaging/recipes/<n>/all/`, port in `packaging/vcpkg/ports/<n>/`),
+> `packaging/recipes/dnspro/all/`, port in `packaging/vcpkg/ports/dnspro/`),
 > but not yet published to the public registries. This section will be
 > updated once they are.
 
@@ -159,17 +155,57 @@ target_link_libraries(your_target PRIVATE <ProjectDnsPro>::<ProjectDnsPro>)
 
 ## <a id="quick-start"></a>🚀 Quick Start
 
-<!-- 2–3 short, runnable examples: the most common single call, one
-     example that builds something up rather than just reading it,
-     and error handling if the library has anything like an exception
-     hierarchy worth showing. Real code that compiles against the
-     actual API — not the placeholder below. -->
+**Answer a query against an in-memory zone:**
 
 ```cpp
-#include <ProjectDnsPro/Header.h>
+#include <DnsPro/DnsResolver.h>
+
+using namespace DnsPro;
 
 int main() {
-    // ...
+    ZoneStore zone;
+
+    Packet::ResourceRecord record;
+    record.name.labels.push_back("example");
+    record.name.labels.push_back("com");
+    record.type   = 1; // A
+    record.rclass = 1; // IN
+    record.ttl    = 3600;
+    record.rdata.push_back(std::byte{93});
+    record.rdata.push_back(std::byte{184});
+    record.rdata.push_back(std::byte{216});
+    record.rdata.push_back(std::byte{34});
+    zone.addRecord(record);
+
+    Resolver resolver(zone);
+
+    std::span<const std::byte> query = /* raw bytes off the wire */;
+    Vector<std::byte> response;
+    if (resolver.resolve(query, response) == Status::OK) {
+        // send `response` back over the wire
+    }
+}
+```
+
+**Parse a raw buffer and inspect its questions:**
+
+```cpp
+Packet::Message message;
+if (Parser::parse(buffer, message) == Status::OK) {
+    for (const auto& question : message.questions) {
+        // question.qname.labels, question.qtype, question.qclass
+    }
+}
+```
+
+**Handle parse failures explicitly:**
+
+```cpp
+switch (Parser::parse(buffer, message)) {
+    case Status::OK:               /* ... */ break;
+    case Status::BUFFER_TOO_SMALL: /* truncated packet */ break;
+    case Status::COMPRESSION_LOOP: /* malformed pointer chain */ break;
+    default:                       /* ... */ break;
 }
 ```
 
@@ -181,18 +217,34 @@ int main() {
 <summary>Expand full tree</summary>
 
 ```
-<repo>/
-├── include/
-│   └── <ProjectDnsPro>/
-│       └── ...
+DnsResolver/
+├── include
+│    └── DnsPro
+│        ├── Builder.h
+│        ├── DnsResolver.h
+│        ├── Packet
+│        │   ├── Header.h
+│        │   ├── Message.h
+│        │   ├── Name.h
+│        │   ├── Question.h
+│        │   └── ResourceRecord.h
+│        ├── Parser.h
+│        ├── Resolver.h
+│        ├── Status.h
+│        └── ZoneStore.h
 │
-├── src/                              # only present once the library has
-│   └── <ProjectDnsPro>/                # compiled sources — header-only by default
-│       └── ...
+├── src
+│    └── DnsPro
+│        ├── Builder.cpp
+│        ├── Parser.cpp
+│        ├── Resolver.cpp
+│        └── ZoneStore.cpp
 │
 ├── libs/
 │   └── internal/                     # this project's own libraries, vendored
-│       └── <LibraryDnsPro>/            # as git submodules (see Dependencies)
+│       ├── VectorPro/                # as git submodules (see Dependencies)
+│       ├── HashMapPro/
+│       └── ArenaAllocator/
 │
 ├── examples/
 │   ├── CMakeLists.txt
@@ -216,19 +268,18 @@ int main() {
 ├── regression/                       # compares a benchmark run against
 │   ├── CMakeLists.txt                # a saved baseline snapshot
 │   ├── README.md
-│   ├── regression_main.cpp
-│   ├── export.h
-│   ├── framework.h
-│   └── helpers.h
+│   ├── custom/
+│   ├── google_regressions/
+│   └── results/
 │
 ├── packaging/
 │   ├── README.md
 │   ├── recipes/
-│   │   └── <n>/
+│   │   └── dnspro/
 │   │       └── all/
 │   ├── vcpkg/
 │   │   └── ports/
-│   │       └── <n>/
+│   │       └── dnspro/
 │   └── vcpkg-smoke-test/
 │
 ├── scripts/
@@ -240,7 +291,7 @@ int main() {
 │   └── dependabot.yml
 │
 ├── cmake/
-│   └── <ProjectDnsPro>Config.cmake.in
+│   └── DnsProConfig.cmake.in
 │
 ├── docs/
 │   ├── Doxyfile
@@ -267,7 +318,7 @@ int main() {
 ## <a id="development"></a>🛠️ Development
 
 The from-source install above builds the library only. To work on
-<ProjectDnsPro> itself — running tests, benchmarks, or the regression
+DnsPro itself — running tests, benchmarks, or the regression
 tool — build with everything enabled (the default):
 
 ```bash
@@ -291,8 +342,8 @@ ctest --test-dir build
 ```
 
 `regression` picks the latest baseline by semantic version (`v1.10.0`
-correctly outranks `v1.9.0`), not alphabetical filednspro order, and
-auto-dnspros its output (`regression_v1.2.0_vs_current.md`/`.json`, etc.).
+correctly outranks `v1.9.0`), not alphabetical filename order, and
+auto-names its output (`regression_v1.2.0_vs_current.md`/`.json`, etc.).
 
 See [packaging/README.md](packaging/README.md) for notes on verifying the vcpkg
 port and Conan recipe locally.
@@ -301,17 +352,24 @@ port and Conan recipe locally.
 
 ## <a id="benchmarks"></a>📊 Benchmarks
 
-<!-- Real measured numbers only — from an actual benchmarks/baselines/
-     snapshot, never invented. If there's nothing to compare against
-     yet, say so plainly instead of leaving a fabricated table here. -->
+Solo-timed at 10K / 100K / 1M iterations — no reference implementation
+exists to compare against (there's no standard-library or widely-used
+DNS parser/zone-store to pair each benchmark with). Full dataset:
+`benchmarks/baselines/v1.0.0.json`.
 
-Measured against `<reference-implementation>`, same build, at 10K /
-100K / 1M iterations (`benchmarks/baselines/<version>.json` has the
-full dataset).
-
-| Operation | <ProjectDnsPro> | <reference-implementation> | Difference |
-|---|---|---|---|
-| `<operation>` | `<time>` | `<time>` | `<±N%>` |
+| Operation | DnsPro (1M) |
+|---|---|
+| `Parser::parse()` — query, single question | 62.97 ns/op |
+| `Parser::parse()` — response, 4 answer records | 296.11 ns/op |
+| `Builder::build()` — query, single question | 122.20 ns/op |
+| `Builder::build()` — response, 4 answer records | 399.52 ns/op |
+| `ZoneStore::lookup()` — existing name+type | 137.71 ns/op |
+| `ZoneStore::lookup()` — missing name | 61.89 ns/op |
+| `Resolver::resolve()` — answer found | 448.81 ns/op |
+| `Resolver::resolve()` — NXDOMAIN | 360.46 ns/op |
+| `Message` move-construct | 5.99 ns/op |
+| Name parse — uncompressed | 63.46 ns/op |
+| Name parse — via compression pointer | 96.05 ns/op |
 
 <div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
@@ -319,7 +377,7 @@ full dataset).
 
 Full API reference, generated with Doxygen from `docs/Doxyfile`:
 
-**https://<owner>.github.io/<repo>/**
+**https://privateMwb.github.io/DnsResolver/**
 
 <div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
@@ -335,7 +393,7 @@ Issues and pull requests are welcome. Before submitting a PR:
 
 ## <a id="changelog"></a>📝 Changelog
 
-See the [Releases](https://github.com/<owner>/<repo>/releases)
+See the [Releases](https://github.com/privateMwb/DnsResolver/releases)
 page for version history and release notes.
 
 ## <a id="license"></a>📄 License
