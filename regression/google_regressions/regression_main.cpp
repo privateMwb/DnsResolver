@@ -15,14 +15,14 @@ int main(int argc, char* argv[]) {
     try {
         if (argc == 1) {
             baselineFile = latestBaseline();
-            currentFile = "benchmarks/results/google_benchmarks_results.json";
+            currentFile = "benchmarks/results/google_benchmark_results.json";
         } else if (argc == 2) {
             if (std::string_view(argv[1]) == "list") {
                 printList();
                 return 0;
             }
             baselineFile = "benchmarks/baselines/" + std::string(argv[1]) + ".json";
-            currentFile = "benchmarks/results/google_benchmarks_results.json";
+            currentFile = "benchmarks/results/google_benchmark_results.json";
         } else if (argc == 3) {
             baselineFile = "benchmarks/baselines/" + std::string(argv[1]) + ".json";
             currentFile = "benchmarks/baselines/" + std::string(argv[2]) + ".json";
