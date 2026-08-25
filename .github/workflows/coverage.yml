@@ -66,10 +66,9 @@ jobs:
             --output-file coverage.info \
             --ignore-errors negative,gcov,mismatch
 
-          lcov --remove coverage.info \
-            '/usr/*' \
-            '*/tests/*' \
-            '*/libs/*' \
+          lcov --extract coverage.info \
+            '*/include/DnsPro/*' \
+            '*/src/DnsPro/*' \
             --output-file coverage.filtered.info
 
       - name: Generate HTML report
