@@ -76,11 +76,24 @@ jobs:
 
       - name: Run google benchmarks
         continue-on-error: true
-        run: ./build/google_benchmarks
-
+        run: ./build/google_benchmarks --benchmark_out=benchmarks/results/google_benchmark_results.json --benchmark_out_format=json
+      
+      - name: Convert google benchmarks result to md
+        continue-on-error: true
+        run: |
+          python3 > benchmarks/results/google_benchmark_results.md <<'PY'
+          import json
+          with open('benchmarks/results/google_benchmark_results.json') as f:
+              data = json.load(f)
+          print('| Benchmark | Time | CPU | Iterations |')
+          print('|---|---|---|---|')
+          for b in data['benchmarks']:
+              print(f"| {b['name']} | {b['real_time']:.2f} {b['time_unit']} | {b['cpu_time']:.2f} {b['time_unit']} | {b['iterations']} |")
+          PY
+ 
       - name: Build regression tool
         run: cmake --build build --target regression
-
+        
       - name: Run regression tool
         continue-on-error: true
         run: ./build/regression
