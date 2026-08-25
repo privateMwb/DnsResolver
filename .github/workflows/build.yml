@@ -4,7 +4,7 @@
 # compiler, and build-type combinations.
 # ============================================================
 
-dnspro: Build and Test
+name: Build and Test
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    dnspro: "${{ matrix.os }} | ${{ matrix.compiler }} | ${{ matrix.build_type }}"
+    name: "${{ matrix.os }} | ${{ matrix.compiler }} | ${{ matrix.build_type }}"
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -62,23 +62,23 @@ jobs:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
 
     steps:
-      - dnspro: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - dnspro: Install dependencies (Ubuntu)
+      - name: Install dependencies (Ubuntu)
         if: runner.os == 'Linux'
         run: |
           sudo apt update
           sudo apt install -y cmake ninja-build g++ clang ccache
 
-      - dnspro: Install ccache (macOS)
+      - name: Install ccache (macOS)
         if: runner.os == 'macOS'
         run: brew install ccache
 
       # MSVC skipped: ccache's MSVC support is unreliable enough that
       # it's not worth it for a cheap caching pass. Only the
       # FetchContent dependency cache below applies on Windows.
-      - dnspro: Cache ccache
+      - name: Cache ccache
         if: runner.os != 'Windows'
         uses: actions/cache@v4
         with:
@@ -86,13 +86,13 @@ jobs:
           key: ccache-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.build_type }}-${{ github.sha }}
           restore-keys: ccache-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.build_type }}-
 
-      - dnspro: Cache fetched dependencies
+      - name: Cache fetched dependencies
         uses: actions/cache@v4
         with:
           path: build-${{ matrix.compiler }}-${{ matrix.build_type }}/_deps
           key: deps-${{ matrix.os }}-${{ hashFiles('tests/google_tests/CMakeLists.txt') }}
 
-      - dnspro: Set compiler launcher flag
+      - name: Set compiler launcher flag
         id: launcher
         shell: bash
         run: |
@@ -104,14 +104,14 @@ jobs:
 
       # Only tests/ are exercised by this workflow (via ctest below).
       # Benchmarks, tools, and examples are disabled to reduce CI time.
-      - dnspro: Configure
+      - name: Configure
         env:
           CXX: ${{ matrix.cxx || '' }}
         run: cmake -S . -B build-${{ matrix.compiler }}-${{ matrix.build_type }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} ${{ steps.launcher.outputs.flag }} -DBUILD_BENCHMARKS=OFF -DBUILD_REGRESSION=OFF -DBUILD_EXAMPLES=OFF
 
-      - dnspro: Build
+      - name: Build
         run: cmake --build build-${{ matrix.compiler }}-${{ matrix.build_type }} --config ${{ matrix.build_type }}
 
-      - dnspro: Run tests
+      - name: Run tests
         continue-on-error: true
         run: ctest --test-dir build-${{ matrix.compiler }}-${{ matrix.build_type }} -C ${{ matrix.build_type }} --output-on-failure
