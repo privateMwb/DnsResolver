@@ -37,9 +37,9 @@ vcpkg_from_github(
 # not by copy-pasting a whole vcpkg_from_github() block. The line
 # below is a placeholder example; replace with your actual submodules.
 set(SUBMODULE_SPECS
-    "ArenaAllocator|<commit-sha>|<sha512>"
-    "HashMapPro|<commit-sha>|<sha512>"
-    "VectorPro|<commit-sha>|<sha512>"
+    "ArenaAllocator|7fe76fb4c3f1d98edeb34832834baece8481de79|39eceb4db5d18d3a5339da7a761772f956dc13521726605bd3683ad0ce62a2c55cf7ac9c546ce626badfc571a83b2193ed86fcae12020e7d168381a592de5f92"
+    "HashMapPro|497b996dfa4721136a4c89edefd36e6a0dfe1d09|3d696060c666b9ea9afa02e9394f637967851cf167d864ec2699858b02370fca52ad8c796552be726d0534373fa828aec0879aaa9ba17d9692b902c199c8eba9"
+    "VectorPro|26407a59ecd6fefe69565c980b8de49332e469e8|969c97bfad58f94a75ba35c8723812badad112d5b304e73b555715ad61657055a7c41c6568fadeb5e8a21bca27215435abef28e6a1221ff14f6d2244ab3ca081"
 )
 
 foreach(SPEC ${SUBMODULE_SPECS})
