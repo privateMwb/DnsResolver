@@ -14,6 +14,17 @@ parser.add_argument("--repo", required=True)
 parser.add_argument("--version", required=True)
 parser.add_argument("--commit", required=True)
 parser.add_argument("--archive", required=True)
+parser.add_argument(
+    "--submodule",
+    nargs=3,
+    metavar=("NAME", "COMMIT", "ARCHIVE"),
+    action="append",
+    default=[],
+    help="A vendored submodule's SUBMODULE_SPECS entry to update in "
+    "portfile.cmake, e.g. --submodule VectorPro <commit> VectorPro.tar.gz. "
+    "Repeatable, one per submodule. Each NAME must already have an entry "
+    "in portfile.cmake's SUBMODULE_SPECS.",
+)
 parser.add_argument("--root-dir", required=True)
 parser.add_argument("--conan-dir", required=True)
 parser.add_argument("--vcpkg-dir", required=True)
@@ -132,7 +143,9 @@ text = portfile.read_text(encoding="utf-8")
 # for the library itself. SUBMODULE_SPECS entries are plain "dnspro|ref|sha"
 # strings (no literal "REF" keyword), and the per-submodule
 # vcpkg_from_github() call inside the foreach loop uses REF ${SUBMODULE_REF}
-# (a variable, not a hex literal), so neither is matched by this pattern.
+# (a variable, not a hex literal), so neither is matched by this pattern --
+# SUBMODULE_SPECS entries are updated separately below, by name, from
+# --submodule arguments.
 text, ref_count = re.subn(
     r"REF\s+(?:<commit-sha>|[0-9a-fA-F]{7,40})",
     f"REF {commit}",
@@ -153,6 +166,36 @@ if ref_count == 0 or sha_count == 0:
         f"REF/SHA512 in {portfile} -- expected either the "
         "<commit-sha>/<sha512> placeholders or a real hex value there."
     )
+
+# SUBMODULE_SPECS entries, e.g. "ArenaAllocator|<commit-sha>|<sha512>" or
+# "ArenaAllocator|2e58e18...|8ed246af...". Each --submodule NAME COMMIT
+# ARCHIVE updates exactly the entry for that NAME, leaving its neighbors
+# in SUBMODULE_SPECS untouched.
+for sub_name, sub_commit, sub_archive_path in args.submodule:
+    sub_archive = pathlib.Path(sub_archive_path)
+
+    if not sub_archive.exists():
+        sys.exit(f"Submodule archive not found for {sub_name}: {sub_archive}")
+
+    sub_sha512 = hashlib.sha512(sub_archive.read_bytes()).hexdigest()
+
+    print(f"Submodule {sub_name}")
+    print(f"  Commit  : {sub_commit}")
+    print(f"  SHA512  : {sub_sha512}")
+
+    text, sub_count = re.subn(
+        rf'"{re.escape(sub_name)}\|[^|]*\|[^"]*"',
+        f'"{sub_name}|{sub_commit}|{sub_sha512}"',
+        text,
+        count=1,
+    )
+
+    if sub_count == 0:
+        sys.exit(
+            f"Could not find a SUBMODULE_SPECS entry for '{sub_name}' in "
+            f"{portfile} -- add one there first (see portfile.cmake's own "
+            "comment on SUBMODULE_SPECS for the format)."
+        )
 
 portfile.write_text(text, encoding="utf-8")
 
