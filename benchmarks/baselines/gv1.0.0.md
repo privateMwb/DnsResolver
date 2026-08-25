@@ -1,0 +1,34 @@
+| Benchmark | Time | CPU | Iterations |
+|---|---|---|---|
+| Lookup_ExistingNameType | 131.34 ns | 131.33 ns | 5333395 |
+| Lookup_MissingName | 59.56 ns | 59.56 ns | 11811871 |
+| Lookup_ExistingNameMissingType | 71.22 ns | 71.21 ns | 9815565 |
+| Build_QuestionOnly | 129.91 ns | 129.90 ns | 5391039 |
+| Build_FourAnswerRecords | 437.89 ns | 437.86 ns | 1593038 |
+| Parse_QuestionOnly | 62.58 ns | 62.58 ns | 11198299 |
+| Parse_FourAnswerRecords | 346.87 ns | 346.85 ns | 2018907 |
+| AddRecord_ExistingBucket | 285.97 ns | 285.94 ns | 2260949 |
+| RemoveRecord_MissingName | 56.78 ns | 56.78 ns | 12346630 |
+| Resolve_AnswerFound | 487.69 ns | 487.64 ns | 1448784 |
+| Resolve_NXDOMAIN | 391.76 ns | 391.74 ns | 1779759 |
+| Resolve_NODATA | 402.01 ns | 401.99 ns | 1738881 |
+| Message_MoveConstruct | 6.24 ns | 6.24 ns | 112357771 |
+| Message_MoveAssign | 5.92 ns | 5.92 ns | 117679155 |
+| ParseAt/FourAnswerRecords | 327.72 ns | 327.71 ns | 2125102 |
+| ParseAt/SixteenAnswerRecords | 2044.20 ns | 2044.04 ns | 419354 |
+| ParseAt/SixtyFourAnswerRecords | 6715.49 ns | 6715.12 ns | 105448 |
+| BuildAt/FourAnswerRecords | 440.39 ns | 440.33 ns | 1594727 |
+| BuildAt/SixteenAnswerRecords | 1238.41 ns | 1238.36 ns | 565983 |
+| BuildAt/SixtyFourAnswerRecords | 4293.48 ns | 4293.15 ns | 163308 |
+| ParseAt/TwoLabelsDeep | 66.33 ns | 66.33 ns | 10555101 |
+| ParseAt/EightLabelsDeep | 122.84 ns | 122.82 ns | 5688267 |
+| ParseAt/ThirtyTwoLabelsDeep | 435.62 ns | 435.60 ns | 1621997 |
+| BuildAt/TwoLabelsDeep | 127.90 ns | 127.88 ns | 5475396 |
+| BuildAt/EightLabelsDeep | 256.04 ns | 256.03 ns | 2746838 |
+| BuildAt/ThirtyTwoLabelsDeep | 710.52 ns | 710.47 ns | 983158 |
+| LookupAt/Names100 | 137.54 ns | 137.52 ns | 5086151 |
+| LookupAt/Names1000 | 138.45 ns | 138.44 ns | 5033152 |
+| LookupAt/Names10000 | 146.02 ns | 146.00 ns | 4817205 |
+| Canonicalize_MixedCaseName | 235.29 ns | 235.26 ns | 4011411 |
+| NameParse_Uncompressed | 63.90 ns | 63.89 ns | 11149690 |
+| NameParse_Compressed | 99.59 ns | 99.58 ns | 7205460 |
