@@ -69,6 +69,7 @@ jobs:
           lcov --remove coverage.info \
             '/usr/*' \
             '*/tests/*' \
+            '*/libs/*' \
             --output-file coverage.filtered.info
 
       - name: Generate HTML report
