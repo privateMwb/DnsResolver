@@ -275,11 +275,7 @@ DnsResolver/
 ├── packaging/
 │   ├── README.md
 │   ├── recipes/
-│   │   └── dnspro/
-│   │       └── all/
 │   ├── vcpkg/
-│   │   └── ports/
-│   │       └── dnspro/
 │   └── vcpkg-smoke-test/
 │
 ├── scripts/
@@ -298,10 +294,6 @@ DnsResolver/
 │   └── README.md
 │
 ├── assets/
-│   ├── banner.svg
-│   ├── divider.svg
-│   └── back-to-top.svg
-│
 ├── .clang-format
 ├── .clang-tidy
 ├── .gitignore

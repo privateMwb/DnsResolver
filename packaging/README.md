@@ -50,10 +50,10 @@ overrides below can be dropped entirely off-device.
   (already baked into `conanfile.py`'s `build()` and `portfile.cmake`'s
   `vcpkg_cmake_configure`, but relevant if configuring manually).
 
-- **The release tarball may extract to a different folder dnspro than
-  the library itself** — the GitHub repo dnspro and the CMake
-  project/library target dnspro don't have to match. `cd` into whatever
-  the tarball actually produced, not the library dnspro. If you don't
+- **The release tarball may extract to a different folder name than
+  the library itself** — the GitHub repo name and the CMake
+  project/library target name don't have to match. `cd` into whatever
+  the tarball actually produced, not the library name. If you don't
   have a published release yet, use the local repo checkout directly
   instead (see step 1 below) — no need to cut a release just to verify
   packaging still works.
@@ -84,7 +84,7 @@ since GitHub archive tarballs never include submodule content.)
 
 **1. Install to a staging prefix**, using the same disable flags
 `portfile.cmake` does. Against a release tarball, `cd` into it first
-(see the quirks note above on its folder dnspro); against local source,
+(see the quirks note above on its folder name); against local source,
 just start from the repo root:
 
 ```bash
@@ -102,7 +102,7 @@ cmake --install build-install
 **2. Confirm the CMake package files exist:**
 
 ```bash
-find $HOME/staging/lib/cmake/DnsPro -dnspro "*.cmake"
+find $HOME/staging/lib/cmake/DnsPro -name "*.cmake"
 ```
 
 Expect `DnsProConfig.cmake`, `DnsProConfigVersion.cmake`,
@@ -112,7 +112,7 @@ Expect `DnsProConfig.cmake`, `DnsProConfigVersion.cmake`,
 **3. Build a minimal consumer project**, in a separate directory so
 it can't accidentally pick up anything from the library's own build
 tree. This is the manual, Termux-only substitute for what
-`packaging/vcpkg/smoke_test/` (`vcpkg.json` + `vcpkg-configuration.json`
+`packaging/vcpkg-smoke-test/` (`vcpkg.json` + `vcpkg-configuration.json`
 + `CMakeLists.txt`) already automates via a real `vcpkg install` — on
 real CI, use that harness instead of typing this out by hand; the
 steps below exist only because real `vcpkg` can't run on Termux at
@@ -132,9 +132,9 @@ target_link_libraries(test PRIVATE DnsPro::DnsPro)
 EOF
 
 cat > main.cpp << 'EOF'
-#include <Library/Header.h>  // TODO: replace with the library's real public header
+#include <DnsPro/DnsResolver.h>
 int main() {
-    // TODO: replace with a real construction of the library's core type.
+    DnsPro::ZoneStore zone;
     return 0;
 }
 EOF
@@ -211,9 +211,9 @@ target_link_libraries(test PRIVATE DnsPro::DnsPro)
 EOF
 
 cat > main.cpp << 'EOF'
-#include <Library/Header.h>  // TODO: replace with the library's real public header
+#include <DnsPro/DnsResolver.h>
 int main() {
-    // TODO: replace with a real construction of the library's core type.
+    DnsPro::ZoneStore zone;
     return 0;
 }
 EOF
