@@ -51,7 +51,7 @@ Write results straight to a file, in a chosen format, without touching
 stdout:
 
 ```
-./build_benchmarks/google_benchmarks --benchmark_out=benchmarks/results/google_benchmarks_results.json --benchmark_out_format=json
+./build_benchmarks/google_benchmarks --benchmark_out=benchmarks/results/google_benchmark_results.json --benchmark_out_format=json
 ```
 
 These flags combine freely — e.g. filter down to one category and
@@ -68,7 +68,7 @@ the benchmark binary directly.
 1. Generate the JSON results (see above):
 
 ```
-./build_benchmarks/google_benchmarks --benchmark_out=benchmarks/results/google_benchmarks_results.json --benchmark_out_format=json
+./build_benchmarks/google_benchmarks --benchmark_out=benchmarks/results/google_benchmark_results.json --benchmark_out_format=json
 ```
 
 2. Convert that JSON into a Markdown table:
@@ -76,13 +76,13 @@ the benchmark binary directly.
 ```
 python3 -c "
 import json
-with open('benchmarks/results/google_benchmarks_results.json') as f:
+with open('benchmarks/results/google_benchmark_results.json') as f:
     data = json.load(f)
 print('| Benchmark | Time | CPU | Iterations |')
 print('|---|---|---|---|')
 for b in data['benchmarks']:
     print(f\"| {b['name']} | {b['real_time']:.2f} {b['time_unit']} | {b['cpu_time']:.2f} {b['time_unit']} | {b['iterations']} |\")
-" > benchmarks/results/google_benchmarks_results.md
+" > benchmarks/results/google_benchmark_results.md
 ```
 
 Running step 2 before step 1 will fail — there's no JSON file yet for

@@ -2,193 +2,193 @@
   {
     "name": "Lookup_ExistingNameType",
     "baseline_ns": 134.82,
-    "current_ns": 997.55,
-    "pct_change": -86.49
+    "current_ns": 1283.25,
+    "pct_change": -89.49
   },
   {
     "name": "Lookup_MissingName",
     "baseline_ns": 60.39,
-    "current_ns": 123.72,
-    "pct_change": -51.19
+    "current_ns": 221.09,
+    "pct_change": -72.68
   },
   {
     "name": "Lookup_ExistingNameMissingType",
     "baseline_ns": 70.40,
-    "current_ns": 169.61,
-    "pct_change": -58.49
+    "current_ns": 404.14,
+    "pct_change": -82.58
   },
   {
     "name": "Build_QuestionOnly",
     "baseline_ns": 121.62,
-    "current_ns": 637.21,
-    "pct_change": -80.91
+    "current_ns": 1362.07,
+    "pct_change": -91.07
   },
   {
     "name": "Build_FourAnswerRecords",
     "baseline_ns": 398.56,
-    "current_ns": 1997.49,
-    "pct_change": -80.05
+    "current_ns": 3769.24,
+    "pct_change": -89.43
   },
   {
     "name": "Parse_QuestionOnly",
     "baseline_ns": 62.39,
-    "current_ns": 474.53,
-    "pct_change": -86.85
+    "current_ns": 1056.48,
+    "pct_change": -94.09
   },
   {
     "name": "Parse_FourAnswerRecords",
     "baseline_ns": 301.21,
-    "current_ns": 2482.83,
-    "pct_change": -87.87
+    "current_ns": 67321.86,
+    "pct_change": -99.55
   },
   {
     "name": "AddRecord_ExistingBucket",
     "baseline_ns": 289.25,
-    "current_ns": 1163.46,
-    "pct_change": -75.14
+    "current_ns": 2314.98,
+    "pct_change": -87.51
   },
   {
     "name": "RemoveRecord_MissingName",
     "baseline_ns": 58.06,
-    "current_ns": 116.53,
-    "pct_change": -50.18
+    "current_ns": 330.82,
+    "pct_change": -82.45
   },
   {
     "name": "Resolve_AnswerFound",
     "baseline_ns": 446.33,
-    "current_ns": 3303.08,
-    "pct_change": -86.49
+    "current_ns": 5556.08,
+    "pct_change": -91.97
   },
   {
     "name": "Resolve_NXDOMAIN",
     "baseline_ns": 354.94,
-    "current_ns": 1584.62,
-    "pct_change": -77.60
+    "current_ns": 3928.28,
+    "pct_change": -90.96
   },
   {
     "name": "Resolve_NODATA",
     "baseline_ns": 368.89,
-    "current_ns": 1849.59,
-    "pct_change": -80.06
+    "current_ns": 4060.91,
+    "pct_change": -90.92
   },
   {
     "name": "Message_MoveConstruct",
     "baseline_ns": 7.04,
-    "current_ns": 41.42,
-    "pct_change": -83.01
+    "current_ns": 67.57,
+    "pct_change": -89.58
   },
   {
     "name": "Message_MoveAssign",
     "baseline_ns": 6.68,
-    "current_ns": 38.30,
-    "pct_change": -82.55
+    "current_ns": 72.59,
+    "pct_change": -90.79
   },
   {
     "name": "ParseAt/FourAnswerRecords",
     "baseline_ns": 303.02,
-    "current_ns": 2832.48,
-    "pct_change": -89.30
+    "current_ns": 5294.67,
+    "pct_change": -94.28
   },
   {
     "name": "ParseAt/SixteenAnswerRecords",
     "baseline_ns": 1756.72,
-    "current_ns": 7122.65,
-    "pct_change": -75.34
+    "current_ns": 17202.37,
+    "pct_change": -89.79
   },
   {
     "name": "ParseAt/SixtyFourAnswerRecords",
     "baseline_ns": 6194.00,
-    "current_ns": 27806.35,
-    "pct_change": -77.72
+    "current_ns": 66771.26,
+    "pct_change": -90.72
   },
   {
     "name": "BuildAt/FourAnswerRecords",
     "baseline_ns": 397.75,
-    "current_ns": 2490.59,
-    "pct_change": -84.03
+    "current_ns": 6015.91,
+    "pct_change": -93.39
   },
   {
     "name": "BuildAt/SixteenAnswerRecords",
     "baseline_ns": 1122.00,
-    "current_ns": 3576.87,
-    "pct_change": -68.63
+    "current_ns": 4150.79,
+    "pct_change": -72.97
   },
   {
     "name": "BuildAt/SixtyFourAnswerRecords",
     "baseline_ns": 4088.26,
-    "current_ns": 12176.15,
-    "pct_change": -66.42
+    "current_ns": 12198.75,
+    "pct_change": -66.49
   },
   {
     "name": "ParseAt/TwoLabelsDeep",
     "baseline_ns": 62.89,
-    "current_ns": 1108.69,
-    "pct_change": -94.33
+    "current_ns": 725.14,
+    "pct_change": -91.33
   },
   {
     "name": "ParseAt/EightLabelsDeep",
     "baseline_ns": 110.60,
-    "current_ns": 907.54,
-    "pct_change": -87.81
+    "current_ns": 625.62,
+    "pct_change": -82.32
   },
   {
     "name": "ParseAt/ThirtyTwoLabelsDeep",
     "baseline_ns": 399.24,
-    "current_ns": 1878.80,
-    "pct_change": -78.75
+    "current_ns": 1874.24,
+    "pct_change": -78.70
   },
   {
     "name": "BuildAt/TwoLabelsDeep",
     "baseline_ns": 120.49,
-    "current_ns": 809.61,
-    "pct_change": -85.12
+    "current_ns": 642.92,
+    "pct_change": -81.26
   },
   {
     "name": "BuildAt/EightLabelsDeep",
     "baseline_ns": 188.49,
-    "current_ns": 1373.72,
-    "pct_change": -86.28
+    "current_ns": 1064.02,
+    "pct_change": -82.29
   },
   {
     "name": "BuildAt/ThirtyTwoLabelsDeep",
     "baseline_ns": 408.27,
-    "current_ns": 2510.40,
-    "pct_change": -83.74
+    "current_ns": 3725.37,
+    "pct_change": -89.04
   },
   {
     "name": "LookupAt/Names100",
     "baseline_ns": 143.31,
-    "current_ns": 994.84,
-    "pct_change": -85.59
+    "current_ns": 1094.40,
+    "pct_change": -86.90
   },
   {
     "name": "LookupAt/Names1000",
     "baseline_ns": 142.56,
-    "current_ns": 849.25,
-    "pct_change": -83.21
+    "current_ns": 888.21,
+    "pct_change": -83.95
   },
   {
     "name": "LookupAt/Names10000",
     "baseline_ns": 143.00,
-    "current_ns": 839.03,
-    "pct_change": -82.96
+    "current_ns": 880.98,
+    "pct_change": -83.77
   },
   {
     "name": "Canonicalize_MixedCaseName",
     "baseline_ns": 251.54,
-    "current_ns": 1182.96,
-    "pct_change": -78.74
+    "current_ns": 1223.21,
+    "pct_change": -79.44
   },
   {
     "name": "NameParse_Uncompressed",
     "baseline_ns": 62.27,
-    "current_ns": 839.63,
-    "pct_change": -92.58
+    "current_ns": 451.07,
+    "pct_change": -86.20
   },
   {
     "name": "NameParse_Compressed",
     "baseline_ns": 97.88,
-    "current_ns": 1287.93,
-    "pct_change": -92.40
+    "current_ns": 725.08,
+    "pct_change": -86.50
   }
 ]
