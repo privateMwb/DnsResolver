@@ -5,16 +5,13 @@ from conan.tools.files import collect_libs, copy
 from conan.tools.scm import Git
 import os
 
-
-dnspro = "dnspro"
-
 class Conan(ConanFile):
     # ── Retargeting this recipe for a new library ───────────────────
     # Edit these fields (and the module-level dnspro above) — everything
     # below derives from them. Version is handled by a separate script,
     # not edited here.
-    name = dnspro
-    cmake_dnspro = "DnsPro"  # matches project()'s dnspro in the top-level CMakeLists.txt
+    name = "dnspro"
+    cmake_name = "DnsPro"  # matches project()'s dnspro in the top-level CMakeLists.txt
     version = "1.0.0"
 
     url = "https://github.com/privateMwb/DnsResolver"
@@ -112,6 +109,6 @@ class Conan(ConanFile):
         )
 
     def package_info(self):
-        self.cpp_info.set_property("cmake_file_name", self.cmake_dnspro)
-        self.cpp_info.set_property("cmake_target_name", f"{self.cmake_dnspro}::{self.cmake_dnspro}")
+        self.cpp_info.set_property("cmake_file_name", self.cmake_name)
+        self.cpp_info.set_property("cmake_target_name", f"{self.cmake_name}::{self.cmake_name}")
         self.cpp_info.libs = collect_libs(self)

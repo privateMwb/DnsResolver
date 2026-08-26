@@ -2,673 +2,673 @@
   {
     "suite": "Lookup",
     "operation": "Existing name+type",
-    "total_ns": 6436693,
+    "total_ns": 8518462,
     "iterations": 10000,
-    "ns_per_op": 643.67
+    "ns_per_op": 851.85
   },
   {
     "suite": "Lookup",
     "operation": "Existing name+type",
-    "total_ns": 83677846,
+    "total_ns": 75894461,
     "iterations": 100000,
-    "ns_per_op": 836.78
+    "ns_per_op": 758.94
   },
   {
     "suite": "Lookup",
     "operation": "Existing name+type",
-    "total_ns": 679753230,
+    "total_ns": 702785539,
     "iterations": 1000000,
-    "ns_per_op": 679.75
+    "ns_per_op": 702.79
   },
   {
     "suite": "Lookup",
     "operation": "Missing name",
-    "total_ns": 1756923,
+    "total_ns": 1977461,
     "iterations": 10000,
-    "ns_per_op": 175.69
+    "ns_per_op": 197.75
   },
   {
     "suite": "Lookup",
     "operation": "Missing name",
-    "total_ns": 17584307,
+    "total_ns": 19557539,
     "iterations": 100000,
-    "ns_per_op": 175.84
+    "ns_per_op": 195.58
   },
   {
     "suite": "Lookup",
     "operation": "Missing name",
-    "total_ns": 175517230,
+    "total_ns": 195444308,
     "iterations": 1000000,
-    "ns_per_op": 175.52
-  },
-  {
-    "suite": "Lookup",
-    "operation": "Existing name, missing type",
-    "total_ns": 2216923,
-    "iterations": 10000,
-    "ns_per_op": 221.69
+    "ns_per_op": 195.44
   },
   {
     "suite": "Lookup",
     "operation": "Existing name, missing type",
-    "total_ns": 21867615,
-    "iterations": 100000,
-    "ns_per_op": 218.68
+    "total_ns": 2429769,
+    "iterations": 10000,
+    "ns_per_op": 242.98
   },
   {
     "suite": "Lookup",
     "operation": "Existing name, missing type",
-    "total_ns": 218924000,
-    "iterations": 1000000,
-    "ns_per_op": 218.92
-  },
-  {
-    "suite": "Build",
-    "operation": "Query, single question",
-    "total_ns": 11213538,
-    "iterations": 10000,
-    "ns_per_op": 1121.35
-  },
-  {
-    "suite": "Build",
-    "operation": "Query, single question",
-    "total_ns": 58014693,
+    "total_ns": 24343153,
     "iterations": 100000,
-    "ns_per_op": 580.15
+    "ns_per_op": 243.43
+  },
+  {
+    "suite": "Lookup",
+    "operation": "Existing name, missing type",
+    "total_ns": 243264923,
+    "iterations": 1000000,
+    "ns_per_op": 243.26
   },
   {
     "suite": "Build",
     "operation": "Query, single question",
-    "total_ns": 505472308,
-    "iterations": 1000000,
-    "ns_per_op": 505.47
-  },
-  {
-    "suite": "Build",
-    "operation": "Response, 4 answer records",
-    "total_ns": 14351384,
+    "total_ns": 5620308,
     "iterations": 10000,
-    "ns_per_op": 1435.14
+    "ns_per_op": 562.03
+  },
+  {
+    "suite": "Build",
+    "operation": "Query, single question",
+    "total_ns": 55988000,
+    "iterations": 100000,
+    "ns_per_op": 559.88
+  },
+  {
+    "suite": "Build",
+    "operation": "Query, single question",
+    "total_ns": 589587308,
+    "iterations": 1000000,
+    "ns_per_op": 589.59
   },
   {
     "suite": "Build",
     "operation": "Response, 4 answer records",
-    "total_ns": 144989231,
-    "iterations": 100000,
-    "ns_per_op": 1449.89
+    "total_ns": 15908692,
+    "iterations": 10000,
+    "ns_per_op": 1590.87
   },
   {
     "suite": "Build",
     "operation": "Response, 4 answer records",
-    "total_ns": 2619873770,
-    "iterations": 1000000,
-    "ns_per_op": 2619.87
-  },
-  {
-    "suite": "Parse",
-    "operation": "Query, single question",
-    "total_ns": 8666462,
-    "iterations": 10000,
-    "ns_per_op": 866.65
-  },
-  {
-    "suite": "Parse",
-    "operation": "Query, single question",
-    "total_ns": 86532385,
+    "total_ns": 159046462,
     "iterations": 100000,
-    "ns_per_op": 865.32
+    "ns_per_op": 1590.46
+  },
+  {
+    "suite": "Build",
+    "operation": "Response, 4 answer records",
+    "total_ns": 1902283461,
+    "iterations": 1000000,
+    "ns_per_op": 1902.28
   },
   {
     "suite": "Parse",
     "operation": "Query, single question",
-    "total_ns": 865203077,
-    "iterations": 1000000,
-    "ns_per_op": 865.20
-  },
-  {
-    "suite": "Parse",
-    "operation": "Response, 4 answer records",
-    "total_ns": 42027615,
+    "total_ns": 4611385,
     "iterations": 10000,
-    "ns_per_op": 4202.76
+    "ns_per_op": 461.14
   },
   {
     "suite": "Parse",
-    "operation": "Response, 4 answer records",
-    "total_ns": 419917154,
+    "operation": "Query, single question",
+    "total_ns": 90296077,
     "iterations": 100000,
-    "ns_per_op": 4199.17
+    "ns_per_op": 902.96
+  },
+  {
+    "suite": "Parse",
+    "operation": "Query, single question",
+    "total_ns": 469586462,
+    "iterations": 1000000,
+    "ns_per_op": 469.59
   },
   {
     "suite": "Parse",
     "operation": "Response, 4 answer records",
-    "total_ns": 12856771693,
+    "total_ns": 22450539,
+    "iterations": 10000,
+    "ns_per_op": 2245.05
+  },
+  {
+    "suite": "Parse",
+    "operation": "Response, 4 answer records",
+    "total_ns": 232939153,
+    "iterations": 100000,
+    "ns_per_op": 2329.39
+  },
+  {
+    "suite": "Parse",
+    "operation": "Response, 4 answer records",
+    "total_ns": 3967280616,
     "iterations": 1000000,
-    "ns_per_op": 12856.77
+    "ns_per_op": 3967.28
   },
   {
     "suite": "Record",
     "operation": "Existing name+type bucket",
-    "total_ns": 27828539,
+    "total_ns": 12098769,
     "iterations": 10000,
-    "ns_per_op": 2782.85
+    "ns_per_op": 1209.88
   },
   {
     "suite": "Record",
     "operation": "Existing name+type bucket",
-    "total_ns": 224769231,
+    "total_ns": 137027692,
     "iterations": 100000,
-    "ns_per_op": 2247.69
+    "ns_per_op": 1370.28
   },
   {
     "suite": "Record",
     "operation": "Existing name+type bucket",
-    "total_ns": 2272322769,
+    "total_ns": 1245380923,
     "iterations": 1000000,
-    "ns_per_op": 2272.32
+    "ns_per_op": 1245.38
   },
   {
     "suite": "Record",
     "operation": "Missing name",
-    "total_ns": 2696615,
+    "total_ns": 1900924,
     "iterations": 10000,
-    "ns_per_op": 269.66
+    "ns_per_op": 190.09
   },
   {
     "suite": "Record",
     "operation": "Missing name",
-    "total_ns": 26990847,
+    "total_ns": 19424000,
     "iterations": 100000,
-    "ns_per_op": 269.91
+    "ns_per_op": 194.24
   },
   {
     "suite": "Record",
     "operation": "Missing name",
-    "total_ns": 270711692,
+    "total_ns": 192233923,
     "iterations": 1000000,
-    "ns_per_op": 270.71
+    "ns_per_op": 192.23
   },
   {
     "suite": "Resolve",
     "operation": "Answer found",
-    "total_ns": 46616307,
+    "total_ns": 23806154,
     "iterations": 10000,
-    "ns_per_op": 4661.63
+    "ns_per_op": 2380.62
   },
   {
     "suite": "Resolve",
     "operation": "Answer found",
-    "total_ns": 464768077,
+    "total_ns": 291235461,
     "iterations": 100000,
-    "ns_per_op": 4647.68
+    "ns_per_op": 2912.35
   },
   {
     "suite": "Resolve",
     "operation": "Answer found",
-    "total_ns": 4138721615,
+    "total_ns": 2718628616,
     "iterations": 1000000,
-    "ns_per_op": 4138.72
+    "ns_per_op": 2718.63
   },
   {
     "suite": "Resolve",
     "operation": "NXDOMAIN",
-    "total_ns": 16818384,
+    "total_ns": 17689230,
     "iterations": 10000,
-    "ns_per_op": 1681.84
+    "ns_per_op": 1768.92
   },
   {
     "suite": "Resolve",
     "operation": "NXDOMAIN",
-    "total_ns": 213063385,
+    "total_ns": 176634769,
     "iterations": 100000,
-    "ns_per_op": 2130.63
+    "ns_per_op": 1766.35
   },
   {
     "suite": "Resolve",
     "operation": "NXDOMAIN",
-    "total_ns": 2571068231,
+    "total_ns": 1766400615,
     "iterations": 1000000,
-    "ns_per_op": 2571.07
+    "ns_per_op": 1766.40
   },
   {
     "suite": "Resolve",
     "operation": "NODATA",
-    "total_ns": 18379077,
+    "total_ns": 18297616,
     "iterations": 10000,
-    "ns_per_op": 1837.91
+    "ns_per_op": 1829.76
   },
   {
     "suite": "Resolve",
     "operation": "NODATA",
-    "total_ns": 236028923,
+    "total_ns": 182629308,
     "iterations": 100000,
-    "ns_per_op": 2360.29
+    "ns_per_op": 1826.29
   },
   {
     "suite": "Resolve",
     "operation": "NODATA",
-    "total_ns": 2122349846,
+    "total_ns": 2070155770,
     "iterations": 1000000,
-    "ns_per_op": 2122.35
+    "ns_per_op": 2070.16
   },
   {
     "suite": "Message Move",
     "operation": "Move-construct",
-    "total_ns": 1066461,
+    "total_ns": 436000,
     "iterations": 10000,
-    "ns_per_op": 106.65
+    "ns_per_op": 43.60
   },
   {
     "suite": "Message Move",
     "operation": "Move-construct",
-    "total_ns": 7527769,
+    "total_ns": 4383461,
     "iterations": 100000,
-    "ns_per_op": 75.28
+    "ns_per_op": 43.83
   },
   {
     "suite": "Message Move",
     "operation": "Move-construct",
-    "total_ns": 64989231,
+    "total_ns": 43688616,
     "iterations": 1000000,
-    "ns_per_op": 64.99
+    "ns_per_op": 43.69
   },
   {
     "suite": "Message Move",
     "operation": "Move-assign",
-    "total_ns": 593000,
+    "total_ns": 385230,
     "iterations": 10000,
-    "ns_per_op": 59.30
+    "ns_per_op": 38.52
   },
   {
     "suite": "Message Move",
     "operation": "Move-assign",
-    "total_ns": 6053308,
+    "total_ns": 3824307,
     "iterations": 100000,
-    "ns_per_op": 60.53
+    "ns_per_op": 38.24
   },
   {
     "suite": "Message Move",
     "operation": "Move-assign",
-    "total_ns": 57135154,
+    "total_ns": 38114230,
     "iterations": 1000000,
-    "ns_per_op": 57.14
+    "ns_per_op": 38.11
   },
   {
     "suite": "Answer Count Growth",
     "operation": "4 answer records",
-    "total_ns": 20316538,
+    "total_ns": 22422846,
     "iterations": 10000,
-    "ns_per_op": 2031.65
+    "ns_per_op": 2242.28
   },
   {
     "suite": "Answer Count Growth",
     "operation": "4 answer records",
-    "total_ns": 247100308,
+    "total_ns": 239143385,
     "iterations": 100000,
-    "ns_per_op": 2471.00
+    "ns_per_op": 2391.43
   },
   {
     "suite": "Answer Count Growth",
     "operation": "4 answer records",
-    "total_ns": 2250108385,
+    "total_ns": 2508993231,
     "iterations": 1000000,
-    "ns_per_op": 2250.11
+    "ns_per_op": 2508.99
   },
   {
     "suite": "Answer Count Growth",
     "operation": "16 answer records",
-    "total_ns": 70028923,
+    "total_ns": 70590692,
     "iterations": 10000,
-    "ns_per_op": 7002.89
+    "ns_per_op": 7059.07
   },
   {
     "suite": "Answer Count Growth",
     "operation": "16 answer records",
-    "total_ns": 822936693,
+    "total_ns": 845406154,
     "iterations": 100000,
-    "ns_per_op": 8229.37
+    "ns_per_op": 8454.06
   },
   {
     "suite": "Answer Count Growth",
     "operation": "16 answer records",
-    "total_ns": 11916791155,
+    "total_ns": 7246517231,
     "iterations": 1000000,
-    "ns_per_op": 11916.79
+    "ns_per_op": 7246.52
   },
   {
     "suite": "Answer Count Growth",
     "operation": "64 answer records",
-    "total_ns": 568193616,
+    "total_ns": 286577538,
     "iterations": 10000,
-    "ns_per_op": 56819.36
+    "ns_per_op": 28657.75
   },
   {
     "suite": "Answer Count Growth",
     "operation": "64 answer records",
-    "total_ns": 5099330847,
+    "total_ns": 2970252000,
     "iterations": 100000,
-    "ns_per_op": 50993.31
+    "ns_per_op": 29702.52
   },
   {
     "suite": "Answer Count Growth",
     "operation": "64 answer records",
-    "total_ns": 38868893233,
+    "total_ns": 69206074081,
     "iterations": 1000000,
-    "ns_per_op": 38868.89
+    "ns_per_op": 69206.07
   },
   {
     "suite": "Answer Count Growth",
     "operation": "4 answer records",
-    "total_ns": 25167769,
+    "total_ns": 20165539,
     "iterations": 10000,
-    "ns_per_op": 2516.78
+    "ns_per_op": 2016.55
   },
   {
     "suite": "Answer Count Growth",
     "operation": "4 answer records",
-    "total_ns": 219220384,
+    "total_ns": 175584923,
     "iterations": 100000,
-    "ns_per_op": 2192.20
+    "ns_per_op": 1755.85
   },
   {
     "suite": "Answer Count Growth",
     "operation": "4 answer records",
-    "total_ns": 2135688692,
+    "total_ns": 3261628000,
     "iterations": 1000000,
-    "ns_per_op": 2135.69
+    "ns_per_op": 3261.63
   },
   {
     "suite": "Answer Count Growth",
     "operation": "16 answer records",
-    "total_ns": 50283923,
+    "total_ns": 43941154,
     "iterations": 10000,
-    "ns_per_op": 5028.39
+    "ns_per_op": 4394.12
   },
   {
     "suite": "Answer Count Growth",
     "operation": "16 answer records",
-    "total_ns": 559670461,
+    "total_ns": 403311923,
     "iterations": 100000,
-    "ns_per_op": 5596.70
+    "ns_per_op": 4033.12
   },
   {
     "suite": "Answer Count Growth",
     "operation": "16 answer records",
-    "total_ns": 5487872846,
+    "total_ns": 3762416923,
     "iterations": 1000000,
-    "ns_per_op": 5487.87
+    "ns_per_op": 3762.42
   },
   {
     "suite": "Answer Count Growth",
     "operation": "64 answer records",
-    "total_ns": 155369231,
+    "total_ns": 114780615,
     "iterations": 10000,
-    "ns_per_op": 15536.92
+    "ns_per_op": 11478.06
   },
   {
     "suite": "Answer Count Growth",
     "operation": "64 answer records",
-    "total_ns": 1540268000,
+    "total_ns": 1781094077,
     "iterations": 100000,
-    "ns_per_op": 15402.68
+    "ns_per_op": 17810.94
   },
   {
     "suite": "Answer Count Growth",
     "operation": "64 answer records",
-    "total_ns": 16121782770,
+    "total_ns": 13922401462,
     "iterations": 1000000,
-    "ns_per_op": 16121.78
+    "ns_per_op": 13922.40
   },
   {
     "suite": "Label Depth Growth",
     "operation": "2 labels deep",
-    "total_ns": 8689847,
+    "total_ns": 9120307,
     "iterations": 10000,
-    "ns_per_op": 868.98
+    "ns_per_op": 912.03
   },
   {
     "suite": "Label Depth Growth",
     "operation": "2 labels deep",
-    "total_ns": 89550770,
+    "total_ns": 92084846,
     "iterations": 100000,
-    "ns_per_op": 895.51
+    "ns_per_op": 920.85
   },
   {
     "suite": "Label Depth Growth",
     "operation": "2 labels deep",
-    "total_ns": 896910769,
+    "total_ns": 495694154,
     "iterations": 1000000,
-    "ns_per_op": 896.91
+    "ns_per_op": 495.69
   },
   {
     "suite": "Label Depth Growth",
     "operation": "8 labels deep",
-    "total_ns": 10806769,
+    "total_ns": 5668077,
     "iterations": 10000,
-    "ns_per_op": 1080.68
+    "ns_per_op": 566.81
   },
   {
     "suite": "Label Depth Growth",
     "operation": "8 labels deep",
-    "total_ns": 114537230,
+    "total_ns": 56677231,
     "iterations": 100000,
-    "ns_per_op": 1145.37
+    "ns_per_op": 566.77
   },
   {
     "suite": "Label Depth Growth",
     "operation": "8 labels deep",
-    "total_ns": 1071142692,
+    "total_ns": 596541539,
     "iterations": 1000000,
-    "ns_per_op": 1071.14
+    "ns_per_op": 596.54
   },
   {
     "suite": "Label Depth Growth",
     "operation": "32 labels deep",
-    "total_ns": 27496385,
+    "total_ns": 14516923,
     "iterations": 10000,
-    "ns_per_op": 2749.64
+    "ns_per_op": 1451.69
   },
   {
     "suite": "Label Depth Growth",
     "operation": "32 labels deep",
-    "total_ns": 275069231,
+    "total_ns": 144013462,
     "iterations": 100000,
-    "ns_per_op": 2750.69
+    "ns_per_op": 1440.13
   },
   {
     "suite": "Label Depth Growth",
     "operation": "32 labels deep",
-    "total_ns": 2903931769,
+    "total_ns": 1895962769,
     "iterations": 1000000,
-    "ns_per_op": 2903.93
+    "ns_per_op": 1895.96
   },
   {
     "suite": "Label Depth Growth",
     "operation": "2 labels deep",
-    "total_ns": 10776846,
+    "total_ns": 14531308,
     "iterations": 10000,
-    "ns_per_op": 1077.68
+    "ns_per_op": 1453.13
   },
   {
     "suite": "Label Depth Growth",
     "operation": "2 labels deep",
-    "total_ns": 107520923,
+    "total_ns": 111516692,
     "iterations": 100000,
-    "ns_per_op": 1075.21
+    "ns_per_op": 1115.17
   },
   {
     "suite": "Label Depth Growth",
     "operation": "2 labels deep",
-    "total_ns": 1134867923,
+    "total_ns": 1385252616,
     "iterations": 1000000,
-    "ns_per_op": 1134.87
+    "ns_per_op": 1385.25
   },
   {
     "suite": "Label Depth Growth",
     "operation": "8 labels deep",
-    "total_ns": 19278461,
+    "total_ns": 24666846,
     "iterations": 10000,
-    "ns_per_op": 1927.85
+    "ns_per_op": 2466.68
   },
   {
     "suite": "Label Depth Growth",
     "operation": "8 labels deep",
-    "total_ns": 204652615,
+    "total_ns": 160364692,
     "iterations": 100000,
-    "ns_per_op": 2046.53
+    "ns_per_op": 1603.65
   },
   {
     "suite": "Label Depth Growth",
     "operation": "8 labels deep",
-    "total_ns": 2081903385,
+    "total_ns": 1203832693,
     "iterations": 1000000,
-    "ns_per_op": 2081.90
+    "ns_per_op": 1203.83
   },
   {
     "suite": "Label Depth Growth",
     "operation": "32 labels deep",
-    "total_ns": 39159384,
+    "total_ns": 22361462,
     "iterations": 10000,
-    "ns_per_op": 3915.94
+    "ns_per_op": 2236.15
   },
   {
     "suite": "Label Depth Growth",
     "operation": "32 labels deep",
-    "total_ns": 486445846,
+    "total_ns": 223158769,
     "iterations": 100000,
-    "ns_per_op": 4864.46
+    "ns_per_op": 2231.59
   },
   {
     "suite": "Label Depth Growth",
     "operation": "32 labels deep",
-    "total_ns": 3890089616,
+    "total_ns": 2263147384,
     "iterations": 1000000,
-    "ns_per_op": 3890.09
+    "ns_per_op": 2263.15
   },
   {
     "suite": "Zone Size Growth",
     "operation": "100 names stored",
-    "total_ns": 13888846,
+    "total_ns": 13993461,
     "iterations": 10000,
-    "ns_per_op": 1388.88
+    "ns_per_op": 1399.35
   },
   {
     "suite": "Zone Size Growth",
     "operation": "100 names stored",
-    "total_ns": 153929461,
+    "total_ns": 105919077,
     "iterations": 100000,
-    "ns_per_op": 1539.29
+    "ns_per_op": 1059.19
   },
   {
     "suite": "Zone Size Growth",
     "operation": "100 names stored",
-    "total_ns": 1556526538,
+    "total_ns": 717407308,
     "iterations": 1000000,
-    "ns_per_op": 1556.53
+    "ns_per_op": 717.41
   },
   {
     "suite": "Zone Size Growth",
     "operation": "1,000 names stored",
-    "total_ns": 13875461,
+    "total_ns": 7281000,
     "iterations": 10000,
-    "ns_per_op": 1387.55
+    "ns_per_op": 728.10
   },
   {
     "suite": "Zone Size Growth",
     "operation": "1,000 names stored",
-    "total_ns": 141695615,
+    "total_ns": 72537769,
     "iterations": 100000,
-    "ns_per_op": 1416.96
+    "ns_per_op": 725.38
   },
   {
     "suite": "Zone Size Growth",
     "operation": "1,000 names stored",
-    "total_ns": 1456405539,
+    "total_ns": 740674385,
     "iterations": 1000000,
-    "ns_per_op": 1456.41
+    "ns_per_op": 740.67
   },
   {
     "suite": "Zone Size Growth",
     "operation": "10,000 names stored",
-    "total_ns": 14224000,
+    "total_ns": 7291462,
     "iterations": 10000,
-    "ns_per_op": 1422.40
+    "ns_per_op": 729.15
   },
   {
     "suite": "Zone Size Growth",
     "operation": "10,000 names stored",
-    "total_ns": 141936077,
+    "total_ns": 72238154,
     "iterations": 100000,
-    "ns_per_op": 1419.36
+    "ns_per_op": 722.38
   },
   {
     "suite": "Zone Size Growth",
     "operation": "10,000 names stored",
-    "total_ns": 1454304846,
+    "total_ns": 717681000,
     "iterations": 1000000,
-    "ns_per_op": 1454.30
+    "ns_per_op": 717.68
   },
   {
     "suite": "Canonicalize",
     "operation": "Mixed-case name",
-    "total_ns": 19043693,
+    "total_ns": 16877923,
     "iterations": 10000,
-    "ns_per_op": 1904.37
+    "ns_per_op": 1687.79
   },
   {
     "suite": "Canonicalize",
     "operation": "Mixed-case name",
-    "total_ns": 212456923,
+    "total_ns": 114681307,
     "iterations": 100000,
-    "ns_per_op": 2124.57
+    "ns_per_op": 1146.81
   },
   {
     "suite": "Canonicalize",
     "operation": "Mixed-case name",
-    "total_ns": 2236007692,
+    "total_ns": 1256353847,
     "iterations": 1000000,
-    "ns_per_op": 2236.01
+    "ns_per_op": 1256.35
   },
   {
     "suite": "Name Parse",
     "operation": "Uncompressed name",
-    "total_ns": 9062154,
+    "total_ns": 4625154,
     "iterations": 10000,
-    "ns_per_op": 906.22
+    "ns_per_op": 462.52
   },
   {
     "suite": "Name Parse",
     "operation": "Uncompressed name",
-    "total_ns": 89545846,
+    "total_ns": 45789539,
     "iterations": 100000,
-    "ns_per_op": 895.46
+    "ns_per_op": 457.90
   },
   {
     "suite": "Name Parse",
     "operation": "Uncompressed name",
-    "total_ns": 927197615,
+    "total_ns": 470270385,
     "iterations": 1000000,
-    "ns_per_op": 927.20
+    "ns_per_op": 470.27
   },
   {
     "suite": "Name Parse",
     "operation": "Name via compression pointer",
-    "total_ns": 13176539,
+    "total_ns": 7126462,
     "iterations": 10000,
-    "ns_per_op": 1317.65
+    "ns_per_op": 712.65
   },
   {
     "suite": "Name Parse",
     "operation": "Name via compression pointer",
-    "total_ns": 131914769,
+    "total_ns": 72882692,
     "iterations": 100000,
-    "ns_per_op": 1319.15
+    "ns_per_op": 728.83
   },
   {
     "suite": "Name Parse",
     "operation": "Name via compression pointer",
-    "total_ns": 1353525230,
+    "total_ns": 725032000,
     "iterations": 1000000,
-    "ns_per_op": 1353.53
+    "ns_per_op": 725.03
   }
 ]
