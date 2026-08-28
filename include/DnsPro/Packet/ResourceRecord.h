@@ -41,6 +41,20 @@ struct ResourceRecord {
                              ///< `rclass`, not `class`, since the latter is a keyword.
     std::uint32_t ttl;       ///< Time-to-live, in seconds.
     Vector<std::byte> rdata; ///< Record data. `rdlength` is implicit: rdata.size().
+    std::size_t rdataOffset; ///< Absolute byte offset of `rdata` within the
+                             ///< original message buffer Parser::parse() was
+                             ///< given. `rdata` itself is a disconnected copy
+                             ///< with no memory of where it came from -- this
+                             ///< is what lets a caller who still has that
+                             ///< original buffer resolve a compressed domain
+                             ///< name embedded inside rdata (e.g. an MX
+                             ///< record's exchange, or an NS record's
+                             ///< nsdname) via Parser::parseName(buffer,
+                             ///< rdataOffset [+ any fixed-size fields the
+                             ///< record type puts before the name], out).
+                             ///< Meaningless on a ResourceRecord built any
+                             ///< other way than by Parser -- Builder does not
+                             ///< set this.
 };
 
 } // namespace DnsPro::Packet

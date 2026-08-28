@@ -205,6 +205,10 @@ Status Parser::parseResourceRecord(std::span<const std::byte> buffer, std::size_
 
     if (offset + rdlength > buffer.size()) return Status::RDATA_LENGTH_MISMATCH;
 
+    out.rdataOffset = offset; // Captured before the loop below advances offset past rdata --
+                              // this is rdata's own start position in the original buffer,
+                              // which a caller needs later to decode any compressed domain
+                              // name embedded inside it (see ResourceRecord::rdataOffset).
     out.rdata.clear();
     out.rdata.reserve(rdlength);
     for (std::size_t i = 0; i < rdlength; ++i) {

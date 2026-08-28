@@ -118,3 +118,10 @@ testable unit of behavior, independent of the categories above.
 - `header_flags_roundtrip.cpp` — header flag bits survive
   `Builder::build()` then `Parser::parse()` unchanged, at both extremes:
   `HeaderFlagsRoundtrip.AllZeroFlagsRoundtrip`, `HeaderFlagsRoundtrip.AllFlagsSetRoundtrip`
+- `rdata_name_compression.cpp` — `ResourceRecord::rdataOffset` lands
+  exactly on rdata's first byte, and the public `Parser::parseName()`,
+  called externally at that offset against the original message buffer,
+  correctly decodes a compressed domain name embedded inside rdata (an
+  MX record's exchange, part literal label and part compression
+  pointer): `RdataNameCompression.RdataOffsetLandsOnRdataStart`,
+  `RdataNameCompression.ParseNameDecodesCompressedExchange`

@@ -60,21 +60,41 @@ class Parser {
      */
     [[nodiscard]] static Status parse(std::span<const std::byte> buffer, Packet::Message& out);
 
+    /**
+     * @brief Parses a domain name starting at `offset`, following
+     * compression pointers as needed.
+     * @param buffer The full original message buffer -- a compression
+     * pointer (RFC 1035 S4.1.4) is only resolvable against this, not
+     * against a disconnected copy of just the bytes near `offset`. This
+     * must be the same buffer `offset` (and, transitively, any pointer
+     * target within it) was computed against.
+     * @param offset Where the name starts. Advanced past the name's own
+     * encoding in `buffer` on return (i.e. past the pointer itself if
+     * compressed, or past the terminating zero-length label otherwise)
+     * -- not advanced into a followed pointer's target, that's a
+     * separate cursor internally.
+     * @param out Name to populate. Left in an unspecified state on
+     * failure.
+     * @return `Status::OK` on success, or the first error encountered.
+     * @details Public so a caller holding both the original response
+     * buffer and a `ResourceRecord::rdataOffset` (see ResourceRecord.h)
+     * can decode a domain name embedded inside that record's rdata --
+     * an MX record's exchange, an NS record's nsdname, a CNAME's
+     * target, and so on. `Parser::parse()` itself only calls this for
+     * the fixed name positions RFC 1035 defines (a record's own owner
+     * name, a question's qname) -- it has no way to know, for an
+     * arbitrary record type, that rdata contains a name at all, let
+     * alone at what offset within rdata one starts. Decoding a name
+     * known to live inside a specific record type's rdata is the
+     * caller's responsibility once armed with this and rdataOffset.
+     */
+    [[nodiscard]] static Status parseName(std::span<const std::byte> buffer, std::size_t& offset,
+                                          Packet::Name& out);
+
   private:
     /// @brief Parses the fixed 12-byte header starting at `offset`.
     [[nodiscard]] static Status parseHeader(std::span<const std::byte> buffer, std::size_t& offset,
                                             Packet::Header& out);
-
-    /**
-     * @brief Parses a domain name starting at `offset`, following
-     * compression pointers as needed.
-     * @param offset Advanced past the name's own encoding in `buffer`
-     * (i.e. past the pointer itself if compressed, or past the terminating
-     * zero-length label otherwise). Not advanced into a followed pointer's
-     * target -- that's a separate cursor internally.
-     */
-    [[nodiscard]] static Status parseName(std::span<const std::byte> buffer, std::size_t& offset,
-                                          Packet::Name& out);
 
     /// @brief Parses one question-section entry (name, qtype, qclass) starting at `offset`.
     [[nodiscard]] static Status parseQuestion(std::span<const std::byte> buffer,
