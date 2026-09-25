@@ -85,7 +85,7 @@ static void bench_build_query() {
         (void)s;
     };
 
-    BENCH("Query, single question", f);
+    BENCH_SOLO("Build Query(single q)", f);
 }
 
 // Measures build() on a response carrying answer records.
@@ -98,14 +98,12 @@ static void bench_build_answer() {
         (void)s;
     };
 
-    BENCH("Response, 4 answer records", f);
+    BENCH_SOLO("Build Response(4 ans rec)", f);
 }
 
 // Executes all build benchmark cases.
 static void run_benchmarks() {
     bench_build_query();
-    std::cout << "\n";
-
     bench_build_answer();
 }
 

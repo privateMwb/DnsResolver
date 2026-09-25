@@ -59,7 +59,7 @@ void benchParseAt(std::size_t labelCount, const char* label) {
         (void)s;
     };
 
-    BENCH(label, f);
+    BENCH_SOLO(label, f);
 }
 
 void benchBuildAt(std::size_t labelCount, const char* label) {
@@ -71,7 +71,7 @@ void benchBuildAt(std::size_t labelCount, const char* label) {
         (void)s;
     };
 
-    BENCH(label, f);
+    BENCH_SOLO(label, f);
 }
 
 } // namespace
@@ -79,30 +79,20 @@ void benchBuildAt(std::size_t labelCount, const char* label) {
 // Measures parse() cost at 2, 8, and 32 labels deep.
 static void bench_parse_growth() {
     benchParseAt(2, "2 labels deep");
-    std::cout << "\n";
-
     benchParseAt(8, "8 labels deep");
-    std::cout << "\n";
-
     benchParseAt(32, "32 labels deep");
 }
 
 // Measures build() cost at 2, 8, and 32 labels deep.
 static void bench_build_growth() {
     benchBuildAt(2, "2 labels deep");
-    std::cout << "\n";
-
     benchBuildAt(8, "8 labels deep");
-    std::cout << "\n";
-
     benchBuildAt(32, "32 labels deep");
 }
 
 // Executes all label-depth-growth benchmark cases.
 static void run_benchmarks() {
     bench_parse_growth();
-    std::cout << "\n";
-
     bench_build_growth();
 }
 

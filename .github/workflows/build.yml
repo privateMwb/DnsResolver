@@ -10,6 +10,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: "${{ matrix.os }} | ${{ matrix.compiler }} | ${{ matrix.build_type }}"
@@ -58,12 +61,9 @@ jobs:
             cxx: clang++
             build_type: Release
 
-    env:
-      CCACHE_DIR: ${{ github.workspace }}/.ccache
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           submodules: recursive
 
@@ -71,49 +71,35 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt update
-          sudo apt install -y cmake ninja-build g++ clang ccache
+          sudo apt install -y cmake ninja-build g++ clang
 
-      - name: Install ccache (macOS)
-        if: runner.os == 'macOS'
-        run: brew install ccache
-
-      # MSVC skipped: ccache's MSVC support is unreliable enough that
-      # it's not worth it for a cheap caching pass. Only the
-      # FetchContent dependency cache below applies on Windows.
-      - name: Cache ccache
-        if: runner.os != 'Windows'
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.CCACHE_DIR }}
-          key: ccache-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.build_type }}-${{ github.sha }}
-          restore-keys: ccache-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.build_type }}-
-
+      # GoogleTest is fetched by tests/google/CMakeLists.txt via
+      # FetchContent at configure time - cached per matrix leg (OS +
+      # compiler + build type all affect the resulting binary, so a
+      # cache hit on one leg must never be reused by another) to avoid
+      # a fresh clang++-and-cmake-built GoogleTest on every one of the
+      # 8 legs below, every run.
       - name: Cache fetched dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: build-${{ matrix.compiler }}-${{ matrix.build_type }}/_deps
-          key: deps-${{ matrix.os }}-${{ hashFiles('tests/google_tests/CMakeLists.txt') }}
+          key: deps-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.build_type }}-${{ hashFiles('tests/google/CMakeLists.txt') }}
 
-      - name: Set compiler launcher flag
-        id: launcher
-        shell: bash
-        run: |
-          if [ "${{ runner.os }}" != "Windows" ]; then
-            echo "flag=-DCMAKE_CXX_COMPILER_LAUNCHER=ccache" >> "$GITHUB_OUTPUT"
-          else
-            echo "flag=" >> "$GITHUB_OUTPUT"
-          fi
-
-      # Only tests/ are exercised by this workflow (via ctest below).
-      # Benchmarks, tools, and examples are disabled to reduce CI time.
+      # tests/ is the only thing this workflow exercises (via ctest
+      # below) - both tests/custom (one aggregate CTest entry, added
+      # via add_test()) and tests/google (one CTest entry per TEST(),
+      # discovered via gtest_discover_tests()) ride on the same
+      # BUILD_TESTS default (ON) and don't need separate build/run
+      # steps from each other, unlike benchmark.yml's custom/google
+      # split, which does. Benchmarks, regression, and examples are
+      # disabled here to reduce CI time.
       - name: Configure
         env:
           CXX: ${{ matrix.cxx || '' }}
-        run: cmake -S . -B build-${{ matrix.compiler }}-${{ matrix.build_type }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} ${{ steps.launcher.outputs.flag }} -DBUILD_BENCHMARKS=OFF -DBUILD_REGRESSION=OFF -DBUILD_EXAMPLES=OFF
+        run: cmake -S . -B build-${{ matrix.compiler }}-${{ matrix.build_type }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DBUILD_BENCHMARKS=OFF -DBUILD_REGRESSION=OFF -DBUILD_EXAMPLES=OFF
 
       - name: Build
         run: cmake --build build-${{ matrix.compiler }}-${{ matrix.build_type }} --config ${{ matrix.build_type }}
 
       - name: Run tests
-        continue-on-error: true
         run: ctest --test-dir build-${{ matrix.compiler }}-${{ matrix.build_type }} -C ${{ matrix.build_type }} --output-on-failure

@@ -1,0 +1,34 @@
+| Benchmark | Time | CPU | Iterations |
+|---|---|---|---|
+| Lookup_ExistingNameType | 812.17 ns | 809.64 ns | 632570 |
+| Lookup_MissingName | 190.12 ns | 189.79 ns | 3688111 |
+| Lookup_ExistingNameMissingType | 236.28 ns | 235.84 ns | 2964494 |
+| Build_QuestionOnly | 567.44 ns | 566.18 ns | 1287322 |
+| Build_FourAnswerRecords | 1954.72 ns | 1950.18 ns | 453677 |
+| Parse_QuestionOnly | 525.44 ns | 524.56 ns | 1206180 |
+| Parse_FourAnswerRecords | 2430.35 ns | 2424.28 ns | 261519 |
+| Record_AddRecordExistingBucket | 1213.58 ns | 1195.77 ns | 626109 |
+| Record_RemoveRecordMissingName | 237.09 ns | 215.74 ns | 3691787 |
+| Resolve_AnswerFound | 7362.34 ns | 5140.75 ns | 136611 |
+| Resolve_NXDOMAIN | 3909.23 ns | 3595.97 ns | 196041 |
+| Resolve_NODATA | 3844.18 ns | 3714.75 ns | 188434 |
+| Message_MoveConstruct | 785.80 ns | 61.65 ns | 11786984 |
+| Message_MoveAssign | 64.51 ns | 62.25 ns | 11286598 |
+| ParseAt/ParseAt_FourAnswerRecords | 4709.34 ns | 4627.94 ns | 151116 |
+| ParseAt/ParseAt_SixteenAnswerRecords | 15575.04 ns | 15277.85 ns | 45759 |
+| ParseAt/ParseAt_SixtyFourAnswerRecords | 60232.70 ns | 59594.17 ns | 11647 |
+| BuildAt/BuildAt_FourAnswerRecords | 3148.03 ns | 3090.05 ns | 226764 |
+| BuildAt/BuildAt_SixteenAnswerRecords | 6113.81 ns | 5992.55 ns | 116756 |
+| BuildAt/BuildAt_SixtyFourAnswerRecords | 17220.50 ns | 17025.87 ns | 41099 |
+| ParseAt/ParseAt_TwoLabelsDeep | 953.51 ns | 937.07 ns | 747130 |
+| ParseAt/ParseAt_EightLabelsDeep | 1157.27 ns | 1140.09 ns | 613951 |
+| ParseAt/ParseAt_ThirtyTwoLabelsDeep | 3034.63 ns | 3006.37 ns | 233429 |
+| BuildAt/BuildAt_TwoLabelsDeep | 1199.36 ns | 1167.56 ns | 600857 |
+| BuildAt/BuildAt_TwoLabelsDeepEightLabelsDeep | 2164.59 ns | 2095.44 ns | 333394 |
+| BuildAt/BuildAt_ThirtyTwoLabelsDeep | 4149.88 ns | 4097.38 ns | 170005 |
+| LookupAt/LookupAt_Names100 | 1551.83 ns | 1511.15 ns | 464390 |
+| LookupAt/LookupAt_Names1000 | 1538.17 ns | 1528.36 ns | 458861 |
+| LookupAt/LookupAt_Names10000 | 1538.35 ns | 1519.08 ns | 461083 |
+| Canonicalize_MixedCaseName | 2109.23 ns | 2075.48 ns | 322179 |
+| NameParse_Uncompressed | 955.00 ns | 939.19 ns | 745924 |
+| NameParse_Compressed | 1435.85 ns | 1422.43 ns | 489304 |

@@ -62,7 +62,7 @@ Packet::ResourceRecord makeRecord() {
 } // namespace
 
 // Measures addRecord() appending to a name+type bucket that already exists.
-static void AddRecord_ExistingBucket(benchmark::State& state) {
+static void Record_AddRecordExistingBucket(benchmark::State& state) {
     ZoneStore store;
     store.addRecord(makeRecord());
 
@@ -70,10 +70,10 @@ static void AddRecord_ExistingBucket(benchmark::State& state) {
         store.addRecord(makeRecord());
     }
 }
-BENCHMARK(AddRecord_ExistingBucket);
+BENCHMARK(Record_AddRecordExistingBucket);
 
 // Measures removeRecord() on a name the store has no entry for at all.
-static void RemoveRecord_MissingName(benchmark::State& state) {
+static void Record_RemoveRecordMissingName(benchmark::State& state) {
     ZoneStore store;
     store.addRecord(makeRecord());
 
@@ -84,4 +84,4 @@ static void RemoveRecord_MissingName(benchmark::State& state) {
         benchmark::DoNotOptimize(removed);
     }
 }
-BENCHMARK(RemoveRecord_MissingName);
+BENCHMARK(Record_RemoveRecordMissingName);

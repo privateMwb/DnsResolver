@@ -17,15 +17,17 @@ on:
         required: true
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   update-packages:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # commits updated package recipe files back to the repo
 
     env:
       PACKAGE_NAME: dnspro
-      DNS_REPOSITORY: privateMwb/DnsResolver
+      REPOSITORY: privateMwb/DnsResolver
       ROOT_DIR: .
       CONAN_RECIPE_DIR: packaging/recipes/dnspro/all
       VCPKG_PORT_DIR: packaging/vcpkg/ports/dnspro
@@ -43,7 +45,7 @@ jobs:
           echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           ref: ${{ github.event.repository.default_branch }}
@@ -71,64 +73,59 @@ jobs:
           echo "Candidates: $(echo "$CANDIDATES" | tr '\n' ' ')"
           echo "Source branch: $BRANCH"
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
-          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
 
       - name: Download source archive
+        id: source
         run: |
-          # Fetch by resolved commit SHA, not the tag string. portfile.cmake
-          # pins REF to a raw commit SHA, and vcpkg_from_github downloads
-          # archive/<REF>.tar.gz -- GitHub embeds the ref string into the
-          # tarball's top-level folder name, so a tag-based archive
-          # (archive/refs/tags/vX.tar.gz) has different bytes, and a
-          # different hash, than the commit-based archive vcpkg actually
-          # fetches. Downloading the same URL here keeps the SHA512 we
-          # compute valid.
+          SHA=$(git rev-list -n 1 "${{ steps.tag.outputs.tag }}")
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
           curl -L \
             -o source.tar.gz \
-            https://github.com/${{ env.DNS_REPOSITORY }}/archive/${{ steps.branch.outputs.sha }}.tar.gz
+            "https://github.com/${{ env.REPOSITORY }}/archive/${SHA}.tar.gz"
 
-      - name: Download submodule archives
+      - name: Resolve and download submodule archives
+        id: submodules
         run: |
-          # Generic across any project reusing this workflow: submodules
-          # are discovered from .gitmodules at runtime, not hardcoded here
-          # by name. Projects with no .gitmodules (no vendored submodules)
-          # produce an empty manifest and are otherwise unaffected --
-          # update_package_files.py treats --submodules-manifest as
-          # optional.
-          #
-          # git ls-tree reads each gitlink entry straight from the
-          # superproject's tree at this commit, so the pinned submodule
-          # commit is available without checking out submodule content at
-          # all (no `submodules: recursive` needed on the Checkout step
-          # above).
-          echo "[]" > submodules.json
+          SHA="${{ steps.source.outputs.sha }}"
 
-          if [ -f .gitmodules ]; then
-            while read -r KEY PATH_; do
-              NAME=$(basename "$PATH_")
-              URL=$(git config --file .gitmodules --get "${KEY%.path}.url")
-              REPO=$(echo "$URL" | sed -E 's#^https?://github\.com/##; s#\.git$##')
+          echo "Actual libs/internal/ entries at $SHA:"
+          git ls-tree "$SHA" libs/internal/ | tee /dev/stderr
 
-              SUB_SHA=$(git ls-tree "${{ steps.branch.outputs.sha }}" "$PATH_" | awk '{print $3}')
-              if [ -z "$SUB_SHA" ]; then
-                echo "Could not resolve a submodule commit for $NAME at $PATH_" >&2
-                exit 1
-              fi
+          declare -A REPOS=(
+            [ArenaAllocator]=privateMwb/ArenaAllocator
+            [HashMap]=privateMwb/HashMap
+            [JsonParser]=privateMwb/JsonParser
+            [LRUCache]=privateMwb/LRUCache
+            [PoolAllocator]=privateMwb/PoolAllocator
+            [PulseThreadPool]=privateMwb/PulseThreadPool
+            [VectorPro]=privateMwb/VectorPro
+          )
+          ARGS=()
+          MISSING=()
+          for NAME in "${!REPOS[@]}"; do
+            REPO="${REPOS[$NAME]}"
+            SUB_SHA=$(git ls-tree "$SHA" "libs/internal/$NAME" | awk '{print $3}')
+            if [ -z "$SUB_SHA" ]; then
+              MISSING+=("$NAME")
+              continue
+            fi
+            curl -L -o "${NAME}.tar.gz" "https://github.com/${REPO}/archive/${SUB_SHA}.tar.gz"
+            ARGS+=("--submodule" "${NAME}=${REPO}:${SUB_SHA}:${NAME}.tar.gz")
+          done
 
-              ARCHIVE="$NAME.tar.gz"
-              curl -L -o "$ARCHIVE" "https://github.com/$REPO/archive/$SUB_SHA.tar.gz"
-
-              jq --arg name "$NAME" --arg commit "$SUB_SHA" --arg archive "$ARCHIVE" \
-                '. += [{"name": $name, "commit": $commit, "archive": $archive}]' \
-                submodules.json > submodules.json.tmp
-              mv submodules.json.tmp submodules.json
-
-              echo "$NAME -> $SUB_SHA"
-            done < <(git config --file .gitmodules --get-regexp '\.path$')
+          if [ "${#MISSING[@]}" -gt 0 ]; then
+            echo "Could not resolve libs/internal/{${MISSING[*]}} -- check names against the tree listing above" >&2
+            exit 1
           fi
 
+          {
+            echo "args<<EOF"
+            echo "${ARGS[@]}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.x"
 
@@ -136,14 +133,14 @@ jobs:
         run: |
           python scripts/update_package_files.py \
             --package ${{ env.PACKAGE_NAME }} \
-            --repo ${{ env.DNS_REPOSITORY }} \
+            --repo ${{ env.REPOSITORY }} \
             --version ${{ steps.tag.outputs.version }} \
-            --commit ${{ steps.branch.outputs.sha }} \
+            --ref ${{ steps.source.outputs.sha }} \
             --archive source.tar.gz \
-            --submodules-manifest submodules.json \
             --root-dir "$ROOT_DIR" \
             --conan-dir "$CONAN_RECIPE_DIR" \
-            --vcpkg-dir "$VCPKG_PORT_DIR"
+            --vcpkg-dir "$VCPKG_PORT_DIR" \
+            ${{ steps.submodules.outputs.args }}
 
       - name: Commit changes
         run: |

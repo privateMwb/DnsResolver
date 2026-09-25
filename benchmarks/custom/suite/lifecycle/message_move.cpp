@@ -75,7 +75,7 @@ static void bench_move_construct() {
         (void)temp;
     };
 
-    BENCH("Move-construct", f);
+    BENCH_SOLO("Move-construct", f);
 }
 
 // Measures Message move assignment.
@@ -85,14 +85,12 @@ static void bench_move_assign() {
 
     auto f = [&] { destination = std::move(source); };
 
-    BENCH("Move-assign", f);
+    BENCH_SOLO("Move-assign", f);
 }
 
 // Executes all message-move benchmark cases.
 static void run_benchmarks() {
     bench_move_construct();
-    std::cout << "\n";
-
     bench_move_assign();
 }
 

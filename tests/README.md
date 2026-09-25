@@ -26,7 +26,7 @@ framework) and `google_tests` (GoogleTest).
 
 ## Usage
 
-See `custom/README.md` and `google_tests/README.md` for each suite's
+See `custom/README.md` and `google/README.md` for each suite's
 CLI. Both are also runnable together through ctest:
 
 ```

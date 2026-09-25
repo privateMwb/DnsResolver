@@ -93,7 +93,7 @@ static void bench_parse_uncompressed() {
         (void)s;
     };
 
-    BENCH("Uncompressed name", f);
+    BENCH_SOLO("Uncompressed name", f);
 }
 
 // Measures parse() on a name reached through a compression pointer.
@@ -107,14 +107,12 @@ static void bench_parse_compressed() {
         (void)s;
     };
 
-    BENCH("Name via compression pointer", f);
+    BENCH_SOLO("Compression pointer name", f);
 }
 
 // Executes all name-parse benchmark cases.
 static void run_benchmarks() {
     bench_parse_uncompressed();
-    std::cout << "\n";
-
     bench_parse_compressed();
 }
 

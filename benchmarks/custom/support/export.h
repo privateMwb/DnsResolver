@@ -61,6 +61,6 @@ inline void exportMarkdown(const std::string& filename) {
     if (!out)
         return;
 
-    out << "# " << custom << " Benchmark Results\n";
+    out << "# " << custom << "Benchmark Results\n";
     out << markdown_buffer();
 }

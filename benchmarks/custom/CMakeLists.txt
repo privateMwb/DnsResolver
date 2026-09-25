@@ -1,8 +1,8 @@
 # ============================================================
-# Build configuration for the custom benchmark suite.
+# benchmarks/CMakeLists.txt
+# Build configuration for the project benchmark suite.
 # ============================================================
 
-# Debug builds skew every timing — default to Release.
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
 endif()
@@ -15,16 +15,16 @@ file(GLOB_RECURSE BENCH_SOURCES CONFIGURE_DEPENDS
 # Build the benchmark executable.
 add_executable(
     benchmarks
-    bench_main.cpp
     ${BENCH_SOURCES}
+    ${CMAKE_CURRENT_SOURCE_DIR}/bench_main.cpp
 )
 
-# Allow includes from support/, the shared reference baseline, and the
-# library's public headers.
+# Allow simple benchmark includes.
 target_include_directories(
     benchmarks
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}
         ${CMAKE_SOURCE_DIR}/include
 )
 
@@ -34,6 +34,3 @@ target_link_libraries(
     PRIVATE
         ${PROJECT_NAME}
 )
-
-# Require C++17.
-target_compile_features(benchmarks PRIVATE cxx_std_17)

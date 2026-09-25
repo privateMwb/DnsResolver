@@ -26,19 +26,19 @@ namespace DnsPro {
 // ============================================================
 Resolver::Resolver(ZoneStore& zone) noexcept : zone_(zone) {}
 
-
 // ============================================================
 //  Section 2 — Resolution
 // ============================================================
 Status Resolver::resolve(std::span<const std::byte> query, Vector<std::byte>& response) const {
     Packet::Message queryMessage;
-    if (Status s = Parser::parse(query, queryMessage); s != Status::OK) return s;
+    if (Status s = Parser::parse(query, queryMessage); s != Status::OK)
+        return s;
 
     Packet::Message responseMessage;
-    responseMessage.header       = queryMessage.header;
-    responseMessage.header.qr    = 1; // this is a response
-    responseMessage.header.aa    = 1; // authoritative -- answers come straight from zone_
-    responseMessage.header.ra    = 0; // no recursive lookup path exists
+    responseMessage.header = queryMessage.header;
+    responseMessage.header.qr = 1; // this is a response
+    responseMessage.header.aa = 1; // authoritative -- answers come straight from zone_
+    responseMessage.header.ra = 0; // no recursive lookup path exists
     responseMessage.header.rcode = RCODE_NOERROR;
 
     if (queryMessage.questions.empty()) {

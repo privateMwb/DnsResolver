@@ -1,21 +1,11 @@
 // clang-format off
 #include "support/framework.h"  // setProjectLabels()
-                                 // printAllBenchSuite(), printBenchSuiteList(), printOneSuite()
-                                 // bench_registry(), prettify(), toLower()
-                                 // exportJson(), exportMarkdown()
+                                // printAllBenchSuite(), printBenchSuiteList(), printOneSuite()
+                                // printUsage(), bench_registry(), prettify(), toLower()
+                                // exportJson(), exportMarkdown()
+
+#include <iomanip>              // std::setw
 // clang-format on
-
-namespace {
-
-// Both non-list-non-all exit paths below need the same JSON+MD export
-// pair; kept as one function so there's a single place to change if the
-// output filenames ever do.
-inline void exportResults() {
-    exportJson("benchmark_results.json");
-    exportMarkdown("benchmark_results.md");
-}
-
-} // namespace
 
 int main(int argc, char* argv[]) {
     setProjectLabels();
@@ -27,6 +17,11 @@ int main(int argc, char* argv[]) {
     }
 
     std::string_view requested = argv[1];
+
+    if (requested == "-h" || requested == "--help") {
+        printUsage();
+        return 0;
+    }
 
     if (requested == "list") {
         printBenchSuiteList();
@@ -45,19 +40,25 @@ int main(int argc, char* argv[]) {
         // Exact suite match (by name or id): run just this one and exit.
         if (nameLower == requestedLower || idLower == requestedLower) {
             printOneSuite(suite);
-            exportResults();
+            printSummary();
+
+            exportJson("benchmark_results.json");
+            exportMarkdown("benchmark_results.md");
             return 0;
         }
 
         // Category match: run every suite in it, keep scanning for more.
         if (categoryLower == requestedLower) {
             foundCategory = true;
+
             printOneSuite(suite);
         }
     }
 
     if (foundCategory) {
-        exportResults();
+        printSummary();
+        exportJson("benchmark_results.json");
+        exportMarkdown("benchmark_results.md");
         return 0;
     }
 

@@ -72,7 +72,7 @@ static void bench_add_record() {
 
     auto f = [&] { store.addRecord(makeRecord()); };
 
-    BENCH("Existing name+type bucket", f);
+    BENCH_SOLO("Existing name+type bucket", f);
 }
 
 // Measures removeRecord() on a name the store has no entry for at all.
@@ -87,14 +87,12 @@ static void bench_remove_record() {
         (void)removed;
     };
 
-    BENCH("Missing name", f);
+    BENCH_SOLO("Missing name", f);
 }
 
 // Executes all record benchmark cases.
 static void run_benchmarks() {
     bench_add_record();
-    std::cout << "\n";
-
     bench_remove_record();
 }
 
