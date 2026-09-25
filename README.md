@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="DnsPro" width="100%">
+  <img src=".github/assets/banner.svg" alt="DnsPro" width="100%">
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/divider.svg" alt="" width="100%">
+  <img src=".github/assets/divider.svg" alt="" width="100%">
 </p>
 
 <p align="center"><sub><b>CI / CD</b></sub></p>
@@ -61,7 +61,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/divider.svg" alt="" width="100%">
+  <img src=".github/assets/divider.svg" alt="" width="100%">
 </p>
 
 <p align="center"><sub><b>Compiler Support</b></sub></p>
@@ -73,7 +73,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/divider.svg" alt="" width="100%">
+  <img src=".github/assets/divider.svg" alt="" width="100%">
 </p>
 
 <p align="center">DnsPro is a C++23 library for parsing, building, and resolving DNS messages against an in-memory authoritative zone — a typed, RFC 1035-conformant packet representation with correct compression-pointer handling (including loop and forward-pointer rejection), not a raw-bytes wrapper.</p>
@@ -125,7 +125,7 @@
   `Message` holds, since `Vector`'s move steals the underlying buffer
   pointer rather than copying elements.
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="requirements"></a>📋 Requirements
 
@@ -135,7 +135,7 @@
   `VectorPro`/`HashMapPro` libraries (see [Dependencies](#dependencies))
   and needs their source present to build from source
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="dependencies"></a>🔗 Dependencies
 
@@ -151,7 +151,7 @@ DnsPro is built entirely on this author's own libraries, vendored as git submodu
 > allocator, not an arena-backed one. Left out of this table since
 > nothing in the library code actually uses it yet.
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="installation"></a>📦 Installation
 
@@ -180,7 +180,7 @@ target_link_libraries(your_target PRIVATE DnsPro::DnsPro)
 > but not yet published to the public registries. This section will be
 > updated once they are.
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="quick-start"></a>🚀 Quick Start
 
@@ -238,7 +238,7 @@ switch (Parser::parse(buffer, message)) {
 }
 ```
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="project-structure"></a>🗂️ Project Structure
 
@@ -329,7 +329,7 @@ DnsResolver/
 │   ├── Doxyfile
 │   └── README.md
 │
-├── assets/
+├── .github/assets/
 ├── .clang-format
 ├── .clang-tidy
 ├── .gitignore
@@ -341,7 +341,7 @@ DnsResolver/
 └── LICENSE
 ```
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="development"></a>🛠️ Development
 
@@ -377,7 +377,7 @@ See [packaging/README.md](packaging/README.md) for notes on verifying the vcpkg
 port and Conan recipe locally, and [FUZZING.md](FUZZING.md) for running the
 fuzz harness locally.
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="benchmarks"></a>📊 Benchmarks
 
@@ -416,7 +416,7 @@ itself stays flat at ~144 ns/op from 100 names up to 10,000, confirming
 the nested hash index does its job — zone size stops being a cost
 variable in the lookup path.
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="fuzzing"></a>🐛 Fuzzing
 
@@ -444,7 +444,7 @@ harness model directly.
 See [FUZZING.md](FUZZING.md) for running the harness locally and
 reproducing a failing input.
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="documentation"></a>📖 Documentation
 
@@ -452,7 +452,7 @@ Full API reference, generated with Doxygen from `docs/Doxyfile`:
 
 **https://privateMwb.github.io/DnsResolver/**
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="contributing"></a>🤝 Contributing
 
@@ -465,14 +465,14 @@ Issues and pull requests are welcome. Before submitting a PR:
   (see [FUZZING.md](FUZZING.md)) before pushing catches most
   malformed-input regressions before CI does
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="changelog"></a>📝 Changelog
 
 See the [Releases](https://github.com/privateMwb/DnsResolver/releases)
 page for version history and release notes.
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="security"></a>🔒 Security
 
@@ -480,7 +480,7 @@ Please don't report a suspected vulnerability in a public issue. Use
 GitHub's private reporting instead — this repository's **Security** tab,
 then **Report a vulnerability** — so it can be fixed before it's disclosed.
 
-<div align="right"><a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
+<div align="right"><a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a></div>
 
 ## <a id="license"></a>📄 License
 
@@ -491,5 +491,5 @@ MIT — see [LICENSE](LICENSE) for details.
 </p>
 
 <p align="center">
-  <a href="#-table-of-contents"><img src="assets/back-to-top.svg" alt="Back to top" height="28"></a>
+  <a href="#-table-of-contents"><img src=".github/assets/back-to-top.svg" alt="Back to top" height="28"></a>
 </p>
