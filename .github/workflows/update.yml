@@ -94,10 +94,6 @@ jobs:
           declare -A REPOS=(
             [ArenaAllocator]=privateMwb/ArenaAllocator
             [HashMap]=privateMwb/HashMap
-            [JsonParser]=privateMwb/JsonParser
-            [LRUCache]=privateMwb/LRUCache
-            [PoolAllocator]=privateMwb/PoolAllocator
-            [PulseThreadPool]=privateMwb/PulseThreadPool
             [VectorPro]=privateMwb/VectorPro
           )
           ARGS=()
