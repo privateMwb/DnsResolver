@@ -93,7 +93,7 @@ jobs:
 
           declare -A REPOS=(
             [ArenaAllocator]=privateMwb/ArenaAllocator
-            [HashMap]=privateMwb/HashMap
+            [HashMapPro]=privateMwb/HashMapPro
             [VectorPro]=privateMwb/VectorPro
           )
           ARGS=()
