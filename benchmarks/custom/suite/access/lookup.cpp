@@ -65,7 +65,7 @@ static void bench_lookup_hit() {
         (void)matches;
     };
 
-    BENCH("Existing name+type", f);
+    BENCH_SOLO("Exist name type", f);
 }
 
 // Measures lookup() on a name the store has no entry for at all.
@@ -78,7 +78,7 @@ static void bench_lookup_miss() {
         (void)matches;
     };
 
-    BENCH("Missing name", f);
+    BENCH_SOLO("Missing name", f);
 }
 
 // Measures lookup() on a name the store holds, but not with this type.
@@ -91,17 +91,13 @@ static void bench_lookup_nodata() {
         (void)matches;
     };
 
-    BENCH("Existing name, missing type", f);
+    BENCH_SOLO("Exist name missing type", f);
 }
 
 // Executes all lookup benchmark cases.
 static void run_benchmarks() {
     bench_lookup_hit();
-    std::cout << "\n";
-
     bench_lookup_miss();
-    std::cout << "\n";
-
     bench_lookup_nodata();
 }
 

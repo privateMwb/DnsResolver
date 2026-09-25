@@ -1,7 +1,19 @@
 # ============================================================
 # .github/workflows/sanitizers.yml
-# Builds and runs the test suite under ASan/UBSan on every push
-# and pull request.
+# Builds and runs the test suite under ASan/UBSan, and separately
+# under TSan, on every push and pull request.
+#
+# TSan is a separate job rather than a third flag alongside
+# -fsanitize=address,undefined: ASan and TSan instrument memory access
+# in mutually exclusive, incompatible ways and cannot share a build.
+# TSan is the one that actually matters most for this project --
+# Server dispatches every connection onto a real ThreadPoolPro-backed
+# pool (see tests/suite/concurrency/pool_concurrent_requests.cpp), and
+# the streaming-connection capacity guard added for SSE
+# (Server::activeStreams_, checked and incremented/decremented around
+# each StreamHandler invocation - see
+# tests/suite/concurrency/sse_capacity_cap.cpp) is exactly the kind of
+# freshly-written, race-sensitive code TSan exists to catch a bug in.
 # ============================================================
 
 name: Sanitizers
@@ -10,36 +22,26 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
-  sanitizers:
+  asan-ubsan:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           submodules: recursive
 
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install -y cmake clang ccache
+          sudo apt install -y cmake clang
 
-      - name: Cache ccache
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ccache
-          key: ccache-sanitizers-${{ github.sha }}
-          restore-keys: ccache-sanitizers-
-
-      - name: Cache fetched dependencies
-        uses: actions/cache@v4
-        with:
-          path: build/_deps
-          key: deps-sanitizers-${{ hashFiles('tests/google_tests/CMakeLists.txt') }}
-
-      # Benchmarks/regression tools/examples are skipped: instrumenting
-      # a fetched third-party dependency (regression/ pulls in
+      # Benchmarks/regression/examples are skipped: instrumenting a
+      # fetched third-party dependency (regression/ pulls in
       # nlohmann_json) with sanitizer flags wastes build time and
       # surfaces warnings this repo can't fix.
       - name: Configure
@@ -47,7 +49,6 @@ jobs:
           cmake -S . -B build \
             -DCMAKE_BUILD_TYPE=Debug \
             -DCMAKE_CXX_COMPILER=clang++ \
-            -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
             -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer" \
             -DBUILD_BENCHMARKS=OFF \
             -DBUILD_REGRESSION=OFF \
@@ -57,5 +58,38 @@ jobs:
         run: cmake --build build --parallel
 
       - name: Run tests
-        continue-on-error: true
+        run: ctest --test-dir build --output-on-failure
+
+  tsan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y cmake clang
+
+      - name: Configure
+        run: |
+          cmake -S . -B build \
+            -DCMAKE_BUILD_TYPE=Debug \
+            -DCMAKE_CXX_COMPILER=clang++ \
+            -DCMAKE_CXX_FLAGS="-fsanitize=thread -fno-omit-frame-pointer" \
+            -DBUILD_BENCHMARKS=OFF \
+            -DBUILD_REGRESSION=OFF \
+            -DBUILD_EXAMPLES=OFF
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      # TSAN_OPTIONS: report a nonzero exit code on any detected race so
+      # CI actually fails on one, rather than just printing a warning.
+      - name: Run tests
+        env:
+          TSAN_OPTIONS: "halt_on_error=1"
         run: ctest --test-dir build --output-on-failure

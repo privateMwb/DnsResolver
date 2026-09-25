@@ -1,8 +1,8 @@
-# Regression
+# Custom Regression
 
 Compares a benchmark run against a saved baseline snapshot and reports
 the change per operation — how much faster or slower the current code
-is. Reads from `benchmarks/baselines/*.json` and
+is. Reads from `benchmarks/baselines/<tag>/<tag>.json` and
 `benchmarks/results/benchmark_results.json`, and writes a JSON and a
 markdown report back out to `benchmarks/results/`.
 
@@ -15,12 +15,12 @@ title.
 Configure with the regression tool enabled and build:
 
 ```
-cmake -S . -B build_regression -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_BENCHMARKS=OFF -DBUILD_REGRESSION=ON
-cmake --build build_regression
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_BENCHMARKS=OFF -DBUILD_REGRESSION=ON
+cmake --build build
 ```
 
-This produces a single `regression` executable under
-`build_regression/`, and fetches `nlohmann_json` at configure time.
+This produces a single `regression` executable under `build/`, and
+fetches `nlohmann_json` at configure time.
 
 ## Usage
 
@@ -28,29 +28,89 @@ Compare the newest baseline snapshot against the current benchmark
 results, then export both reports:
 
 ```
-./build_regression/regression
+./build/regression
 ```
 
 List every available baseline snapshot, oldest to newest — useful
-when you don't remember a baseline's exact dnspro:
+when you don't remember a baseline's exact name. Shows the project
+name and a tree of version tags, with the total count boxed at the
+bottom:
 
 ```
-./build_regression/regression list
+./build/regression list
 ```
 
-Compare one dnsprod baseline against the current benchmark results:
+List every baseline snapshot's available benchmark methods, grouped
+by version (version tags in green, methods in sky blue) — useful when
+you don't remember a method's exact name:
 
 ```
-./build_regression/regression v1.2.0
+./build/regression methods
 ```
 
-Compare two dnsprod baselines directly against each other, instead of
-against the current run:
+Restrict that listing to a single version:
 
 ```
-./build_regression/regression v1.2.0 v1.3.0
+./build/regression methods v1.2.0
 ```
 
-Every run (except `list`) writes `regression_results.json` and
-`regression_results.md` to `benchmarks/results/`, overwriting any
-previous report.
+Compare one custom baseline against the current benchmark results:
+
+```
+./build/regression v1.2.0
+```
+
+Compare two custom baselines directly against each other, instead of
+against the current run. Both tags are baselines -- neither is the
+live local run -- and both show up as the actual version tags in the
+column headers (e.g. `v1.2.0` vs `v1.3.0`, instead of the generic
+"Current"/"Baseline" labels used when comparing against a live local
+run):
+
+```
+./build/regression v1.2.0 v1.3.0
+```
+
+Restrict any of the above to a single benchmark method by adding its
+name after the version tag(s). Works with the current-run comparison,
+a single chosen baseline, or two baselines head-to-head:
+
+```
+./build/regression push_back
+./build/regression v1.2.0 push_back
+./build/regression v1.2.0 v1.3.0 push_back
+```
+
+A method name with spaces or commas (e.g. `push_back, 0 listeners`, as
+shown by `regression methods`) doesn't need quoting — every word after
+the version tag(s) is joined back together into the method name:
+
+```
+./build/regression v1.2.0 v1.3.0 push_back, 0 listeners
+```
+
+A method can also be given as the `[LetterN]` id shown next to it by
+`regression methods` (e.g. `a1`, `u1`) instead of typing out its full
+name, resolved against whichever baseline is being compared:
+
+```
+./build/regression v1.2.0 u1
+```
+
+Drop the trailing number and just give the letter (e.g. `a`, `u`) to
+run every method in that group at once, instead of picking one:
+
+```
+./build/regression v1.2.0 u
+```
+
+If either side doesn't have the requested method (or, for a letter
+group, no methods in it), the tool reports which one and exits
+without writing a report.
+
+Every run (except `list` and `methods`) writes
+`regression_results.json` and `regression_results.md` to
+`benchmarks/results/`, overwriting any previous report.
+
+Run `regression -h` (or `--help`/`help`) to print this usage summary
+from the command line.

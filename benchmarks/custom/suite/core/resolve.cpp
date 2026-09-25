@@ -87,7 +87,7 @@ static void bench_resolve_hit() {
         (void)s;
     };
 
-    BENCH("Answer found", f);
+    BENCH_SOLO("Answer found", f);
 }
 
 // Measures resolve() on a query for a name that doesn't exist.
@@ -103,7 +103,7 @@ static void bench_resolve_miss() {
         (void)s;
     };
 
-    BENCH("NXDOMAIN", f);
+    BENCH_SOLO("NXDOMAIN", f);
 }
 
 // Measures resolve() on a query for a name that exists, but not with this type.
@@ -119,17 +119,13 @@ static void bench_resolve_nodata() {
         (void)s;
     };
 
-    BENCH("NODATA", f);
+    BENCH_SOLO("NODATA", f);
 }
 
 // Executes all resolve benchmark cases.
 static void run_benchmarks() {
     bench_resolve_hit();
-    std::cout << "\n";
-
     bench_resolve_miss();
-    std::cout << "\n";
-
     bench_resolve_nodata();
 }
 

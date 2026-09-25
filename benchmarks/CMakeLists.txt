@@ -5,5 +5,5 @@
 # Custom framework suite — see custom/README.md.
 add_subdirectory(custom)
 
-# Google Benchmark suite — see google_benchmark/README.md.
-add_subdirectory(google_benchmarks)
+# Google Benchmark suite — see google/README.md.
+add_subdirectory(google)

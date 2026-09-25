@@ -77,7 +77,7 @@ void benchParseAt(std::size_t answerCount, const char* label) {
         (void)s;
     };
 
-    BENCH(label, f);
+    BENCH_SOLO(label, f);
 }
 
 void benchBuildAt(std::size_t answerCount, const char* label) {
@@ -89,7 +89,7 @@ void benchBuildAt(std::size_t answerCount, const char* label) {
         (void)s;
     };
 
-    BENCH(label, f);
+    BENCH_SOLO(label, f);
 }
 
 } // namespace
@@ -97,30 +97,20 @@ void benchBuildAt(std::size_t answerCount, const char* label) {
 // Measures parse() cost at 4, 16, and 64 answer records.
 static void bench_parse_growth() {
     benchParseAt(4, "4 answer records");
-    std::cout << "\n";
-
     benchParseAt(16, "16 answer records");
-    std::cout << "\n";
-
     benchParseAt(64, "64 answer records");
 }
 
 // Measures build() cost at 4, 16, and 64 answer records.
 static void bench_build_growth() {
     benchBuildAt(4, "4 answer records");
-    std::cout << "\n";
-
     benchBuildAt(16, "16 answer records");
-    std::cout << "\n";
-
     benchBuildAt(64, "64 answer records");
 }
 
 // Executes all answer-count-growth benchmark cases.
 static void run_benchmarks() {
     bench_parse_growth();
-    std::cout << "\n";
-
     bench_build_growth();
 }
 

@@ -1,770 +1,578 @@
 [
   {
-    "suite": "Lookup",
-    "operation": "Existing name+type",
+    "suite": "Element Access",
+    "operation": "get() hit",
     "iteration": 10000, 
-    "baseline_ns": 138.01,
-    "current_ns": 643.67,
-    "pct_change": -78.56
+    "baseline_ns": 1.49,
+    "current_ns": 5.52,
+    "pct_change": -73.01
   },
   {
-    "suite": "Lookup",
-    "operation": "Existing name+type",
+    "suite": "Element Access",
+    "operation": "get() hit",
     "iteration": 100000, 
-    "baseline_ns": 138.92,
-    "current_ns": 836.78,
-    "pct_change": -83.40
+    "baseline_ns": 2.00,
+    "current_ns": 4.87,
+    "pct_change": -58.93
   },
   {
-    "suite": "Lookup",
-    "operation": "Existing name+type",
+    "suite": "Element Access",
+    "operation": "get() hit",
     "iteration": 1000000, 
-    "baseline_ns": 141.91,
-    "current_ns": 679.75,
-    "pct_change": -79.12
+    "baseline_ns": 1.71,
+    "current_ns": 4.91,
+    "pct_change": -65.17
   },
   {
-    "suite": "Lookup",
-    "operation": "Missing name",
+    "suite": "Element Access",
+    "operation": "peek() hit",
     "iteration": 10000, 
-    "baseline_ns": 65.06,
-    "current_ns": 175.69,
-    "pct_change": -62.97
+    "baseline_ns": 1.26,
+    "current_ns": 3.82,
+    "pct_change": -67.02
   },
   {
-    "suite": "Lookup",
-    "operation": "Missing name",
+    "suite": "Element Access",
+    "operation": "peek() hit",
     "iteration": 100000, 
-    "baseline_ns": 58.90,
-    "current_ns": 175.84,
-    "pct_change": -66.50
+    "baseline_ns": 0.85,
+    "current_ns": 4.87,
+    "pct_change": -82.55
   },
   {
-    "suite": "Lookup",
-    "operation": "Missing name",
+    "suite": "Element Access",
+    "operation": "peek() hit",
     "iteration": 1000000, 
-    "baseline_ns": 59.96,
-    "current_ns": 175.52,
-    "pct_change": -65.84
+    "baseline_ns": 1.13,
+    "current_ns": 3.82,
+    "pct_change": -70.42
   },
   {
-    "suite": "Lookup",
-    "operation": "Existing name, missing type",
+    "suite": "Iteration",
+    "operation": "keys() traversal",
     "iteration": 10000, 
-    "baseline_ns": 70.74,
-    "current_ns": 221.69,
-    "pct_change": -68.09
+    "baseline_ns": 131.23,
+    "current_ns": 409.76,
+    "pct_change": -67.97
   },
   {
-    "suite": "Lookup",
-    "operation": "Existing name, missing type",
+    "suite": "Iteration",
+    "operation": "keys() traversal",
     "iteration": 100000, 
-    "baseline_ns": 72.71,
-    "current_ns": 218.68,
-    "pct_change": -66.75
+    "baseline_ns": 135.62,
+    "current_ns": 387.44,
+    "pct_change": -65.00
   },
   {
-    "suite": "Lookup",
-    "operation": "Existing name, missing type",
+    "suite": "Iteration",
+    "operation": "keys() traversal",
     "iteration": 1000000, 
-    "baseline_ns": 72.04,
-    "current_ns": 218.92,
-    "pct_change": -67.09
+    "baseline_ns": 134.74,
+    "current_ns": 380.75,
+    "pct_change": -64.61
   },
   {
-    "suite": "Build",
-    "operation": "Query, single question",
+    "suite": "Search",
+    "operation": "contains() miss",
     "iteration": 10000, 
-    "baseline_ns": 130.06,
-    "current_ns": 1121.35,
-    "pct_change": -88.40
+    "baseline_ns": 2.30,
+    "current_ns": 2.73,
+    "pct_change": -15.75
   },
   {
-    "suite": "Build",
-    "operation": "Query, single question",
+    "suite": "Search",
+    "operation": "contains() miss",
     "iteration": 100000, 
-    "baseline_ns": 129.76,
-    "current_ns": 580.15,
-    "pct_change": -77.63
+    "baseline_ns": 1.72,
+    "current_ns": 2.71,
+    "pct_change": -36.53
   },
   {
-    "suite": "Build",
-    "operation": "Query, single question",
+    "suite": "Search",
+    "operation": "contains() miss",
     "iteration": 1000000, 
-    "baseline_ns": 129.88,
-    "current_ns": 505.47,
-    "pct_change": -74.31
+    "baseline_ns": 2.29,
+    "current_ns": 3.29,
+    "pct_change": -30.40
   },
   {
-    "suite": "Build",
-    "operation": "Response, 4 answer records",
+    "suite": "Search",
+    "operation": "get() miss",
     "iteration": 10000, 
-    "baseline_ns": 440.61,
-    "current_ns": 1435.14,
-    "pct_change": -69.30
+    "baseline_ns": 2.08,
+    "current_ns": 2.89,
+    "pct_change": -28.03
   },
   {
-    "suite": "Build",
-    "operation": "Response, 4 answer records",
+    "suite": "Search",
+    "operation": "get() miss",
     "iteration": 100000, 
-    "baseline_ns": 442.80,
-    "current_ns": 1449.89,
-    "pct_change": -69.46
+    "baseline_ns": 1.96,
+    "current_ns": 3.43,
+    "pct_change": -42.86
   },
   {
-    "suite": "Build",
-    "operation": "Response, 4 answer records",
+    "suite": "Search",
+    "operation": "get() miss",
     "iteration": 1000000, 
-    "baseline_ns": 441.45,
-    "current_ns": 2619.87,
-    "pct_change": -83.15
+    "baseline_ns": 1.96,
+    "current_ns": 3.26,
+    "pct_change": -39.88
   },
   {
-    "suite": "Parse",
-    "operation": "Query, single question",
+    "suite": "Emplace",
+    "operation": "emplace() insert",
     "iteration": 10000, 
-    "baseline_ns": 73.25,
-    "current_ns": 1121.35,
-    "pct_change": -93.47
+    "baseline_ns": 24.42,
+    "current_ns": 321.48,
+    "pct_change": -92.40
   },
   {
-    "suite": "Parse",
-    "operation": "Query, single question",
+    "suite": "Emplace",
+    "operation": "emplace() insert",
     "iteration": 100000, 
-    "baseline_ns": 62.76,
-    "current_ns": 580.15,
-    "pct_change": -89.18
+    "baseline_ns": 26.80,
+    "current_ns": 305.02,
+    "pct_change": -91.21
   },
   {
-    "suite": "Parse",
-    "operation": "Query, single question",
+    "suite": "Emplace",
+    "operation": "emplace() insert",
     "iteration": 1000000, 
-    "baseline_ns": 65.75,
-    "current_ns": 505.47,
-    "pct_change": -86.99
+    "baseline_ns": 26.71,
+    "current_ns": 509.39,
+    "pct_change": -94.76
   },
   {
-    "suite": "Parse",
-    "operation": "Response, 4 answer records",
+    "suite": "Erase",
+    "operation": "erase() existing",
     "iteration": 10000, 
-    "baseline_ns": 333.58,
-    "current_ns": 1435.14,
-    "pct_change": -76.76
+    "baseline_ns": 37.61,
+    "current_ns": 788.92,
+    "pct_change": -95.23
   },
   {
-    "suite": "Parse",
-    "operation": "Response, 4 answer records",
+    "suite": "Erase",
+    "operation": "erase() existing",
     "iteration": 100000, 
-    "baseline_ns": 339.08,
-    "current_ns": 1449.89,
-    "pct_change": -76.61
+    "baseline_ns": 36.67,
+    "current_ns": 713.31,
+    "pct_change": -94.86
   },
   {
-    "suite": "Parse",
-    "operation": "Response, 4 answer records",
+    "suite": "Erase",
+    "operation": "erase() existing",
     "iteration": 1000000, 
-    "baseline_ns": 347.05,
-    "current_ns": 2619.87,
-    "pct_change": -86.75
+    "baseline_ns": 23.86,
+    "current_ns": 556.89,
+    "pct_change": -95.72
   },
   {
-    "suite": "Record",
-    "operation": "Existing name+type bucket",
+    "suite": "Insert",
+    "operation": "put() insert",
     "iteration": 10000, 
-    "baseline_ns": 374.12,
-    "current_ns": 2782.85,
-    "pct_change": -86.56
+    "baseline_ns": 19.40,
+    "current_ns": 467.21,
+    "pct_change": -95.85
   },
   {
-    "suite": "Record",
-    "operation": "Existing name+type bucket",
+    "suite": "Insert",
+    "operation": "put() insert",
     "iteration": 100000, 
-    "baseline_ns": 329.22,
-    "current_ns": 2247.69,
-    "pct_change": -85.35
+    "baseline_ns": 27.36,
+    "current_ns": 367.78,
+    "pct_change": -92.56
   },
   {
-    "suite": "Record",
-    "operation": "Existing name+type bucket",
+    "suite": "Insert",
+    "operation": "put() insert",
     "iteration": 1000000, 
-    "baseline_ns": 324.18,
-    "current_ns": 2272.32,
-    "pct_change": -85.73
+    "baseline_ns": 21.22,
+    "current_ns": 259.32,
+    "pct_change": -91.82
   },
   {
-    "suite": "Record",
-    "operation": "Missing name",
+    "suite": "Pop Clear",
+    "operation": "clear() + refill",
     "iteration": 10000, 
-    "baseline_ns": 56.12,
-    "current_ns": 175.69,
-    "pct_change": -68.06
+    "baseline_ns": 631.73,
+    "current_ns": 3138.89,
+    "pct_change": -79.87
   },
   {
-    "suite": "Record",
-    "operation": "Missing name",
+    "suite": "Pop Clear",
+    "operation": "clear() + refill",
     "iteration": 100000, 
-    "baseline_ns": 57.46,
-    "current_ns": 175.84,
-    "pct_change": -67.32
+    "baseline_ns": 615.43,
+    "current_ns": 3136.26,
+    "pct_change": -80.38
   },
   {
-    "suite": "Record",
-    "operation": "Missing name",
+    "suite": "Pop Clear",
+    "operation": "clear() + refill",
     "iteration": 1000000, 
-    "baseline_ns": 56.66,
-    "current_ns": 175.52,
-    "pct_change": -67.72
+    "baseline_ns": 633.57,
+    "current_ns": 3515.27,
+    "pct_change": -81.98
   },
   {
-    "suite": "Resolve",
-    "operation": "Answer found",
+    "suite": "Push Back",
+    "operation": "put() insert (evicting)",
     "iteration": 10000, 
-    "baseline_ns": 484.84,
-    "current_ns": 4661.63,
-    "pct_change": -89.60
+    "baseline_ns": 44.36,
+    "current_ns": 120.77,
+    "pct_change": -63.27
   },
   {
-    "suite": "Resolve",
-    "operation": "Answer found",
+    "suite": "Push Back",
+    "operation": "put() insert (evicting)",
     "iteration": 100000, 
-    "baseline_ns": 483.41,
-    "current_ns": 4647.68,
-    "pct_change": -89.60
+    "baseline_ns": 43.68,
+    "current_ns": 121.18,
+    "pct_change": -63.95
   },
   {
-    "suite": "Resolve",
-    "operation": "Answer found",
+    "suite": "Push Back",
+    "operation": "put() insert (evicting)",
     "iteration": 1000000, 
-    "baseline_ns": 484.15,
-    "current_ns": 4138.72,
-    "pct_change": -88.30
+    "baseline_ns": 42.89,
+    "current_ns": 119.79,
+    "pct_change": -64.20
   },
   {
-    "suite": "Resolve",
-    "operation": "NXDOMAIN",
+    "suite": "Construction",
+    "operation": "construct empty",
     "iteration": 10000, 
-    "baseline_ns": 397.46,
-    "current_ns": 1681.84,
-    "pct_change": -76.37
+    "baseline_ns": 2103.83,
+    "current_ns": 15636.36,
+    "pct_change": -86.55
   },
   {
-    "suite": "Resolve",
-    "operation": "NXDOMAIN",
+    "suite": "Construction",
+    "operation": "construct empty",
     "iteration": 100000, 
-    "baseline_ns": 396.53,
-    "current_ns": 2130.63,
-    "pct_change": -81.39
+    "baseline_ns": 2098.65,
+    "current_ns": 15573.62,
+    "pct_change": -86.52
   },
   {
-    "suite": "Resolve",
-    "operation": "NXDOMAIN",
+    "suite": "Construction",
+    "operation": "construct empty",
     "iteration": 1000000, 
-    "baseline_ns": 394.94,
-    "current_ns": 2571.07,
-    "pct_change": -84.64
-  },
-  {
-    "suite": "Resolve",
-    "operation": "NODATA",
-    "iteration": 10000, 
-    "baseline_ns": 402.00,
-    "current_ns": 1837.91,
-    "pct_change": -78.13
-  },
-  {
-    "suite": "Resolve",
-    "operation": "NODATA",
-    "iteration": 100000, 
-    "baseline_ns": 395.62,
-    "current_ns": 2360.29,
-    "pct_change": -83.24
-  },
-  {
-    "suite": "Resolve",
-    "operation": "NODATA",
-    "iteration": 1000000, 
-    "baseline_ns": 398.70,
-    "current_ns": 2122.35,
-    "pct_change": -81.21
-  },
-  {
-    "suite": "Message Move",
-    "operation": "Move-construct",
-    "iteration": 10000, 
-    "baseline_ns": 9.57,
-    "current_ns": 106.65,
-    "pct_change": -91.03
-  },
-  {
-    "suite": "Message Move",
-    "operation": "Move-construct",
-    "iteration": 100000, 
-    "baseline_ns": 9.38,
-    "current_ns": 75.28,
-    "pct_change": -87.54
-  },
-  {
-    "suite": "Message Move",
-    "operation": "Move-construct",
-    "iteration": 1000000, 
-    "baseline_ns": 5.39,
-    "current_ns": 64.99,
-    "pct_change": -91.71
-  },
-  {
-    "suite": "Message Move",
-    "operation": "Move-assign",
-    "iteration": 10000, 
-    "baseline_ns": 5.95,
-    "current_ns": 59.30,
-    "pct_change": -89.97
-  },
-  {
-    "suite": "Message Move",
-    "operation": "Move-assign",
-    "iteration": 100000, 
-    "baseline_ns": 5.91,
-    "current_ns": 60.53,
-    "pct_change": -90.24
-  },
-  {
-    "suite": "Message Move",
-    "operation": "Move-assign",
-    "iteration": 1000000, 
-    "baseline_ns": 5.85,
-    "current_ns": 57.14,
-    "pct_change": -89.76
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "4 answer records",
-    "iteration": 10000, 
-    "baseline_ns": 315.78,
-    "current_ns": 2031.65,
-    "pct_change": -84.46
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "4 answer records",
-    "iteration": 100000, 
-    "baseline_ns": 312.72,
-    "current_ns": 2471.00,
-    "pct_change": -87.34
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "4 answer records",
-    "iteration": 1000000, 
-    "baseline_ns": 315.45,
-    "current_ns": 2250.11,
-    "pct_change": -85.98
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "16 answer records",
-    "iteration": 10000, 
-    "baseline_ns": 1220.01,
-    "current_ns": 7002.89,
-    "pct_change": -82.58
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "16 answer records",
-    "iteration": 100000, 
-    "baseline_ns": 1222.81,
-    "current_ns": 8229.37,
-    "pct_change": -85.14
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "16 answer records",
-    "iteration": 1000000, 
-    "baseline_ns": 1219.16,
-    "current_ns": 11916.79,
-    "pct_change": -89.77
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "64 answer records",
-    "iteration": 10000, 
-    "baseline_ns": 6107.97,
-    "current_ns": 56819.36,
-    "pct_change": -89.25
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "64 answer records",
-    "iteration": 100000, 
-    "baseline_ns": 6138.30,
-    "current_ns": 50993.31,
-    "pct_change": -87.96
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "64 answer records",
-    "iteration": 1000000, 
-    "baseline_ns": 6149.22,
-    "current_ns": 38868.89,
-    "pct_change": -84.18
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "4 answer records",
-    "iteration": 10000, 
-    "baseline_ns": 438.03,
-    "current_ns": 2031.65,
-    "pct_change": -78.44
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "4 answer records",
-    "iteration": 100000, 
-    "baseline_ns": 436.94,
-    "current_ns": 2471.00,
-    "pct_change": -82.32
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "4 answer records",
-    "iteration": 1000000, 
-    "baseline_ns": 436.95,
-    "current_ns": 2250.11,
-    "pct_change": -80.58
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "16 answer records",
-    "iteration": 10000, 
-    "baseline_ns": 1233.42,
-    "current_ns": 7002.89,
-    "pct_change": -82.39
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "16 answer records",
-    "iteration": 100000, 
-    "baseline_ns": 1235.52,
-    "current_ns": 8229.37,
-    "pct_change": -84.99
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "16 answer records",
-    "iteration": 1000000, 
-    "baseline_ns": 1235.55,
-    "current_ns": 11916.79,
-    "pct_change": -89.63
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "64 answer records",
-    "iteration": 10000, 
-    "baseline_ns": 4340.63,
-    "current_ns": 56819.36,
-    "pct_change": -92.36
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "64 answer records",
-    "iteration": 100000, 
-    "baseline_ns": 4327.80,
-    "current_ns": 50993.31,
-    "pct_change": -91.51
-  },
-  {
-    "suite": "Answer Count Growth",
-    "operation": "64 answer records",
-    "iteration": 1000000, 
-    "baseline_ns": 4316.69,
-    "current_ns": 38868.89,
-    "pct_change": -88.89
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "2 labels deep",
-    "iteration": 10000, 
-    "baseline_ns": 62.87,
-    "current_ns": 868.98,
-    "pct_change": -92.77
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "2 labels deep",
-    "iteration": 100000, 
-    "baseline_ns": 63.11,
-    "current_ns": 895.51,
-    "pct_change": -92.95
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "2 labels deep",
-    "iteration": 1000000, 
-    "baseline_ns": 62.89,
-    "current_ns": 896.91,
-    "pct_change": -92.99
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "8 labels deep",
-    "iteration": 10000, 
-    "baseline_ns": 107.43,
-    "current_ns": 1080.68,
-    "pct_change": -90.06
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "8 labels deep",
-    "iteration": 100000, 
-    "baseline_ns": 106.68,
-    "current_ns": 1145.37,
-    "pct_change": -90.69
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "8 labels deep",
-    "iteration": 1000000, 
-    "baseline_ns": 106.41,
-    "current_ns": 1071.14,
-    "pct_change": -90.07
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "32 labels deep",
-    "iteration": 10000, 
-    "baseline_ns": 372.44,
-    "current_ns": 2749.64,
-    "pct_change": -86.45
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "32 labels deep",
-    "iteration": 100000, 
-    "baseline_ns": 366.99,
-    "current_ns": 2750.69,
-    "pct_change": -86.66
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "32 labels deep",
-    "iteration": 1000000, 
-    "baseline_ns": 367.39,
-    "current_ns": 2903.93,
-    "pct_change": -87.35
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "2 labels deep",
-    "iteration": 10000, 
-    "baseline_ns": 129.35,
-    "current_ns": 868.98,
-    "pct_change": -85.11
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "2 labels deep",
-    "iteration": 100000, 
-    "baseline_ns": 126.59,
-    "current_ns": 895.51,
-    "pct_change": -85.86
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "2 labels deep",
-    "iteration": 1000000, 
-    "baseline_ns": 126.04,
-    "current_ns": 896.91,
-    "pct_change": -85.95
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "8 labels deep",
-    "iteration": 10000, 
-    "baseline_ns": 252.08,
-    "current_ns": 1080.68,
-    "pct_change": -76.67
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "8 labels deep",
-    "iteration": 100000, 
-    "baseline_ns": 252.12,
-    "current_ns": 1145.37,
-    "pct_change": -77.99
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "8 labels deep",
-    "iteration": 1000000, 
-    "baseline_ns": 252.37,
-    "current_ns": 1071.14,
-    "pct_change": -76.44
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "32 labels deep",
-    "iteration": 10000, 
-    "baseline_ns": 721.58,
-    "current_ns": 2749.64,
-    "pct_change": -73.76
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "32 labels deep",
-    "iteration": 100000, 
-    "baseline_ns": 721.48,
-    "current_ns": 2750.69,
-    "pct_change": -73.77
-  },
-  {
-    "suite": "Label Depth Growth",
-    "operation": "32 labels deep",
-    "iteration": 1000000, 
-    "baseline_ns": 723.09,
-    "current_ns": 2903.93,
-    "pct_change": -75.10
-  },
-  {
-    "suite": "Zone Size Growth",
-    "operation": "100 names stored",
-    "iteration": 10000, 
-    "baseline_ns": 266.73,
-    "current_ns": 1388.88,
-    "pct_change": -80.80
-  },
-  {
-    "suite": "Zone Size Growth",
-    "operation": "100 names stored",
-    "iteration": 100000, 
-    "baseline_ns": 154.14,
-    "current_ns": 1539.29,
-    "pct_change": -89.99
-  },
-  {
-    "suite": "Zone Size Growth",
-    "operation": "100 names stored",
-    "iteration": 1000000, 
-    "baseline_ns": 143.71,
-    "current_ns": 1556.53,
-    "pct_change": -90.77
-  },
-  {
-    "suite": "Zone Size Growth",
-    "operation": "1,000 names stored",
-    "iteration": 10000, 
-    "baseline_ns": 143.50,
-    "current_ns": 1387.55,
-    "pct_change": -89.66
-  },
-  {
-    "suite": "Zone Size Growth",
-    "operation": "1,000 names stored",
-    "iteration": 100000, 
-    "baseline_ns": 144.66,
-    "current_ns": 1416.96,
-    "pct_change": -89.79
-  },
-  {
-    "suite": "Zone Size Growth",
-    "operation": "1,000 names stored",
-    "iteration": 1000000, 
-    "baseline_ns": 146.83,
-    "current_ns": 1456.41,
-    "pct_change": -89.92
-  },
-  {
-    "suite": "Zone Size Growth",
-    "operation": "10,000 names stored",
-    "iteration": 10000, 
-    "baseline_ns": 144.66,
-    "current_ns": 1422.40,
-    "pct_change": -89.83
-  },
-  {
-    "suite": "Zone Size Growth",
-    "operation": "10,000 names stored",
-    "iteration": 100000, 
-    "baseline_ns": 144.70,
-    "current_ns": 1419.36,
-    "pct_change": -89.81
-  },
-  {
-    "suite": "Zone Size Growth",
-    "operation": "10,000 names stored",
-    "iteration": 1000000, 
-    "baseline_ns": 143.64,
-    "current_ns": 1454.30,
-    "pct_change": -90.12
-  },
-  {
-    "suite": "Canonicalize",
-    "operation": "Mixed-case name",
-    "iteration": 10000, 
-    "baseline_ns": 174.28,
-    "current_ns": 1904.37,
-    "pct_change": -90.85
-  },
-  {
-    "suite": "Canonicalize",
-    "operation": "Mixed-case name",
-    "iteration": 100000, 
-    "baseline_ns": 202.49,
-    "current_ns": 2124.57,
-    "pct_change": -90.47
-  },
-  {
-    "suite": "Canonicalize",
-    "operation": "Mixed-case name",
-    "iteration": 1000000, 
-    "baseline_ns": 294.89,
-    "current_ns": 2236.01,
+    "baseline_ns": 2093.09,
+    "current_ns": 15864.67,
     "pct_change": -86.81
   },
   {
-    "suite": "Name Parse",
-    "operation": "Uncompressed name",
+    "suite": "Move",
+    "operation": "move-assign",
     "iteration": 10000, 
-    "baseline_ns": 67.05,
-    "current_ns": 906.22,
-    "pct_change": -92.60
+    "baseline_ns": 6.16,
+    "current_ns": 63.59,
+    "pct_change": -90.31
   },
   {
-    "suite": "Name Parse",
-    "operation": "Uncompressed name",
+    "suite": "Move",
+    "operation": "move-assign",
     "iteration": 100000, 
-    "baseline_ns": 68.94,
-    "current_ns": 895.46,
-    "pct_change": -92.30
+    "baseline_ns": 7.51,
+    "current_ns": 63.94,
+    "pct_change": -88.25
   },
   {
-    "suite": "Name Parse",
-    "operation": "Uncompressed name",
+    "suite": "Move",
+    "operation": "move-assign",
     "iteration": 1000000, 
-    "baseline_ns": 71.12,
-    "current_ns": 927.20,
-    "pct_change": -92.33
+    "baseline_ns": 6.71,
+    "current_ns": 65.14,
+    "pct_change": -89.70
   },
   {
-    "suite": "Name Parse",
-    "operation": "Name via compression pointer",
+    "suite": "Move",
+    "operation": "move-construct",
     "iteration": 10000, 
-    "baseline_ns": 104.52,
-    "current_ns": 1317.65,
-    "pct_change": -92.07
+    "baseline_ns": 832.18,
+    "current_ns": 7739.78,
+    "pct_change": -89.25
   },
   {
-    "suite": "Name Parse",
-    "operation": "Name via compression pointer",
+    "suite": "Move",
+    "operation": "move-construct",
     "iteration": 100000, 
-    "baseline_ns": 103.53,
-    "current_ns": 1319.15,
-    "pct_change": -92.15
+    "baseline_ns": 795.99,
+    "current_ns": 7552.38,
+    "pct_change": -89.46
   },
   {
-    "suite": "Name Parse",
-    "operation": "Name via compression pointer",
+    "suite": "Move",
+    "operation": "move-construct",
     "iteration": 1000000, 
-    "baseline_ns": 102.93,
-    "current_ns": 1353.53,
-    "pct_change": -92.40
+    "baseline_ns": 796.57,
+    "current_ns": 7542.37,
+    "pct_change": -89.44
+  },
+  {
+    "suite": "Reallocation",
+    "operation": "resize() grow",
+    "iteration": 10000, 
+    "baseline_ns": 34.81,
+    "current_ns": 631.16,
+    "pct_change": -94.48
+  },
+  {
+    "suite": "Reallocation",
+    "operation": "resize() grow",
+    "iteration": 100000, 
+    "baseline_ns": 43.49,
+    "current_ns": 484.11,
+    "pct_change": -91.02
+  },
+  {
+    "suite": "Reallocation",
+    "operation": "resize() grow",
+    "iteration": 1000000, 
+    "baseline_ns": 39.02,
+    "current_ns": 323.40,
+    "pct_change": -87.93
+  },
+  {
+    "suite": "Reserve",
+    "operation": "reserve()",
+    "iteration": 10000, 
+    "baseline_ns": 0.90,
+    "current_ns": 12.98,
+    "pct_change": -93.07
+  },
+  {
+    "suite": "Reserve",
+    "operation": "reserve()",
+    "iteration": 100000, 
+    "baseline_ns": 0.31,
+    "current_ns": 12.93,
+    "pct_change": -97.60
+  },
+  {
+    "suite": "Reserve",
+    "operation": "reserve()",
+    "iteration": 1000000, 
+    "baseline_ns": 0.74,
+    "current_ns": 14.14,
+    "pct_change": -94.77
+  },
+  {
+    "suite": "Shrink To Fit",
+    "operation": "shrink_to_fit()",
+    "iteration": 10000, 
+    "baseline_ns": 966.43,
+    "current_ns": 9275.24,
+    "pct_change": -89.58
+  },
+  {
+    "suite": "Shrink To Fit",
+    "operation": "shrink_to_fit()",
+    "iteration": 100000, 
+    "baseline_ns": 986.89,
+    "current_ns": 8965.82,
+    "pct_change": -88.99
+  },
+  {
+    "suite": "Shrink To Fit",
+    "operation": "shrink_to_fit()",
+    "iteration": 1000000, 
+    "baseline_ns": 960.11,
+    "current_ns": 9119.57,
+    "pct_change": -89.47
+  },
+  {
+    "suite": "Observer",
+    "operation": "hitCount()",
+    "iteration": 10000, 
+    "baseline_ns": 0.29,
+    "current_ns": 1.25,
+    "pct_change": -76.80
+  },
+  {
+    "suite": "Observer",
+    "operation": "hitCount()",
+    "iteration": 100000, 
+    "baseline_ns": 0.29,
+    "current_ns": 1.85,
+    "pct_change": -84.32
+  },
+  {
+    "suite": "Observer",
+    "operation": "hitCount()",
+    "iteration": 1000000, 
+    "baseline_ns": 0.46,
+    "current_ns": 1.23,
+    "pct_change": -62.60
+  },
+  {
+    "suite": "Observer",
+    "operation": "missCount()",
+    "iteration": 10000, 
+    "baseline_ns": 0.70,
+    "current_ns": 1.87,
+    "pct_change": -62.57
+  },
+  {
+    "suite": "Observer",
+    "operation": "missCount()",
+    "iteration": 100000, 
+    "baseline_ns": 0.58,
+    "current_ns": 1.23,
+    "pct_change": -52.85
+  },
+  {
+    "suite": "Observer",
+    "operation": "missCount()",
+    "iteration": 1000000, 
+    "baseline_ns": 0.53,
+    "current_ns": 1.30,
+    "pct_change": -59.23
+  },
+  {
+    "suite": "Observer",
+    "operation": "hitRate()",
+    "iteration": 10000, 
+    "baseline_ns": 1.51,
+    "current_ns": 14.18,
+    "pct_change": -89.35
+  },
+  {
+    "suite": "Observer",
+    "operation": "hitRate()",
+    "iteration": 100000, 
+    "baseline_ns": 1.52,
+    "current_ns": 14.16,
+    "pct_change": -89.27
+  },
+  {
+    "suite": "Observer",
+    "operation": "hitRate()",
+    "iteration": 1000000, 
+    "baseline_ns": 1.37,
+    "current_ns": 14.75,
+    "pct_change": -90.71
+  },
+  {
+    "suite": "Observer",
+    "operation": "mostRecentKey()",
+    "iteration": 10000, 
+    "baseline_ns": 0.29,
+    "current_ns": 3.08,
+    "pct_change": -90.58
+  },
+  {
+    "suite": "Observer",
+    "operation": "mostRecentKey()",
+    "iteration": 100000, 
+    "baseline_ns": 0.71,
+    "current_ns": 3.08,
+    "pct_change": -76.95
+  },
+  {
+    "suite": "Observer",
+    "operation": "mostRecentKey()",
+    "iteration": 1000000, 
+    "baseline_ns": 0.29,
+    "current_ns": 3.15,
+    "pct_change": -90.79
+  },
+  {
+    "suite": "Observer",
+    "operation": "leastRecentKey()",
+    "iteration": 10000, 
+    "baseline_ns": 0.29,
+    "current_ns": 3.10,
+    "pct_change": -90.65
+  },
+  {
+    "suite": "Observer",
+    "operation": "leastRecentKey()",
+    "iteration": 100000, 
+    "baseline_ns": 0.29,
+    "current_ns": 3.08,
+    "pct_change": -90.58
+  },
+  {
+    "suite": "Observer",
+    "operation": "leastRecentKey()",
+    "iteration": 1000000, 
+    "baseline_ns": 0.57,
+    "current_ns": 3.13,
+    "pct_change": -81.79
+  },
+  {
+    "suite": "State",
+    "operation": "size()",
+    "iteration": 10000, 
+    "baseline_ns": 0.35,
+    "current_ns": 1.88,
+    "pct_change": -81.38
+  },
+  {
+    "suite": "State",
+    "operation": "size()",
+    "iteration": 100000, 
+    "baseline_ns": 0.35,
+    "current_ns": 1.23,
+    "pct_change": -71.54
+  },
+  {
+    "suite": "State",
+    "operation": "size()",
+    "iteration": 1000000, 
+    "baseline_ns": 0.54,
+    "current_ns": 1.29,
+    "pct_change": -58.14
+  },
+  {
+    "suite": "State",
+    "operation": "empty()",
+    "iteration": 10000, 
+    "baseline_ns": 1.19,
+    "current_ns": 2.48,
+    "pct_change": -52.02
+  },
+  {
+    "suite": "State",
+    "operation": "empty()",
+    "iteration": 100000, 
+    "baseline_ns": 0.95,
+    "current_ns": 2.46,
+    "pct_change": -61.38
+  },
+  {
+    "suite": "State",
+    "operation": "empty()",
+    "iteration": 1000000, 
+    "baseline_ns": 0.56,
+    "current_ns": 2.46,
+    "pct_change": -77.24
+  },
+  {
+    "suite": "State",
+    "operation": "capacity()",
+    "iteration": 10000, 
+    "baseline_ns": 0.29,
+    "current_ns": 1.87,
+    "pct_change": -84.49
+  },
+  {
+    "suite": "State",
+    "operation": "capacity()",
+    "iteration": 100000, 
+    "baseline_ns": 0.29,
+    "current_ns": 1.85,
+    "pct_change": -84.32
+  },
+  {
+    "suite": "State",
+    "operation": "capacity()",
+    "iteration": 1000000, 
+    "baseline_ns": 0.29,
+    "current_ns": 1.90,
+    "pct_change": -84.74
   }
 ]

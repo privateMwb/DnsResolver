@@ -1,4 +1,4 @@
-# Google Tests
+# Google Test Suite
 
 The same categories as `../custom/suite/` (see `../custom/suite/README.md`
 for what each one covers), reimplemented with GoogleTest instead of the

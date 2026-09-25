@@ -54,7 +54,7 @@ void benchLookupAt(std::size_t nameCount, const char* label) {
         (void)matches;
     };
 
-    BENCH(label, f);
+    BENCH_SOLO(label, f);
 }
 
 } // namespace
@@ -62,11 +62,7 @@ void benchLookupAt(std::size_t nameCount, const char* label) {
 // Executes all zone-size-growth benchmark cases.
 static void run_benchmarks() {
     benchLookupAt(100, "100 names stored");
-    std::cout << "\n";
-
     benchLookupAt(1000, "1,000 names stored");
-    std::cout << "\n";
-
     benchLookupAt(10000, "10,000 names stored");
 }
 

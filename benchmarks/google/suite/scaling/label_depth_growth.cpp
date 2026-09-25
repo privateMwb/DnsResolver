@@ -77,5 +77,5 @@ BENCHMARK_CAPTURE(ParseAt, EightLabelsDeep, 8);
 BENCHMARK_CAPTURE(ParseAt, ThirtyTwoLabelsDeep, 32);
 
 BENCHMARK_CAPTURE(BuildAt, TwoLabelsDeep, 2);
-BENCHMARK_CAPTURE(BuildAt, EightLabelsDeep, 8);
+BENCHMARK_CAPTURE(BuildAt, TwoLabelsDeepEightLabelsDeep, 8);
 BENCHMARK_CAPTURE(BuildAt, ThirtyTwoLabelsDeep, 32);

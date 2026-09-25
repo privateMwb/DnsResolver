@@ -46,7 +46,7 @@ static void bench_canonicalize() {
 
     auto f = [&] { store.addRecord(makeRecord()); };
 
-    BENCH("Mixed-case name", f);
+    BENCH_SOLO("Mixed-case name", f);
 }
 
 // Executes all canonicalize benchmark cases.

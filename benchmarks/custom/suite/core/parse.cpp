@@ -95,7 +95,7 @@ static void bench_parse_question() {
         (void)s;
     };
 
-    BENCH("Query, single question", f);
+    BENCH_SOLO("Parse Query(single q)", f);
 }
 
 // Measures parse() on a response carrying answer records.
@@ -109,14 +109,12 @@ static void bench_parse_answer() {
         (void)s;
     };
 
-    BENCH("Response, 4 answer records", f);
+    BENCH_SOLO("Parse Response(4 ans rec)", f);
 }
 
 // Executes all parse benchmark cases.
 static void run_benchmarks() {
     bench_parse_question();
-    std::cout << "\n";
-
     bench_parse_answer();
 }
 

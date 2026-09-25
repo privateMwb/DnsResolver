@@ -88,8 +88,7 @@ void ZoneStore::addRecord(const Packet::ResourceRecord& record) {
     ++recordCount_;
 }
 
-bool ZoneStore::removeRecord(const Packet::Name& name,
-                             std::uint16_t type) {
+bool ZoneStore::removeRecord(const Packet::Name& name, std::uint16_t type) {
     std::unique_lock lock(mutex_);
 
     std::string key = canonicalize(name);
@@ -120,9 +119,8 @@ bool ZoneStore::removeRecord(const Packet::Name& name,
 //  Section 3 — Introspection
 // ============================================================
 
-Vector<Packet::ResourceRecord> ZoneStore::lookup(
-    const Packet::Name& name,
-    std::uint16_t type) const {
+Vector<Packet::ResourceRecord> ZoneStore::lookup(const Packet::Name& name,
+                                                 std::uint16_t type) const {
 
     std::shared_lock lock(mutex_);
 
@@ -139,8 +137,7 @@ Vector<Packet::ResourceRecord> ZoneStore::lookup(
     return typeMap.at(type);
 }
 
-bool ZoneStore::contains(const Packet::Name& name,
-                         std::uint16_t type) const noexcept {
+bool ZoneStore::contains(const Packet::Name& name, std::uint16_t type) const noexcept {
 
     std::shared_lock lock(mutex_);
 
@@ -183,9 +180,7 @@ std::string ZoneStore::canonicalize(const Packet::Name& name) {
             key += '.';
 
         for (char c : name.labels[i]) {
-            key += static_cast<char>(
-                std::tolower(static_cast<unsigned char>(c))
-            );
+            key += static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
         }
     }
 
