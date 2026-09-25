@@ -329,15 +329,15 @@ DnsResolver/
 │   ├── Doxyfile
 │   └── README.md
 │
-├── .github/assets/
 ├── .clang-format
 ├── .clang-tidy
 ├── .gitignore
 ├── CMakeLists.txt
 ├── README.md
+├── CONTRIBUTING.md
 ├── CHANGELOG.md
+├── SECURITY.md
 ├── FUZZING.md
-├── RETARGETING.md
 └── LICENSE
 ```
 
