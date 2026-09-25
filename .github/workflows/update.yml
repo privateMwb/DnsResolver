@@ -131,7 +131,7 @@ jobs:
             --package ${{ env.PACKAGE_NAME }} \
             --repo ${{ env.REPOSITORY }} \
             --version ${{ steps.tag.outputs.version }} \
-            --ref ${{ steps.source.outputs.sha }} \
+            --commit ${{ steps.source.outputs.sha }} \
             --archive source.tar.gz \
             --root-dir "$ROOT_DIR" \
             --conan-dir "$CONAN_RECIPE_DIR" \
