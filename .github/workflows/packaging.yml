@@ -8,11 +8,12 @@
 # and vcpkg-smoke-test/ rather than reimplemented here, so there's one
 # place -- not two -- that defines what "the package works" means.
 #
-# Unlike the leaf libraries (VectorPro, JsonPro, ...), MiniDatabase's own
-# recipe/port declares all 7 of them as dependencies. This workflow
-# doesn't need to know that -- conan create / vcpkg both resolve MiniDatabase's
-# declared requirements automatically -- but it does mean a failure here
-# can originate from a dependency's package, not just MiniDatabase's own recipe.
+# Unlike a package that declares Conan/vcpkg requirements on separate
+# leaf-library packages, DnsPro's recipe and port don't declare any --
+# VectorPro and HashMapPro are vendored as git submodules, fetched
+# directly inside conanfile.py's source() step and portfile.cmake's own
+# submodule handling. A failure here is self-contained to DnsPro's own
+# recipe, not a dependency's package.
 # ============================================================
 
 name: Packaging
@@ -107,7 +108,7 @@ jobs:
           cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=/tmp/vcpkg/scripts/buildsystems/vcpkg.cmake
           cmake --build build
 
-      - name: Show MiniDatabase build logs
+      - name: Show DnsPro build logs
         if: failure()
         run: |
           echo "===== OUT ====="
