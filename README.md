@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/privateMwb/DnsResolver?style=for-the-badge&logo=github&color=F97316&labelColor=0D1117" alt="Version">
-  <img src="https://img.shields.io/badge/License-MIT-EA4C1E?style=for-the-badge&labelColor=0D1117" alt="License - MIT">
+  <img src="https://img.shields.io/github/v/release/privateMwb/DnsResolver?style=for-the-badge&logo=github&color=FACC15&labelColor=0D1117" alt="Version">
+  <img src="https://img.shields.io/badge/License-MIT-F97316?style=for-the-badge&labelColor=0D1117" alt="License - MIT">
   <img src="https://img.shields.io/badge/C%2B%2B-23-DC2626?style=for-the-badge&logo=c%2B%2B&labelColor=0D1117" alt="C++ - 23">
 </p>
 
