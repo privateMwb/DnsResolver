@@ -1,156 +1,160 @@
-#CacheProRegression Report
+#DnsProRegression Report
 
-## Element Access
-
-| Test | Iteration | Current | v1.0.0 | Δ |
-|---|---|---|---|---|
-| get() hit | 10K | 6 ns | 1 ns | -73.0% |
-| get() hit | 100K | 5 ns | 2 ns | -58.9% |
-| get() hit | 1M | 5 ns | 2 ns | -65.2% |
-| peek() hit | 10K | 4 ns | 1 ns | -67.0% |
-| peek() hit | 100K | 5 ns | 1 ns | -82.5% |
-| peek() hit | 1M | 4 ns | 1 ns | -70.4% |
-
-## Iteration
+## Lookup
 
 | Test | Iteration | Current | v1.0.0 | Δ |
 |---|---|---|---|---|
-| keys() traversal | 10K | 410 ns | 131 ns | -68.0% |
-| keys() traversal | 100K | 387 ns | 136 ns | -65.0% |
-| keys() traversal | 1M | 381 ns | 135 ns | -64.6% |
+| Exist name type | 10K | 1.16 us | 66 ns | -94.3% |
+| Exist name type | 100K | 1.25 us | 64 ns | -94.9% |
+| Exist name type | 1M | 1.19 us | 62 ns | -94.8% |
+| Missing name | 10K | 176 ns | 30 ns | -83.2% |
+| Missing name | 100K | 176 ns | 30 ns | -82.9% |
+| Missing name | 1M | 176 ns | 31 ns | -82.6% |
+| Exist name missing type | 10K | 219 ns | 37 ns | -82.9% |
+| Exist name missing type | 100K | 219 ns | 38 ns | -82.9% |
+| Exist name missing type | 1M | 219 ns | 37 ns | -83.0% |
 
-## Search
-
-| Test | Iteration | Current | v1.0.0 | Δ |
-|---|---|---|---|---|
-| contains() miss | 10K | 3 ns | 2 ns | -15.8% |
-| contains() miss | 100K | 3 ns | 2 ns | -36.5% |
-| contains() miss | 1M | 3 ns | 2 ns | -30.4% |
-| get() miss | 10K | 3 ns | 2 ns | -28.0% |
-| get() miss | 100K | 3 ns | 2 ns | -42.9% |
-| get() miss | 1M | 3 ns | 2 ns | -39.9% |
-
-## Emplace
+## Build
 
 | Test | Iteration | Current | v1.0.0 | Δ |
 |---|---|---|---|---|
-| emplace() insert | 10K | 321 ns | 24 ns | -92.4% |
-| emplace() insert | 100K | 305 ns | 27 ns | -91.2% |
-| emplace() insert | 1M | 509 ns | 27 ns | -94.8% |
+| Build Query(single q) | 10K | 940 ns | 58 ns | -93.9% |
+| Build Query(single q) | 100K | 1.07 us | 59 ns | -94.5% |
+| Build Query(single q) | 1M | 974 ns | 60 ns | -93.8% |
+| Build Response(4 ans rec) | 10K | 2.20 us | 202 ns | -90.8% |
+| Build Response(4 ans rec) | 100K | 2.64 us | 196 ns | -92.6% |
+| Build Response(4 ans rec) | 1M | 2.54 us | 194 ns | -92.4% |
 
-## Erase
-
-| Test | Iteration | Current | v1.0.0 | Δ |
-|---|---|---|---|---|
-| erase() existing | 10K | 789 ns | 38 ns | -95.2% |
-| erase() existing | 100K | 713 ns | 37 ns | -94.9% |
-| erase() existing | 1M | 557 ns | 24 ns | -95.7% |
-
-## Insert
+## Parse
 
 | Test | Iteration | Current | v1.0.0 | Δ |
 |---|---|---|---|---|
-| put() insert | 10K | 467 ns | 19 ns | -95.8% |
-| put() insert | 100K | 368 ns | 27 ns | -92.6% |
-| put() insert | 1M | 259 ns | 21 ns | -91.8% |
+| Parse Query(single q) | 10K | 808 ns | 34 ns | -95.8% |
+| Parse Query(single q) | 100K | 769 ns | 43 ns | -94.4% |
+| Parse Query(single q) | 1M | 755 ns | 32 ns | -95.7% |
+| Parse Response(4 ans rec) | 10K | 3.91 us | 174 ns | -95.5% |
+| Parse Response(4 ans rec) | 100K | 3.99 us | 183 ns | -95.4% |
+| Parse Response(4 ans rec) | 1M | 4.39 us | 174 ns | -96.0% |
 
-## Pop Clear
-
-| Test | Iteration | Current | v1.0.0 | Δ |
-|---|---|---|---|---|
-| clear() + refill | 10K | 3.14 us | 632 ns | -79.9% |
-| clear() + refill | 100K | 3.14 us | 615 ns | -80.4% |
-| clear() + refill | 1M | 3.52 us | 634 ns | -82.0% |
-
-## Push Back
+## Record
 
 | Test | Iteration | Current | v1.0.0 | Δ |
 |---|---|---|---|---|
-| put() insert (evicting) | 10K | 121 ns | 44 ns | -63.3% |
-| put() insert (evicting) | 100K | 121 ns | 44 ns | -64.0% |
-| put() insert (evicting) | 1M | 120 ns | 43 ns | -64.2% |
+| Existing name+type bucket | 10K | 2.29 us | 239 ns | -89.6% |
+| Existing name+type bucket | 100K | 2.64 us | 199 ns | -92.5% |
+| Existing name+type bucket | 1M | 11.15 us | 236 ns | -97.9% |
+| Missing name | 10K | 176 ns | 35 ns | -79.8% |
+| Missing name | 100K | 176 ns | 36 ns | -79.4% |
+| Missing name | 1M | 176 ns | 35 ns | -80.0% |
 
-## Construction
-
-| Test | Iteration | Current | v1.0.0 | Δ |
-|---|---|---|---|---|
-| construct empty | 10K | 15.64 us | 2.10 us | -86.5% |
-| construct empty | 100K | 15.57 us | 2.10 us | -86.5% |
-| construct empty | 1M | 15.87 us | 2.09 us | -86.8% |
-
-## Move
+## Resolve
 
 | Test | Iteration | Current | v1.0.0 | Δ |
 |---|---|---|---|---|
-| move-assign | 10K | 64 ns | 6 ns | -90.3% |
-| move-assign | 100K | 64 ns | 8 ns | -88.3% |
-| move-assign | 1M | 65 ns | 7 ns | -89.7% |
-| move-construct | 10K | 7.74 us | 832 ns | -89.2% |
-| move-construct | 100K | 7.55 us | 796 ns | -89.5% |
-| move-construct | 1M | 7.54 us | 797 ns | -89.4% |
+| Answer found | 10K | 4.60 us | 241 ns | -94.8% |
+| Answer found | 100K | 4.64 us | 245 ns | -94.7% |
+| Answer found | 1M | 5.15 us | 234 ns | -95.5% |
+| NXDOMAIN | 10K | 3.37 us | 180 ns | -94.7% |
+| NXDOMAIN | 100K | 3.34 us | 182 ns | -94.6% |
+| NXDOMAIN | 1M | 3.30 us | 185 ns | -94.4% |
+| NODATA | 10K | 3.35 us | 189 ns | -94.3% |
+| NODATA | 100K | 3.36 us | 195 ns | -94.2% |
+| NODATA | 1M | 3.42 us | 193 ns | -94.4% |
 
-## Reallocation
-
-| Test | Iteration | Current | v1.0.0 | Δ |
-|---|---|---|---|---|
-| resize() grow | 10K | 631 ns | 35 ns | -94.5% |
-| resize() grow | 100K | 484 ns | 43 ns | -91.0% |
-| resize() grow | 1M | 323 ns | 39 ns | -87.9% |
-
-## Reserve
+## Message Move
 
 | Test | Iteration | Current | v1.0.0 | Δ |
 |---|---|---|---|---|
-| reserve() | 10K | 13 ns | 1 ns | -93.1% |
-| reserve() | 100K | 13 ns | 0 ns | -97.6% |
-| reserve() | 1M | 14 ns | 1 ns | -94.8% |
+| Move-construct | 10K | 62 ns | 2 ns | -96.0% |
+| Move-construct | 100K | 71 ns | 3 ns | -96.2% |
+| Move-construct | 1M | 63 ns | 2 ns | -96.1% |
+| Move-assign | 10K | 57 ns | 3 ns | -94.6% |
+| Move-assign | 100K | 57 ns | 3 ns | -95.0% |
+| Move-assign | 1M | 59 ns | 3 ns | -95.1% |
 
-## Shrink To Fit
-
-| Test | Iteration | Current | v1.0.0 | Δ |
-|---|---|---|---|---|
-| shrink_to_fit() | 10K | 9.28 us | 966 ns | -89.6% |
-| shrink_to_fit() | 100K | 8.97 us | 987 ns | -89.0% |
-| shrink_to_fit() | 1M | 9.12 us | 960 ns | -89.5% |
-
-## Observer
+## Answer Count Growth
 
 | Test | Iteration | Current | v1.0.0 | Δ |
 |---|---|---|---|---|
-| hitCount() | 10K | 1 ns | 0 ns | -76.8% |
-| hitCount() | 100K | 2 ns | 0 ns | -84.3% |
-| hitCount() | 1M | 1 ns | 0 ns | -62.6% |
-| missCount() | 10K | 2 ns | 1 ns | -62.6% |
-| missCount() | 100K | 1 ns | 1 ns | -52.8% |
-| missCount() | 1M | 1 ns | 1 ns | -59.2% |
-| hitRate() | 10K | 14 ns | 2 ns | -89.4% |
-| hitRate() | 100K | 14 ns | 2 ns | -89.3% |
-| hitRate() | 1M | 15 ns | 1 ns | -90.7% |
-| mostRecentKey() | 10K | 3 ns | 0 ns | -90.6% |
-| mostRecentKey() | 100K | 3 ns | 1 ns | -76.9% |
-| mostRecentKey() | 1M | 3 ns | 0 ns | -90.8% |
-| leastRecentKey() | 10K | 3 ns | 0 ns | -90.6% |
-| leastRecentKey() | 100K | 3 ns | 0 ns | -90.6% |
-| leastRecentKey() | 1M | 3 ns | 1 ns | -81.8% |
+| 4 answer records | 10K | 4.24 us | 181 ns | -95.7% |
+| 4 answer records | 100K | 4.24 us | 180 ns | -95.8% |
+| 4 answer records | 1M | 4.32 us | 177 ns | -95.9% |
+| 16 answer records | 10K | 15.10 us | 666 ns | -95.6% |
+| 16 answer records | 100K | 14.32 us | 650 ns | -95.5% |
+| 16 answer records | 1M | 13.91 us | 642 ns | -95.4% |
+| 64 answer records | 10K | 58.28 us | 3.28 us | -94.4% |
+| 64 answer records | 100K | 55.20 us | 3.30 us | -94.0% |
+| 64 answer records | 1M | 62.10 us | 3.30 us | -94.7% |
+| 4 answer records | 10K | 4.24 us | 190 ns | -95.5% |
+| 4 answer records | 100K | 4.24 us | 206 ns | -95.1% |
+| 4 answer records | 1M | 4.32 us | 210 ns | -95.1% |
+| 16 answer records | 10K | 15.10 us | 534 ns | -96.5% |
+| 16 answer records | 100K | 14.32 us | 548 ns | -96.2% |
+| 16 answer records | 1M | 13.91 us | 554 ns | -96.0% |
+| 64 answer records | 10K | 58.28 us | 1.96 us | -96.6% |
+| 64 answer records | 100K | 55.20 us | 1.88 us | -96.6% |
+| 64 answer records | 1M | 62.10 us | 1.91 us | -96.9% |
 
-## State
+## Label Depth Growth
 
 | Test | Iteration | Current | v1.0.0 | Δ |
 |---|---|---|---|---|
-| size() | 10K | 2 ns | 0 ns | -81.4% |
-| size() | 100K | 1 ns | 0 ns | -71.5% |
-| size() | 1M | 1 ns | 1 ns | -58.1% |
-| empty() | 10K | 2 ns | 1 ns | -52.0% |
-| empty() | 100K | 2 ns | 1 ns | -61.4% |
-| empty() | 1M | 2 ns | 1 ns | -77.2% |
-| capacity() | 10K | 2 ns | 0 ns | -84.5% |
-| capacity() | 100K | 2 ns | 0 ns | -84.3% |
-| capacity() | 1M | 2 ns | 0 ns | -84.7% |
+| 2 labels deep | 10K | 962 ns | 32 ns | -96.7% |
+| 2 labels deep | 100K | 966 ns | 32 ns | -96.7% |
+| 2 labels deep | 1M | 966 ns | 32 ns | -96.7% |
+| 8 labels deep | 10K | 1.17 us | 58 ns | -95.0% |
+| 8 labels deep | 100K | 1.20 us | 58 ns | -95.2% |
+| 8 labels deep | 1M | 1.18 us | 58 ns | -95.1% |
+| 32 labels deep | 10K | 3.08 us | 209 ns | -93.2% |
+| 32 labels deep | 100K | 3.04 us | 210 ns | -93.1% |
+| 32 labels deep | 1M | 3.06 us | 216 ns | -93.0% |
+| 2 labels deep | 10K | 962 ns | 105 ns | -89.0% |
+| 2 labels deep | 100K | 966 ns | 62 ns | -93.6% |
+| 2 labels deep | 1M | 966 ns | 58 ns | -94.0% |
+| 8 labels deep | 10K | 1.17 us | 93 ns | -92.0% |
+| 8 labels deep | 100K | 1.20 us | 93 ns | -92.2% |
+| 8 labels deep | 1M | 1.18 us | 93 ns | -92.1% |
+| 32 labels deep | 10K | 3.08 us | 200 ns | -93.5% |
+| 32 labels deep | 100K | 3.04 us | 206 ns | -93.2% |
+| 32 labels deep | 1M | 3.06 us | 200 ns | -93.5% |
+
+## Zone Size Growth
+
+| Test | Iteration | Current | v1.0.0 | Δ |
+|---|---|---|---|---|
+| 100 names stored | 10K | 1.71 us | 63 ns | -96.3% |
+| 100 names stored | 100K | 1.60 us | 64 ns | -96.0% |
+| 100 names stored | 1M | 1.60 us | 64 ns | -96.0% |
+| 1,000 names stored | 10K | 1.55 us | 64 ns | -95.9% |
+| 1,000 names stored | 100K | 1.59 us | 64 ns | -96.0% |
+| 1,000 names stored | 1M | 1.57 us | 64 ns | -96.0% |
+| 10,000 names stored | 10K | 1.59 us | 67 ns | -95.8% |
+| 10,000 names stored | 100K | 1.58 us | 67 ns | -95.8% |
+| 10,000 names stored | 1M | 1.55 us | 64 ns | -95.9% |
+
+## Canonicalize
+
+| Test | Iteration | Current | v1.0.0 | Δ |
+|---|---|---|---|---|
+| Mixed-case name | 10K | 2.06 us | 88 ns | -95.7% |
+| Mixed-case name | 100K | 2.30 us | 164 ns | -92.9% |
+| Mixed-case name | 1M | 2.44 us | 190 ns | -92.2% |
+
+## Name Parse
+
+| Test | Iteration | Current | v1.0.0 | Δ |
+|---|---|---|---|---|
+| Uncompressed name | 10K | 966 ns | 35 ns | -96.4% |
+| Uncompressed name | 100K | 957 ns | 34 ns | -96.4% |
+| Uncompressed name | 1M | 964 ns | 35 ns | -96.4% |
+| Compression pointer name | 10K | 1.46 us | 106 ns | -92.8% |
+| Compression pointer name | 100K | 1.45 us | 76 ns | -94.7% |
+| Compression pointer name | 1M | 1.48 us | 54 ns | -96.4% |
 
 ## Summary
 
 | Result | Count |
 |---|---|
 | Current faster | 0 (0%) |
-| v1.0.0 faster | 72 (100%) |
+| v1.0.0 faster | 96 (100%) |
 | Tie | 0 (0%) |

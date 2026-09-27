@@ -4,149 +4,149 @@
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| Existing Name Type | 10K | 11.25 ms |
-| Existing Name Type | 100K | 132.95 ms |
-| Existing Name Type | 1M | 1.34 s |
-| Missing Name | 10K | 1.92 ms |
-| Missing Name | 100K | 19.01 ms |
-| Missing Name | 1M | 189.94 ms |
-| Existing Name Missing Type | 10K | 2.36 ms |
-| Existing Name Missing Type | 100K | 23.88 ms |
-| Existing Name Missing Type | 1M | 236.38 ms |
+| Exist Name Type | 10K | 6.56 ms |
+| Exist Name Type | 100K | 117.91 ms |
+| Exist Name Type | 1M | 1.17 s |
+| Missing Name | 10K | 1.76 ms |
+| Missing Name | 100K | 17.60 ms |
+| Missing Name | 1M | 175.69 ms |
+| Exist Name Missing Type | 10K | 2.18 ms |
+| Exist Name Missing Type | 100K | 21.87 ms |
+| Exist Name Missing Type | 1M | 218.52 ms |
 
 ## Build
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| Query, Single Question | 10K | 7.76 ms |
-| Query, Single Question | 100K | 118.15 ms |
-| Query, Single Question | 1M | 1.20 s |
-| Response, 4 Answer Records | 10K | 30.27 ms |
-| Response, 4 Answer Records | 100K | 231.85 ms |
-| Response, 4 Answer Records | 1M | 3.98 s |
+| Build Query(single Q) | 10K | 11.20 ms |
+| Build Query(single Q) | 100K | 102.03 ms |
+| Build Query(single Q) | 1M | 1.26 s |
+| Build Response(4 Ans Rec) | 10K | 30.94 ms |
+| Build Response(4 Ans Rec) | 100K | 282.65 ms |
+| Build Response(4 Ans Rec) | 1M | 2.97 s |
 
 ## Parse
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| Query, Single Question | 10K | 12.71 ms |
-| Query, Single Question | 100K | 154.71 ms |
-| Query, Single Question | 1M | 1.31 s |
-| Response, 4 Answer Records | 10K | 49.59 ms |
-| Response, 4 Answer Records | 100K | 865.99 ms |
-| Response, 4 Answer Records | 1M | 4.22 s |
+| Parse Query(single Q) | 10K | 8.12 ms |
+| Parse Query(single Q) | 100K | 78.52 ms |
+| Parse Query(single Q) | 1M | 789.02 ms |
+| Parse Response(4 Ans Rec) | 10K | 39.79 ms |
+| Parse Response(4 Ans Rec) | 100K | 420.99 ms |
+| Parse Response(4 Ans Rec) | 1M | 4.11 s |
 
 ## Record
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| Existing Name+type Bucket | 10K | 12.02 ms |
-| Existing Name+type Bucket | 100K | 110.75 ms |
-| Existing Name+type Bucket | 1M | 1.34 s |
-| Missing Name | 10K | 1.85 ms |
-| Missing Name | 100K | 18.61 ms |
-| Missing Name | 1M | 185.49 ms |
+| Existing Name+type Bucket | 10K | 11.40 ms |
+| Existing Name+type Bucket | 100K | 109.75 ms |
+| Existing Name+type Bucket | 1M | 2.04 s |
+| Missing Name | 10K | 2.68 ms |
+| Missing Name | 100K | 26.93 ms |
+| Missing Name | 1M | 270.50 ms |
 
 ## Resolve
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| Answer Found | 10K | 37.74 ms |
-| Answer Found | 100K | 404.66 ms |
-| Answer Found | 1M | 4.82 s |
-| NXDOMAIN | 10K | 36.97 ms |
-| NXDOMAIN | 100K | 369.29 ms |
-| NXDOMAIN | 1M | 3.72 s |
-| NODATA | 10K | 37.62 ms |
-| NODATA | 100K | 378.42 ms |
-| NODATA | 1M | 3.76 s |
+| Answer Found | 10K | 47.73 ms |
+| Answer Found | 100K | 469.38 ms |
+| Answer Found | 1M | 4.73 s |
+| NXDOMAIN | 10K | 32.38 ms |
+| NXDOMAIN | 100K | 323.29 ms |
+| NXDOMAIN | 1M | 3.24 s |
+| NODATA | 10K | 33.52 ms |
+| NODATA | 100K | 335.00 ms |
+| NODATA | 1M | 3.36 s |
 
 ## Message Move
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| Move-construct | 10K | 685.00 us |
-| Move-construct | 100K | 6.92 ms |
-| Move-construct | 1M | 70.63 ms |
-| Move-assign | 10K | 1.08 ms |
-| Move-assign | 100K | 7.11 ms |
-| Move-assign | 1M | 70.31 ms |
+| Move-construct | 10K | 619.08 us |
+| Move-construct | 100K | 6.24 ms |
+| Move-construct | 1M | 62.05 ms |
+| Move-assign | 10K | 631.08 us |
+| Move-assign | 100K | 5.89 ms |
+| Move-assign | 1M | 58.70 ms |
 
 ## Answer Count Growth
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| 4 Answer Records | 10K | 49.42 ms |
-| 4 Answer Records | 100K | 470.25 ms |
-| 4 Answer Records | 1M | 4.57 s |
-| 16 Answer Records | 10K | 168.10 ms |
-| 16 Answer Records | 100K | 1.40 s |
-| 16 Answer Records | 1M | 15.07 s |
-| 64 Answer Records | 10K | 276.80 ms |
-| 64 Answer Records | 100K | 2.76 s |
-| 64 Answer Records | 1M | 49.19 s |
-| 4 Answer Records | 10K | 32.48 ms |
-| 4 Answer Records | 100K | 327.05 ms |
-| 4 Answer Records | 1M | 3.21 s |
-| 16 Answer Records | 10K | 60.67 ms |
-| 16 Answer Records | 100K | 609.32 ms |
-| 16 Answer Records | 1M | 6.21 s |
-| 64 Answer Records | 10K | 172.23 ms |
-| 64 Answer Records | 100K | 1.73 s |
-| 64 Answer Records | 1M | 17.53 s |
+| 4 Answer Records | 10K | 42.00 ms |
+| 4 Answer Records | 100K | 419.55 ms |
+| 4 Answer Records | 1M | 4.21 s |
+| 16 Answer Records | 10K | 133.42 ms |
+| 16 Answer Records | 100K | 1.34 s |
+| 16 Answer Records | 1M | 13.55 s |
+| 64 Answer Records | 10K | 260.81 ms |
+| 64 Answer Records | 100K | 3.02 s |
+| 64 Answer Records | 1M | 44.09 s |
+| 4 Answer Records | 10K | 27.93 ms |
+| 4 Answer Records | 100K | 315.33 ms |
+| 4 Answer Records | 1M | 3.20 s |
+| 16 Answer Records | 10K | 60.60 ms |
+| 16 Answer Records | 100K | 626.10 ms |
+| 16 Answer Records | 1M | 5.47 s |
+| 64 Answer Records | 10K | 120.01 ms |
+| 64 Answer Records | 100K | 1.31 s |
+| 64 Answer Records | 1M | 12.15 s |
 
 ## Label Depth Growth
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| 2 Labels Deep | 10K | 9.76 ms |
-| 2 Labels Deep | 100K | 100.42 ms |
-| 2 Labels Deep | 1M | 997.14 ms |
-| 8 Labels Deep | 10K | 11.71 ms |
-| 8 Labels Deep | 100K | 129.55 ms |
-| 8 Labels Deep | 1M | 1.21 s |
-| 32 Labels Deep | 10K | 30.54 ms |
-| 32 Labels Deep | 100K | 309.32 ms |
-| 32 Labels Deep | 1M | 3.12 s |
-| 2 Labels Deep | 10K | 11.84 ms |
-| 2 Labels Deep | 100K | 133.33 ms |
-| 2 Labels Deep | 1M | 1.27 s |
-| 8 Labels Deep | 10K | 21.17 ms |
-| 8 Labels Deep | 100K | 213.82 ms |
-| 8 Labels Deep | 1M | 2.17 s |
-| 32 Labels Deep | 10K | 48.78 ms |
-| 32 Labels Deep | 100K | 436.76 ms |
-| 32 Labels Deep | 1M | 4.22 s |
+| 2 Labels Deep | 10K | 5.89 ms |
+| 2 Labels Deep | 100K | 82.97 ms |
+| 2 Labels Deep | 1M | 779.88 ms |
+| 8 Labels Deep | 10K | 8.30 ms |
+| 8 Labels Deep | 100K | 76.19 ms |
+| 8 Labels Deep | 1M | 880.43 ms |
+| 32 Labels Deep | 10K | 22.02 ms |
+| 32 Labels Deep | 100K | 211.35 ms |
+| 32 Labels Deep | 1M | 2.08 s |
+| 2 Labels Deep | 10K | 8.41 ms |
+| 2 Labels Deep | 100K | 75.63 ms |
+| 2 Labels Deep | 1M | 1.05 s |
+| 8 Labels Deep | 10K | 9.97 ms |
+| 8 Labels Deep | 100K | 124.06 ms |
+| 8 Labels Deep | 1M | 1.73 s |
+| 32 Labels Deep | 10K | 36.25 ms |
+| 32 Labels Deep | 100K | 359.13 ms |
+| 32 Labels Deep | 1M | 3.57 s |
 
 ## Zone Size Growth
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| 100 Names Stored | 10K | 19.42 ms |
-| 100 Names Stored | 100K | 161.78 ms |
-| 100 Names Stored | 1M | 1.56 s |
-| 1,000 Names Stored | 10K | 15.53 ms |
-| 1,000 Names Stored | 100K | 156.57 ms |
-| 1,000 Names Stored | 1M | 1.59 s |
-| 10,000 Names Stored | 10K | 15.43 ms |
-| 10,000 Names Stored | 100K | 156.76 ms |
-| 10,000 Names Stored | 1M | 1.55 s |
+| 100 Names Stored | 10K | 9.56 ms |
+| 100 Names Stored | 100K | 125.06 ms |
+| 100 Names Stored | 1M | 1.24 s |
+| 1,000 Names Stored | 10K | 12.64 ms |
+| 1,000 Names Stored | 100K | 125.73 ms |
+| 1,000 Names Stored | 1M | 1.18 s |
+| 10,000 Names Stored | 10K | 11.35 ms |
+| 10,000 Names Stored | 100K | 120.66 ms |
+| 10,000 Names Stored | 1M | 1.18 s |
 
 ## Canonicalize
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| Mixed-case Name | 10K | 21.36 ms |
-| Mixed-case Name | 100K | 236.91 ms |
-| Mixed-case Name | 1M | 2.52 s |
+| Mixed-case Name | 10K | 14.19 ms |
+| Mixed-case Name | 100K | 220.57 ms |
+| Mixed-case Name | 1M | 1.59 s |
 
 ## Name Parse
 
 | Test | Iteration | DnsPro |
 |---|---|---|
-| Uncompressed Name | 10K | 9.87 ms |
-| Uncompressed Name | 100K | 105.28 ms |
-| Uncompressed Name | 1M | 1.14 s |
-| Name Via Compression Pointer | 10K | 14.78 ms |
-| Name Via Compression Pointer | 100K | 148.04 ms |
-| Name Via Compression Pointer | 1M | 1.48 s |
+| Uncompressed Name | 10K | 6.74 ms |
+| Uncompressed Name | 100K | 81.62 ms |
+| Uncompressed Name | 1M | 781.52 ms |
+| Compression Pointer Name | 10K | 8.86 ms |
+| Compression Pointer Name | 100K | 126.86 ms |
+| Compression Pointer Name | 1M | 1.21 s |
