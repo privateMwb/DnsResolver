@@ -3,7 +3,7 @@
 # Base image for building the fuzz harnesses under ClusterFuzzLite.
 # ============================================================
 
-FROM gcr.io/oss-fuzz-base/base-builder@sha256:0b571c53b7180e7266de67665bc3ccef35618593af5714fee0750d611dc8b1f6
+FROM gcr.io/oss-fuzz-base/base-builder@sha256:3cf598908df31d5bcc8013f9040e7689daef8cbeedd0401789158fb1abd42cf4
 
 COPY . $SRC/DnsResolver
 COPY .clusterfuzzlite/build.sh $SRC/
